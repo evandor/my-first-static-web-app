@@ -1,0 +1,13 @@
+{
+  "firstName": "Vorname",
+  "lastName": "Nachname",
+  "decimalField": "Decimal Zahl (2 Nachkommastellen)",
+  "integerField": "Integer Zahl",
+  "age": "Alter",
+  "my": {
+    "comments": "Kommentare"
+  },
+  "eyeData": "Daten der Augen",
+  "date_format_printed": "d",
+  "printed_by": "Erzeugt am {0} by {1}, {2}"
+}

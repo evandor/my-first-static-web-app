@@ -1,0 +1,209 @@
+@import 'a4';
+@import '../../../../shared/1.1/assets/css/colors';
+@import '../../../../shared/1.1/assets/css/fonts';
+
+@mixin set-format(// definition of the page format
+  $czm-page-format,
+  // definition of the width of the page width that corresponds to the defined page format and page orientation
+  $czm-page-width,
+  // definition of the height of the page that corresponds to the defined page format and page orientation
+  $czm-page-height,
+  // definition of the height of the page header. This value does not include the vertical page margins
+  $czm-page-header-height,
+  // definition of the height of the page footer. This value does not include the vertical page margins
+  $czm-page-footer-height,
+  // definition of the page margins
+  $czm-page-margin,
+  // definition of the page top padding
+  $czm-page-padding-top,
+  // definition of the page left padding
+  $czm-page-padding-left, // page padding left + page margin left = style guide left page margin = 18mm
+  // definition of the page right padding
+  $czm-page-padding-right,// page padding right + page margin right = style guide right page margin = 10mm
+  // definition of the page bottom padding
+  $czm-page-padding-bottom,
+) {
+  // definition of the sum of the top and bottom page margins
+  $czm-page-height-margins: 2 * $czm-page-margin;
+  // definition of the sum of the left and right page margins
+  $czm-page-width-margins: 2 * $czm-page-margin;
+  // definition of the height of the page main area. This value does not include the vertical page margins
+  $czm-page-main-height: $czm-page-height - $czm-page-header-height - $czm-page-footer-height - $czm-page-height-margins;
+  // page height without the margins. Used to define rigid box of the printable area which contains header, footer and main
+  $czm-page-height-printable-area: $czm-page-height - $czm-page-height-margins;
+  // page width without the margins. Used to define rigid box of the printable area which contains header, footer and main
+  $czm-page-width-printable-area: $czm-page-width - $czm-page-height-margins;
+
+  /* make sure we use box-sizing for all css elements */
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: $defaultFontFamily;
+    line-height: 9.6pt; /* default line spacing defined in Styleguilde_V1.pdf (page 3) */
+    color: $gs120; /* default color as defined in Styleguilde_V1.pdf */
+  }
+
+  /* This class creates the illusion of a page in the browser. It is used mainly in the screen. For print it is only
+      used keep the contained content area in the middle of the page using the benefits of the flex layout. This
+      provides the flexibility that hardware printer margins are absorbed.  
+   */
+  .page {
+    /* Please note that the margins are only used here to visually separate the pages. "auto" equally provides
+       margins to the left and right of the page and fills the complete viewport area of the browser */
+    margin: 5mm auto 5mm;
+    padding: 0;
+    /* centers the only child element (div) in the middle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* set width to the preferred page width */
+    width: $czm-page-width;
+    /* set width to the preferred page height */
+    height: $czm-page-height;
+    /* set the default font size, which is implicitly used to calculate the heights of elements */
+    font-size: 8pt;
+    /* defines the shadow around the page */
+    box-shadow: 0 0 5mm rgba(0, 0, 0, 0.59);
+    /*           overflow-y: scroll; */
+    background-color: white;
+    outline: 0;
+  }
+
+  /* This class defines a rigid box around the printable area. This is the area that is safe to use for print items.
+     Outside of the printable area, printer hardware margins can clip the texts or graphics or might lead to a 
+     unwanted offset of the print face and wrong layout of pages. 
+     This area typically contains a header, page content and a footer plus padding around it. The size of the box
+     must be not changeable, which means min-height=max-height and min-width=max-width */
+  div.printable {
+    margin: 0; /* never change this value */
+    padding: $czm-page-padding-top $czm-page-padding-right $czm-page-padding-bottom $czm-page-padding-left;
+    min-height: $czm-page-height-printable-area;
+    max-height: $czm-page-height-printable-area;
+    min-width: $czm-page-width-printable-area;
+    max-width: $czm-page-width-printable-area;
+    font-size: 8pt;
+    outline: 0;
+  }
+
+  /* This class defines a box for the header. It can grow horizontally, but never changes in height. */
+  header {
+    /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       This ensures, that child item margins do not exceed the header box-layout! For example: the top margin of  
+       a paragraph <p> element inside the header element exceeds the top border of the header bounding-box and 
+       pushes the whole layout down by the size of the top margin of the <p> element. Only overflow value "auto" 
+       ensures that the margins of the <p> elem are layouted inside of the header bounding box. 
+       Therefore, do not change this value unless you know what you are doing! */
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* set width to 100%, width is limited by the parent containers fixed size width limit */
+    min-height: $czm-page-header-height; /* define a fixed height (min-height=max=height), so child items */
+    max-height: $czm-page-header-height; /* cant grow beyond this limit */
+    /*    border: thin dashed rgba(200, 200, 200, 0.7); */
+    background-color: rgba(0, 0, 200, 0.1);
+  }
+
+  /* This class defines a box for the main (content) area. It can grow horizontally, but never changes in height. */
+  main {
+    /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       The scrollbar is used as indicator here, to decide if the page needs to be split. If a scrollbar shows up
+       ,then to many child items are in inside of the page and the page needs to be split into two or more pages.
+       In addition the overflow-y:auto property ensures, that child item margins do not exceed the main box-layout! 
+       For example: the top margin of a paragraph <p> element inside the main element exceeds the top border of the 
+       main bounding-box and pushes the whole layout down by the size of the top margin of the <p> element. Only 
+       overflow value "auto" ensures that the margins of the <p> elem are layouted inside of the footers bounding 
+       box. Therefore, do not change this value unless you know what you are doing! */
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* set width to 100%, width is limited by the parent containers fixed size width limit */
+    min-height: $czm-page-main-height; /* define a fixed height (min-height=max=height), so child items */
+    max-height: $czm-page-main-height; /* cant grow beyond this limit */
+    /*    border: thin dashed rgba(200, 200, 200, 0.7); */
+    background-color: rgba(200, 200, 200, 0.1);
+  }
+
+  /* This class defines a box for the footer. It can grow horizontally, but never changes in height. */
+  footer {
+    /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       This ensures, that child item margins do not exceed the footer box-layout! For example: the top margin of  
+       a paragraph <p> element inside the footer element exceeds the top border of the footer bounding-box and 
+       pushes the whole layout down by the size of the top margin of the <p> element. Only overflow value "auto" 
+       ensures that the margins of the <p> elem are layouted inside of the footers bounding box. 
+       Therefore, do not change this value unless you know what you are doing! */
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: $czm-page-footer-height; /* define a fixed height (min-height=max=height), so child items */
+    max-height: $czm-page-footer-height; /* cant grow beyond this limit */
+    height: $czm-page-footer-height;
+    /*   border: thin dashed rgba(200, 200, 200, 0.7); */
+    background-color: rgba(0, 100, 0, 0.1);
+  }
+
+  @media print {
+    @page {
+      margin: 0;
+      padding: 0;
+      size: $czm-page-format;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .page {
+      box-shadow: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      outline: 0;
+      border: none;
+    }
+
+    div.printable {
+      margin: 0;
+      padding: $czm-page-padding-top $czm-page-padding-right $czm-page-padding-bottom $czm-page-padding-left;
+      min-height: $czm-page-height-printable-area;
+      max-height: $czm-page-height-printable-area;
+      min-width: $czm-page-width-printable-area;
+      max-width: $czm-page-width-printable-area;
+      box-sizing: border-box;
+      outline: 0;
+    }
+
+    /* can be used to hide an html element, which should not be printed. Remove, if not used */
+    .noprint {
+      display: none;
+    }
+
+    /* can be used to show an html element, which should be printed. Remove, if not used */
+    .enable-print {
+      display: block;
+    }
+
+    /* avoid that there are page breaks inside paragraphs. */
+    p {
+      page-break-inside: avoid;
+    }
+
+    /* avoid page breaks inside sections. */
+    section {
+      page-break-inside: avoid;
+    }
+  }
+}

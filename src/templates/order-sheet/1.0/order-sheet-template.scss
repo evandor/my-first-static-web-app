@@ -1,0 +1,50 @@
+@import "../../shared/1.0/assets/css/borders";
+
+@page {
+  margin: 0mm 0mm 0mm 15mm; /* page header and footer areas belongs to the margin */
+}
+
+.h1 {
+  line-height: 18pt; /* to match the font size */
+}
+
+table.order-sheet {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr td {
+    border-bottom: $border-default;
+  }
+
+  tr:first-child td {
+    border-bottom: $border-section;
+  }
+
+  td {
+    width: 32%;
+    padding: 5px;
+    text-align: right;
+  }
+
+  td:first-child {
+    text-align: left;
+    width: 36%;
+  }
+}
+
+.disclaimer {
+  padding-top: 2mm;
+}
+
+.reusable-stacy {
+  padding-top: 4mm;
+
+  div#box {
+    display: inline-block;
+    position: relative;
+    top: 0.25em;
+    width: 1.125em;
+    height: 1.125em;
+    border: $border-default;
+  }
+}

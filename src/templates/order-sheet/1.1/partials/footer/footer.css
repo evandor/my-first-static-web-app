@@ -1,0 +1,49 @@
+/* only used for at the beginning of a new section */
+/* used as standard separator in tables */
+/* used for footer comment box border */
+/* border for selected table line */
+footer {
+  padding-right: 3mm;
+}
+
+.signature-section {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 3mm;
+  height: 13mm;
+  margin-bottom: 1.5mm;
+}
+
+.print-comment {
+  width: 90mm;
+  padding: 1.5mm;
+  line-height: 7.2pt;
+  border: 0.25pt solid #0d0a0b;
+}
+
+.signature {
+  width: 65mm;
+  padding: 1.5mm;
+  background: #ecf2f8;
+}
+
+.zeiss-logo {
+  overflow: hidden;
+  justify-content: flex-end;
+}
+
+.zeiss-logo img {
+  width: 13mm;
+  height: 13mm;
+}
+
+.device-info-section {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 4.5mm;
+}
+
+.page-number {
+  justify-content: flex-end;
+  text-align: right;
+}

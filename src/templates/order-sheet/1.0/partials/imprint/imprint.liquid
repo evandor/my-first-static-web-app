@@ -1,0 +1,11 @@
+{% comment %}
+- Description: Partial for the imprint of the report
+- Parameters: 
+  - model data model for the imprint
+  - i18n access to the i18n properties  
+{% endcomment %}
+<div id="imprint">
+    <div class="imprint info">
+        {{ model.copyright | default: "Carl Zeiss Meditec AG - Copyright 2020 All rights reserved." }}
+    </div>
+</div>

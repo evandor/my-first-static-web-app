@@ -1,0 +1,21 @@
+{
+  "patient": {
+    "id": "123",
+    "name1": "Mr. Heinz Huber (PN1)",
+    "name2": "Mr. Heinz Huber (PN2)",
+    "dateOfBirth": "1945-10-09",
+    "gender": "male"
+  },
+  "institution": {
+    "name": "Sacred Heart",
+    "department": "Surgery",
+    "addressLine1": "Medical Street 123",
+    "addressLine2": "Address line 2",
+    "city": "San Francisco",
+    "zipCode": "93402",
+    "state": "California",
+    "country": "United States of America",
+    "phoneNumber": "+19111234567",
+    "emailAddress": "emergency@sacredheard.org"
+  }
+}

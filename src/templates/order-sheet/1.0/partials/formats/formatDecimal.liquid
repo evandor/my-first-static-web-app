@@ -1,0 +1,11 @@
+{% comment %}
+- Description: This liquid file just formats a given number as decimal and displays all available fraction digits.
+               TODO: Clarify how many fraction digits should be displayed? Currently its 4.
+- Parameters
+  - number value that should be formatted
+{% endcomment %}
+{%- unless number -%}
+    {{ "---" }}
+{%- else -%}
+    {{- number | format_number: 'N4' | default: "---" -}}
+{%- endunless -%}    

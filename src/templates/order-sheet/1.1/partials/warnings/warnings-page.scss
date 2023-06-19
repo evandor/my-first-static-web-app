@@ -1,0 +1,63 @@
+@import "../../../../shared/1.1/assets/css/colors";
+
+main {
+  display: block; /* make sure this page uses layout children as blocks (unless overwritten by child-elements) */ 
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-bottom: 0; /* remove bottom margin, otherwise there is a gap between warning header and warning entries */
+}
+
+h2.warnings-header {
+  margin: 0;
+  display: block; /* header and warning-row are children of the main element they need to have to use block layout  */
+  max-width: 180mm; /* limit width of a row. Height is implicitly limited by h2 element  */
+  padding: 1.5mm 2.5mm;
+  background-color: $y100
+}
+
+.warning-row {
+  margin: 0;
+  padding: 0;
+  min-width: 180mm; /* limit width of a row  */
+  max-width: 180mm; /* limit width of a row  */
+  min-height: 5mm; /* limit height of a row  */
+  max-height: 5mm; /* limit height of a row  */
+  background-color: $y30;
+  display: block;
+}
+
+.warning-logo2 {
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* do not change! Inline-block ensures that the logo is not enlarging the parent object warning-row. */
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.warning-row img {
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* do not change! Inline-block ensures that the logo is not enlarging the parent object warning-row. */
+  min-width: 5mm;
+  max-width: 5mm;
+  min-height: 5mm;
+  max-height: 5mm;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  background-color: $y100;
+}
+
+.warnings2 {
+  margin: 0;
+  display: inline-block; /* do not change! Inline-block ensures that the warnings are not enlarging the parent object warning-row. */
+  padding: 0;
+  min-width: 170mm;
+  max-width: 170mm;
+  min-height: 5mm;
+  max-height: 5mm;
+}

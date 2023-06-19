@@ -1,0 +1,15 @@
+{% comment %}
+- Description: This liquid file just formats a given number with a one digit fraction part and a millimeter unit. The display of the unit is optional.
+- Parameters
+  - number value that should be formatted
+  - displayUnit, flag indicating if the unit should be displayed 
+{% endcomment %}
+{%- unless number -%}
+    {{ "---" }}
+{%- else -%}
+    {%- if displayUnit -%}
+        {{- number | format_number: "N2" | append: " mm" | default: "---" -}}
+    {%- else -%}
+        {{- number | format_number: "N2" | default: "---" -}}
+    {%- endif -%}
+{%- endunless -%}    

@@ -1,0 +1,83 @@
+@import 'fonts';
+@import 'colors';
+
+#footer {
+  position: running(footer);
+  margin-bottom: 21mm;
+}
+
+#header {
+  position: running(header);
+  margin-top: 12mm;
+  max-width: 210mm;
+}
+
+#imprint {
+  position: running(imprint);
+}
+
+@page {
+  margin: 0mm 0mm 0mm 15mm; /* page header and footer areas belongs to the margin */
+  size: A4;
+  @top-left {
+    content: element(header);
+  }
+  @bottom-left {
+    content: element(footer);
+  }
+  @left-bottom {
+    content: element(imprint);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $defaultFontFamily;
+  line-height: 9.6pt; /* default line spacing defined in Styleguilde_V1.pdf (page 3) */
+  color: $gs120; /* default color as defined in Styleguilde_V1.pdf */
+}
+
+table {
+  border-spacing: 0;
+}
+
+td {
+  padding: 0;
+}
+
+.sheet {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+  max-width: 180mm; /* payload width (without page margins) */
+}
+
+.align-right {
+  text-align: right;
+}
+
+.column {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  max-height: 206.5mm; /* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+  font-size: 8pt;
+}
+
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}
+
+.grayed-out {
+  color: $gs80;
+}

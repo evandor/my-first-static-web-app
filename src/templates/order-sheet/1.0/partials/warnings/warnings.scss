@@ -1,0 +1,27 @@
+@import "../../../../shared/1.0/assets/css/colors";
+
+.warnings-component {
+  min-height: 12.5mm;
+  display: table;
+  width: 180mm;
+  background-color: $y100;
+  margin-bottom: 3mm;
+}
+
+.warning-logo {
+  align-items: center;
+  justify-content: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.warning-logo img {
+  width: 5mm;
+}
+
+.warnings {
+  background-color: $y30;
+  padding: 1.5mm 2.5mm;
+  display: table-cell;
+  width: 175mm;
+}

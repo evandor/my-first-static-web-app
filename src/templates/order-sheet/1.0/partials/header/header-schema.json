@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/header",
+  "title": "Json Schema for header section in html report templates",
+  "description": "Json Schema for header section in html report templates",
+  "type": "object",
+  "default": {},
+  "required": [
+    "patient",
+    "institution"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "patient": {
+      "title": "The patient Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "object",
+      "default": {},
+      "required": [
+        "id",
+        "name1",
+        "name2",
+        "dateOfBirth",
+        "gender"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "The id Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "123"
+          ]
+        },
+        "name1": {
+          "title": "The name1 Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Mr. Heinz Huber (PN1)"
+          ]
+        },
+        "name2": {
+          "title": "The name2 Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Mr. Heinz Huber (PN2)"
+          ]
+        },
+        "dateOfBirth": {
+          "title": "The dateOfBirth Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "10/10/1945"
+          ]
+        },
+        "gender": {
+          "title": "The gender Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "male"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "id": "123",
+          "name1": "Mr. Heinz Huber (PN1)",
+          "name2": "Mr. Heinz Huber (PN2)",
+          "dateOfBirth": "10/10/1945",
+          "gender": "male"
+        }
+      ]
+    },
+    "institution": {
+      "title": "The institution Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "object",
+      "default": {},
+      "required": [
+        "name",
+        "department",
+        "addressLine1",
+        "addressLine2",
+        "city",
+        "zipCode",
+        "state",
+        "country",
+        "phoneNumber",
+        "emailAddress"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "title": "The name Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Sacred Heart"
+          ]
+        },
+        "department": {
+          "title": "The department Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Surgery"
+          ]
+        },
+        "addressLine1": {
+          "title": "The addressLine1 Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Medical Street 123"
+          ]
+        },
+        "addressLine2": {
+          "title": "The addressLine2 Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Address line 2"
+          ]
+        },
+        "city": {
+          "title": "The city Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "San Francisco"
+          ]
+        },
+        "zipCode": {
+          "title": "The zipCode Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "93402"
+          ]
+        },
+        "state": {
+          "title": "The state Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "California"
+          ]
+        },
+        "country": {
+          "title": "The country Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "United States of America"
+          ]
+        },
+        "phoneNumber": {
+          "title": "The phoneNumber Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "+19111234567"
+          ]
+        },
+        "emailAddress": {
+          "title": "The emailAddress Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "emergency@sacredheard.org"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "Sacred Heart",
+          "department": "Surgery",
+          "addressLine1": "Medical Street 123",
+          "addressLine2": "Address line 2",
+          "city": "San Francisco",
+          "zipCode": "93402",
+          "state": "California",
+          "country": "United States of America",
+          "phoneNumber": "+19111234567",
+          "emailAddress": "emergency@sacredheard.org"
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "patient": {
+        "id": "123",
+        "name1": "Mr. Heinz Huber (PN1)",
+        "name2": "Mr. Heinz Huber (PN2)",
+        "dateOfBirth": "10/10/1945",
+        "gender": "male"
+      },
+      "institution": {
+        "name": "Sacred Heart",
+        "department": "Surgery",
+        "addressLine1": "Medical Street 123",
+        "addressLine2": "Address line 2",
+        "city": "San Francisco",
+        "zipCode": "93402",
+        "state": "California",
+        "country": "United States of America",
+        "phoneNumber": "+19111234567",
+        "emailAddress": "emergency@sacredheard.org"
+      }
+    }
+  ]
+}

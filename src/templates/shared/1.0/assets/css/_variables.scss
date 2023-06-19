@@ -1,0 +1,8 @@
+$defaultFontFamily: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+
+$specialFontLanguages: (
+  // support "characters" with identical Unicode numbers but different looks, as for example used in Japanese, Korean and Chinese
+        "ja": "Noto Sans CJK JP", // Japanese
+        "ko": "Noto Sans CJK KR", // Korean
+        "zh": "Noto Sans CJK SC" // Simplified Chinese
+);

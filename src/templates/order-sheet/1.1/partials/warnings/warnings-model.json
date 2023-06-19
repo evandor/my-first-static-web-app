@@ -1,0 +1,17 @@
+{
+  "common": {
+    "warnings": [
+      "This is a general warning."
+    ]
+  },
+  "od": {
+    "warnings": [
+      "This is a warning for the OD eye."
+    ]
+  },
+  "os": {
+    "warnings": [
+      "This is a warning for the OS eye."
+    ]
+  }
+}

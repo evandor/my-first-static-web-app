@@ -1,0 +1,11 @@
+/* only used for at the beginning of a new section */
+/* used as standard separator in tables */
+/* used for footer comment box border */
+/* border for selected table line */
+div.imprint {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  transform: rotate(-90deg) translateX(36.5mm) translateY(-30mm);
+}

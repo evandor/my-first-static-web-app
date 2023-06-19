@@ -1,0 +1,13 @@
+{
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "decimalField": "Decimal Number (2 fraction digits)",
+  "integerField": "Integer Number",
+  "age": "Age",
+  "my": {
+    "comments": "Comments"
+  },
+  "eyeData": "Eye data",
+  "date_format_printed": "d",
+  "printed_by": "Created on {0} by {1}, {2}"
+}

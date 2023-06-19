@@ -1,0 +1,76 @@
+{% comment %}
+- Description: Partial for the header of the report
+- Parameters:
+  - model: data model for the header 
+  - i18n access to the i18n properties  
+  - documentTitle: title of the report
+  - compact: flag indicating, if the warning indication should be displayed in compact or non-compact fashion
+  - displayWarningReference: flag indicating if a warning indication should be displayed 
+  - hasWarnings: flag indicating if warnings are present or not
+{% endcomment %}
+<section class="headerSection">
+    <div class="patientDetailsHeader">
+        <div class="headline sub-headline2">{{ documentTitle | default: "&#160;" }}</div>
+        <table class="patient-details">
+            <tr>
+                <td class="label2">{{ i18n.header.patient.id }}</td>
+                <td class="patientId body2" colspan="3">{{ model.patient.id }}</td>
+            </tr>
+            <tr>
+                <td class="label2">
+                    {% if model.patient.name1 or model.patient.name2 %}{{ i18n.header.patient.label }}{% else %}{{ "&#160;" }}{% endif %}
+                </td>
+                <td class="patientName sub-headline2">
+                    <div class="ellipsis">{{ model.patient.name1 | default: "&#160;" }}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td class="patientName2 sub-headline2">
+                    <div class="ellipsis">{{ model.patient.name2 | default: "&#160;" }}</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="dateOfBirthLabel label2">{{ i18n.header.date_of_birth }}</td>
+                <td class="dateOfBirth body2">{{ model.patient.dateOfBirth | format_date: i18n.header.date_format_date_of_birth | default: "&#160;" }}</td>
+            </tr>
+            <tr>
+                <td class="label2">{{ i18n.header.gender | default: "&#160;" }}</td>
+                <td class="body2">{{ model.patient.gender | default: "&#160;" }}</td>
+            </tr>
+            {% unless compact %}
+                <tr>
+                    {% if displayWarningReference and hasWarnings %}
+                        <td colspan="2">{% render "partials/header/warning-hint", icon_small: true, message: i18n.warning.second_page %}</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    {% unless displayWarningReference and hasWarnings %}
+                        <td colspan="2" class="label2 headerWarningSection"></td>
+                    {% endunless %}
+                </tr>
+            {% endunless %}
+        </table>
+    </div>
+    <div class="institutionDetailsHeader">
+        <div class="institution-logo">
+            {% comment %} reserved space for institution logo {% endcomment %}
+            &#160;
+        </div>
+        <div class="institution-details">
+            <div class="institutionName body2">{{ model.institution.name | default: "Institution name" }}</div>
+            {% if compact and displayWarningReference and hasWarnings %}
+                {% render "warning-hint", icon_small: false, message: i18n.warning.all_pages %}
+            {% endif %}
+            {% unless compact %}
+                <div class="department body2">{{ model.institution.department | default: "Department" }}</div>
+                <div class="addressLine1 body2">{{ model.institution.addressLine1 | default: "Address line 1" }}</div>
+                <div class="addressLine2 body2">{{ model.institution.addressLine2 | default: "Address line 2" }}</div>
+                <div class="addressLine3 body2">{{ i18n.header.addressLine3 | format_string: model.institution.zipCode, model.institution.city, model.institution.state }}</div>
+                <div class="country body2">{{ model.institution.country | default: "Country" }}</div>
+                <div class="phoneNumber body2">{{ model.institution.phoneNumber | default: "++0049 123 1234567" }}</div>
+                <div class="emailAddress body2">{{ model.institution.emailAddress | default: "emergency@sacredheart.org" }}</div>
+            {% endunless %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+@import "../../shared/1.1/assets/css/colors";
+
+.align-right {
+  text-align: right;
+}
+
+.flex-spacer {
+  flex: auto;
+}
+
+.column {
+   float: left;
+ }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+.content {
+    max-height: 206.5mm;*/
+/* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+/*        font-size: 8pt;
+    }
+*/
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}
+
+.grayed-out {
+  color: $gs80;
+}

@@ -1,0 +1,24 @@
+{% comment %}
+- Description: This liquid file just contains so-called macros (functions) to realize the measurements functions, 
+               that where used in thymeleaf templates, but had to be translated in something equivalent in the 
+               liquid template language. Please don't over-use 
+{% endcomment %}
+{%- macro formatDiopterWithPlus( number, unit = ' D') -%}
+{{ number | format_number: 'N2' | append: unit | default: "---" }}
+{%- endmacro -%}
+
+{%- macro formatDiopterNoPlus( number, unit = ' D') %}
+{{ number | format_number: 'N2' | append: unit | default: "---" }}
+{%- endmacro %}
+
+{%- macro formatDegree( number, unit = '°') %}
+{{ number | format_number: 'N0' | append: unit | default: "---" }}
+{%- endmacro %}
+
+{%- macro formatMillimeter1Digit( number, unit = ' mm') -%}
+{{ number | format_number: 'N1' | append: unit | default: "---" }}
+{%- endmacro -%}
+
+{%- macro formatMicrometer( number, unit = ' µm') -%}
+{{ number | times: 1000 | format_number: 'N0' | append: unit | default: "---" }}
+{%- endmacro -%}

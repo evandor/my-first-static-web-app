@@ -1,0 +1,73 @@
+{
+  "enum": {
+    "AnteriorChamberDepthMeasurementSource": [
+      {
+        "name": "ENDOTHELIUM",
+        "value": "Endothelium"
+      },
+      {
+        "name": "EPITHELIUM",
+        "value": "Epithelium"
+      }
+    ]
+  },
+  "footer": {
+    "comment": "Kommentar",
+    "date_format_printed": "g",
+    "date_format_surgery": "d",
+    "page_number": "Seite {0} von {1}",
+    "page": "Seite",
+    "of": "von",
+    "printed_by": "Erzeugt am {0} von {1}, {2}",
+    "signature": "Signatur"
+  },
+  "imprint": {
+    "copyright": "Carl Zeiss Meditec AG - Copyright {0} All rights reserved."
+  },
+  "header": {
+    "addressLine3": "{0} {1} {2}",
+    "date_format_date_of_birth": "d",
+    "date_of_birth": "Geburtsdatum",
+    "doctor": "Arzt",
+    "gender": "Geschlecht",
+    "patient": {
+      "label": "Patient",
+      "id": "Patienten-ID"
+    }
+  },
+  "order": {
+    "acd": "Vorderkammertiefe",
+    "axial_length": "Achslänge",
+    "disclaimer": "Haftunsausschluß",
+    "disclaimer_text": "Die Bestellanfrage folgt einer unverbindlichen Empfehlung. Ich habe die Nutzungsbedingungen des ZEISS Produkts, welches diese Bestellanfrage erzeugt hat, akzeptiert. Die Empfehlung stellt lediglich einen Näherungswert auf der Basis allgemeiner Erfahrungen und eines Berechnungsalgorithmus dar und wurde von mir fachlich gegengeprüft. Der Bestellanfrage sowie einer daraus resultierenden Bestellung liegen die AGB der Carl Zeiss Meditec AG zugrunde, die ich im Internet unter https://www.zeiss.de/meditec/rechtliches/agb.html zur Kenntnis nehmen konnte.",
+    "elp": "ELP",
+    "from_acd_measurement_source": "von {0}",
+    "incision_orientation": "Position der Inzision",
+    "iol_name": "IOL",
+    "keratometry_cyl": "Ast. K",
+    "keratometry_cyl_tk": "Ast. TK",
+    "keratometry_n": "Keratometerindex",
+    "left_os": "OS",
+    "order_request": "IOL-Bestellformular",
+    "order_reusable_stacy": "Wiederverwendbare STACY bestellen",
+    "plan_creation_date": "Plan erstellt am",
+    "plan_creation_date_format": "d",
+    "plan_creator": "Plan erstellt von",
+    "quantity": "Bestellmenge",
+    "residual_refraction": "Vorhergesagtes Ergebnis (SE / Sph / Zyl / Achse)",
+    "right_od": "OD",
+    "sia_effect": "SIA",
+    "surgeon": "Arzt",
+    "surgery_date": "OP-Datum",
+    "surgery_date_date_format": "d",
+    "target_refraction_se": "Zielrefraktion (SE)"
+  },
+  "unit": {
+    "dpt": "D"
+  },
+  "warning": {
+    "all_pages": "Warnhinweise auf allen Seiten beachten!",
+    "second_page": "Weitere Warnhinweise auf Seite 2 ff. beachten",
+    "header": "Warnungen"
+  }
+}

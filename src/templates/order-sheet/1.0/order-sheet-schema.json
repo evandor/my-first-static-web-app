@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/order-sheet",
+  "title": "Root Schema",
+  "description": "The root schema is the schema that comprises the entire JSON document.",
+  "type": "object",
+  "default": {},
+  "required": [
+    "header",
+    "footer",
+    "imprint",
+    "od",
+    "os",
+    "refractionUnitInDpt"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "header": {
+      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/header"
+    },
+    "footer": {
+      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/footer"
+    },
+    "imprint": {
+      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/imprint"
+    },
+    "warnings": {
+      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/warnings"
+    },
+    "od": {
+      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/order-lens"
+    },
+    "os": {
+      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/order-lens"
+    },
+    "refractionUnitInDpt": {
+      "title": "The refractionUnitInDpt Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        false
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{% comment %}
+- Description: Partial for the footer of the report
+- Parameters:
+  - model: data model for the footer 
+  - i18n access to the i18n properties  
+{% endcomment %}
+<div id="footer">
+    <div class="row">
+        <div class="print-comment">
+            <div><span class="label2">{{ i18n.footer.comment }}</span></div>
+        </div>
+        <div class="signature">
+            <div><span class="label2">{{ i18n.footer.signature }}</span></div>
+        </div>
+        <div class="zeiss-logo">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/ZEISS_logo.gif" alt="ZEISS logo"/>
+        </div>
+    </div>
+
+    <div class="row footer">
+        <div id="productVersion" class="caption">
+            {{ model.versionString }}
+        </div>
+        <div id="printedBy" class="caption">
+            {%- capture creationDateTime %}{{ model.creationDateTime | format_date: i18n.footer.date_format_printed }}{% endcapture -%}
+            <td class="label1">{{ i18n.footer.printed_by | format_string: creationDateTime, model.userFirstName, model.userLastName }}</td>
+        </div>
+        <!-- To prevent having html tags in i18n resource strings the placeholder will be replaced by html elements
+         and later they'll are enriched by CSS with the concrete page numbers -->
+        {%- assign currentPageNo = '<span id=&quot;currentPage&quot;/>' -%}
+        {%- assign totalPagesNo = '<span id=&quot;totalPages&quot;/>' -%}
+        <div id="pageNumber" class="caption">
+            {{ i18n.page_number | format_string: currentPageNo, totalPagesNo }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+@mixin fontSelector($languages, $defaultFont : "sans-serif") {
+  @each $language, $font in $languages {
+    .language-#{$language} {
+      .h1, .h2, .sub-headline1, .sub-headline2,
+      .body1, .body2,
+      .label1, .label2, .caption, .info, .caption-medium, .large-number, .body1-bold {
+        font-family: $font, $defaultFont;
+      }
+    }
+  }
+}

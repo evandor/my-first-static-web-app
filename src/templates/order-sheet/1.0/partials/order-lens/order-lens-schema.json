@@ -1,0 +1,662 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/order-lens",
+  "title": "Root Schema",
+  "description": "The root schema is the schema that comprises the entire JSON document.",
+  "type": "object",
+  "default": {},
+  "required": [
+    "laterality",
+    "targetRefractionSphericalEquivalent",
+    "axialLength",
+    "keratometryExists",
+    "keratometryDeltaKExists",
+    "totalKeratometryExists",
+    "totalKeratometryDeltaKExists",
+    "KeratometryR1",
+    "KeratometryK1",
+    "KeratometryA1",
+    "KeratometryR2",
+    "KeratometryK2",
+    "KeratometryA2",
+    "KeratometryCyl",
+    "KeratometryCylAxis",
+    "KeratometrySE",
+    "KeratometryCR",
+    "totalKeratometryR1",
+    "totalKeratometryK1",
+    "totalKeratometryA1",
+    "totalKeratometryR2",
+    "totalKeratometryK2",
+    "totalKeratometryA2",
+    "totalKeratometryCyl",
+    "totalKeratometryCylAxis",
+    "totalKeratometrySE",
+    "totalKeratometryCR",
+    "acd",
+    "acdMeasurementSource",
+    "incisionOrientation",
+    "sia",
+    "refractiveIndex",
+    "planCreationDate",
+    "surgeon",
+    "planCreator",
+    "warnings",
+    "iolName",
+    "manufacturerName",
+    "variantName",
+    "formulaName",
+    "useTk",
+    "seBased",
+    "estimatedLensPosition",
+    "calculatedIol",
+    "toricLens",
+    "cylinderLabel",
+    "quantity",
+    "surgeryDate"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "laterality": {
+      "title": "The laterality Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "OD"
+      ]
+    },
+    "targetRefractionSphericalEquivalent": {
+      "title": "The targetRefractionSphericalEquivalent Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        0.0
+      ]
+    },
+    "axialLength": {
+      "title": "The axialLength Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        22.86
+      ]
+    },
+    "keratometryExists": {
+      "title": "The keratometryExists Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "keratometryDeltaKExists": {
+      "title": "The keratometryDeltaKExists Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "totalKeratometryExists": {
+      "title": "The totalKeratometryExists Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "totalKeratometryDeltaKExists": {
+      "title": "The totalKeratometryDeltaKExists Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "KeratometryR1": {
+      "title": "The KeratometryR1 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        7.97
+      ]
+    },
+    "KeratometryK1": {
+      "title": "The KeratometryK1 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        42.34
+      ]
+    },
+    "KeratometryA1": {
+      "title": "The KeratometryA1 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        0.0
+      ]
+    },
+    "KeratometryR2": {
+      "title": "The KeratometryR2 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        7.83
+      ]
+    },
+    "KeratometryK2": {
+      "title": "The KeratometryK2 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        43.09
+      ]
+    },
+    "KeratometryA2": {
+      "title": "The KeratometryA2 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        100.0
+      ]
+    },
+    "KeratometryCyl": {
+      "title": "The KeratometryCyl Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        0.22
+      ]
+    },
+    "KeratometryCylAxis": {
+      "title": "The KeratometryCylAxis Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        106.0
+      ]
+    },
+    "KeratometrySE": {
+      "title": "The KeratometrySE Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        42.32
+      ]
+    },
+    "KeratometryCR": {
+      "title": "The KeratometryCR Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        4.0
+      ]
+    },
+    "totalKeratometryR1": {
+      "title": "The totalKeratometryR1 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        7.75
+      ]
+    },
+    "totalKeratometryK1": {
+      "title": "The totalKeratometryK1 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        42.43
+      ]
+    },
+    "totalKeratometryA1": {
+      "title": "The totalKeratometryA1 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        0.0
+      ]
+    },
+    "totalKeratometryR2": {
+      "title": "The totalKeratometryR2 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        7.84
+      ]
+    },
+    "totalKeratometryK2": {
+      "title": "The totalKeratometryK2 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        43.04
+      ]
+    },
+    "totalKeratometryA2": {
+      "title": "The totalKeratometryA2 Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        100.0
+      ]
+    },
+    "totalKeratometryCyl": {
+      "title": "The totalKeratometryCyl Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        0.16
+      ]
+    },
+    "totalKeratometryCylAxis": {
+      "title": "The totalKeratometryCylAxis Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        142.0
+      ]
+    },
+    "totalKeratometrySE": {
+      "title": "The totalKeratometrySE Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        42.44
+      ]
+    },
+    "totalKeratometryCR": {
+      "title": "The totalKeratometryCR Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        7.95
+      ]
+    },
+    "acd": {
+      "title": "The acd Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        3.06
+      ]
+    },
+    "acdMeasurementSource": {
+      "title": "The acdMeasurementSource Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "EPITHELIUM"
+      ]
+    },
+    "incisionOrientation": {
+      "title": "The incisionOrientation Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        45.0
+      ]
+    },
+    "sia": {
+      "title": "The sia Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        1.4
+      ]
+    },
+    "refractiveIndex": {
+      "title": "The refractiveIndex Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0.0,
+      "examples": [
+        1.3375
+      ]
+    },
+    "planCreationDate": {
+      "title": "The planCreationDate Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "2022-12-27"
+      ]
+    },
+    "surgeon": {
+      "title": "The surgeon Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Dr. Who"
+      ]
+    },
+    "planCreator": {
+      "title": "The planCreator Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Christina Hernandez"
+      ]
+    },
+    "warnings": {
+      "title": "The warnings Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "array",
+      "default": [],
+      "additionalItems": true,
+      "items": {},
+      "examples": [
+        []
+      ]
+    },
+    "iolName": {
+      "title": "The iolName Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Eyecryl Toric"
+      ]
+    },
+    "manufacturerName": {
+      "title": "The manufacturerName Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Biotech Vision"
+      ]
+    },
+    "variantName": {
+      "title": "The variantName Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "M"
+      ]
+    },
+    "formulaName": {
+      "title": "The formulaName Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Haigis Suite"
+      ]
+    },
+    "useTk": {
+      "title": "The useTk Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "seBased": {
+      "title": "The seBased Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "estimatedLensPosition": {
+      "title": "The estimatedLensPosition Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "4.24"
+      ]
+    },
+    "calculatedIol": {
+      "title": "The calculatedIol Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "object",
+      "default": {},
+      "required": [
+        "iolRefractivePowerSphericalEquivalent",
+        "iolRefractivePowerSphere",
+        "iolRefractivePowerCylinder",
+        "iolRefractivePowerAxis",
+        "residualRefractionSphericalEquivalent",
+        "residualRefractionSphere",
+        "residualRefractionCylinder",
+        "residualRefractionAxis",
+        "residualRefractionAxisFlipping"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "iolRefractivePowerSphericalEquivalent": {
+          "title": "The iolRefractivePowerSphericalEquivalent Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            24.5
+          ]
+        },
+        "iolRefractivePowerSphere": {
+          "title": "The iolRefractivePowerSphere Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            23.375
+          ]
+        },
+        "iolRefractivePowerCylinder": {
+          "title": "The iolRefractivePowerCylinder Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            2.25
+          ]
+        },
+        "iolRefractivePowerAxis": {
+          "title": "The iolRefractivePowerAxis Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            100.0
+          ]
+        },
+        "residualRefractionSphericalEquivalent": {
+          "title": "The residualRefractionSphericalEquivalent Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            0.06
+          ]
+        },
+        "residualRefractionSphere": {
+          "title": "The residualRefractionSphere Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            0.32
+          ]
+        },
+        "residualRefractionCylinder": {
+          "title": "The residualRefractionCylinder Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            -0.52
+          ]
+        },
+        "residualRefractionAxis": {
+          "title": "The residualRefractionAxis Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "number",
+          "default": 0.0,
+          "examples": [
+            0.0
+          ]
+        },
+        "residualRefractionAxisFlipping": {
+          "title": "The residualRefractionAxisFlipping Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            true
+          ]
+        }
+      },
+      "examples": [
+        {
+          "iolRefractivePowerSphericalEquivalent": 24.5,
+          "iolRefractivePowerSphere": 23.375,
+          "iolRefractivePowerCylinder": 2.25,
+          "iolRefractivePowerAxis": 100.0,
+          "residualRefractionSphericalEquivalent": 0.06,
+          "residualRefractionSphere": 0.32,
+          "residualRefractionCylinder": -0.52,
+          "residualRefractionAxis": 0.0,
+          "residualRefractionAxisFlipping": true
+        }
+      ]
+    },
+    "toricLens": {
+      "title": "The toricLens Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "cylinderLabel": {
+      "title": "The cylinderLabel Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "tbd"
+      ]
+    },
+    "quantity": {
+      "title": "The quantity Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "number",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "surgeryDate": {
+      "title": "The surgeryDate Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "2023-03-11"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "laterality": "OD",
+      "targetRefractionSphericalEquivalent": 0.0,
+      "axialLength": 22.86,
+      "keratometryExists": true,
+      "keratometryDeltaKExists": true,
+      "totalKeratometryExists": true,
+      "totalKeratometryDeltaKExists": true,
+      "KeratometryR1": 7.97,
+      "KeratometryK1": 42.34,
+      "KeratometryA1": 0.0,
+      "KeratometryR2": 7.83,
+      "KeratometryK2": 43.09,
+      "KeratometryA2": 100.0,
+      "KeratometryCyl": 0.22,
+      "KeratometryCylAxis": 106.0,
+      "KeratometrySE": 42.32,
+      "KeratometryCR": 4.0,
+      "totalKeratometryR1": 7.75,
+      "totalKeratometryK1": 42.43,
+      "totalKeratometryA1": 0.0,
+      "totalKeratometryR2": 7.84,
+      "totalKeratometryK2": 43.04,
+      "totalKeratometryA2": 100.0,
+      "totalKeratometryCyl": 0.16,
+      "totalKeratometryCylAxis": 142.0,
+      "totalKeratometrySE": 42.44,
+      "totalKeratometryCR": 7.95,
+      "acd": 3.06,
+      "acdMeasurementSource": "EPITHELIUM",
+      "incisionOrientation": 45.0,
+      "sia": 1.4,
+      "refractiveIndex": 1.3375,
+      "planCreationDate": "2022-12-27",
+      "surgeon": "Dr. Who",
+      "planCreator": "Christina Hernandez",
+      "warnings": [],
+      "iolName": "Eyecryl Toric",
+      "manufacturerName": "Biotech Vision",
+      "variantName": "M",
+      "formulaName": "Haigis Suite",
+      "useTk": false,
+      "seBased": true,
+      "estimatedLensPosition": "4.24",
+      "calculatedIol": {
+        "iolRefractivePowerSphericalEquivalent": 24.5,
+        "iolRefractivePowerSphere": 23.375,
+        "iolRefractivePowerCylinder": 2.25,
+        "iolRefractivePowerAxis": 100.0,
+        "residualRefractionSphericalEquivalent": 0.06,
+        "residualRefractionSphere": 0.32,
+        "residualRefractionCylinder": -0.52,
+        "residualRefractionAxis": 0.0,
+        "residualRefractionAxisFlipping": true
+      },
+      "toricLens": true,
+      "cylinderLabel": "tbd",
+      "quantity": 1,
+      "surgeryDate": "2023-03-11"
+    }
+  ]
+}

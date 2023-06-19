@@ -1,0 +1,45 @@
+{% comment %}
+- Description: Sub-partial for the detailed warning partial
+- Parameters:
+  - common-warnings: string array containing common warnings
+  - od-warnings: string array containing warnings for the OD eye
+  - os-warnings: string array containing warnings for the OS eye
+  - i18n: access to the i18n properties  
+{% endcomment %}
+{% unless common-warnings == empty and od-warnings == empty and os-warnings == empty %}
+    {% comment %}
+    <div class="warnings-component">
+        <div class="warning-logo"><img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning.svg" alt="!"/></div>
+        <div class="warnings label2">
+            {% for warning in common-warnings %}
+                <div>{{ warning }}</div>
+            {% endfor %}
+            {% for warning in od-warnings %}
+                <div>{{ warning }}</div>
+            {% endfor %}
+            {% for warning in os-warnings %}
+                <div>{{ warning }}</div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endcomment %}
+    <h2 class="warnings-header">{{ i18n.warning.header }}</h2>
+    {% for warning in common-warnings %}
+        <div class="warning-row">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning_small.svg" alt="!"/>
+            <div class="warnings2 label2">{{ warning }}</div>
+        </div>
+    {% endfor %}
+    {% for warning in od-warnings %}
+        <div class="warning-row">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning_small.svg" alt="!"/>
+            <div class="warnings2 label2">{{ warning }}</div>
+        </div>
+    {% endfor %}
+    {% for warning in os-warnings %}
+        <div class="warning-row">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning_small.svg" alt="!"/>
+            <div class="warnings2 label2">{{ warning }}</div>
+        </div>
+    {% endfor %}
+{% endunless %}

@@ -1,0 +1,39 @@
+{% comment %}
+- Description: Partial for the footer of the report
+- Parameters:
+  - model: data model for the footer 
+  - i18n access to the i18n properties  
+{% endcomment %}
+<section class="footer-section">
+    <section class="signature-section">
+        <div class="print-comment">
+            <div><span class="label2">{{ i18n.footer.comment }}</span></div>
+        </div>
+        <div class="signature">
+            <div><span class="label2">{{ i18n.footer.signature }}</span></div>
+        </div>
+        <div class="footer-spacer">&#160;</div>
+        <div class="zeiss-logo">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/ZEISS_logo.gif" alt="ZEISS logo"/>
+        </div>
+    </section>
+
+    <section class="device-info-section caption">
+        <span>
+            {{ model.versionString }}
+        </span>
+        <span>
+            {%- capture creationDateTime %}{{ model.creationDateTime | format_date: i18n.footer.date_format_printed }}{% endcapture -%}
+            {{ i18n.footer.printed_by | format_string: creationDateTime, model.userFirstName, model.userLastName }}
+        </span>
+        <span class="flex-spacer"></span>
+        {% comment %} 
+        The span elements are placeholders. The values will be replaced by javascript when the document is loaded. 
+        See dynamic-page-layout.js in shared assets folder 
+        {% endcomment %}
+        <span class="page-number">
+            {{ i18n.footer.page }} <span class="current-page-no">0</span> {{ i18n.footer.of }} <span
+                    class="total-pages-no">0</span>
+        </span>
+    </section>
+</section>

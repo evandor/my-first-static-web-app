@@ -1,0 +1,14 @@
+@import 'a4';
+@import 'page';
+
+@include set-format(
+                $czm-page-format,
+                $czm-page-width,
+                $czm-page-height,
+                $czm-page-header-height,
+                $czm-page-footer-height,
+                $czm-page-margin,
+                $czm-page-padding-top,
+                $czm-page-padding-left,
+                $czm-page-padding-right,
+                $czm-page-padding-bottom);

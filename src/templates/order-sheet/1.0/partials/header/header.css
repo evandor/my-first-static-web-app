@@ -1,0 +1,92 @@
+#headline {
+  height: 6mm;
+  /* 3.5mm (ca. text height of "SELECTED IOL REPORT") + 2,5mm (bottom margin) = 6mm */
+  text-transform: uppercase;
+}
+
+#patientDetailsHeader {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  height: 39.5mm;
+  width: 107mm;
+  /* = 180 (A4 width without borders) - 68.5 (institution detail width) - 4.5 (padding between elements) */
+  white-space: nowrap;
+}
+
+#institutionDetailsHeader {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  height: 36mm;
+  width: 68.5mm;
+  white-space: nowrap;
+}
+
+.patient-details {
+  max-height: 35mm;
+  max-width: 106.4mm;
+  border-spacing: 0;
+  padding-right: 4.5mm;
+}
+
+.patient-details td {
+  vertical-align: baseline;
+  padding-right: 4.5mm;
+}
+
+div.headerWarningSection {
+  width: 90mm;
+  height: 8mm;
+  background-color: #ffefce;
+  margin-top: 2mm;
+  margin-bottom: 2mm;
+}
+
+div.headerWarningSection td {
+  vertical-align: middle;
+  padding: 0;
+}
+
+div.headerWarningSection td:first-child {
+  line-height: 0;
+}
+
+div.headerWarningSection td:first-child img {
+  margin: 2mm;
+  width: 4mm;
+}
+
+div.headerWarningSection td:first-child img.square {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+#dateOfBirthLabel, #dateOfBirth {
+  padding-top: 1mm;
+}
+
+#patientName, #patientName2 {
+  width: 78mm;
+  /* required for ellipsis */
+}
+
+#patientName div.ellipsis, #patientName2 div.ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: inherit;
+  line-height: 12pt;
+}
+
+.institution-logo {
+  height: 6mm;
+  width: 68.5mm;
+}
+
+.institution-details div {
+  min-height: 9.6pt;
+  /* default line spacing */
+}

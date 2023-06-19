@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>{{ model.footer.userLastName }}</title>
+    <link href="{{ sharedAssetsUrl }}/css/base.css" media="print,screen" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" media="print,screen" href="{{ versionedReportBaseUrl }}/partials/header/header.css"
+          type="text/css"/>
+    <link rel="stylesheet" media="print,screen" href="{{ versionedReportBaseUrl }}/partials/footer/footer.css"
+          type="text/css"/>
+    <link rel="stylesheet" media="print,screen" href="{{ versionedReportBaseUrl }}/partials/warnings/warnings.css"
+          type="text/css"/>
+    <link rel="stylesheet" media="print,screen" href="{{ versionedReportBaseUrl }}/order-sheet-template.css"
+          type="text/css"/>
+</head>
+
+<body>
+{% render "partials/header/header", model: model.header, i18n: i18n, documentTitle: i18n.order.order_request, compact: false, displayWarningReference: true, hasWarnings: true %}
+<!-- footer must be defined before other page content otherwise the footer will not be printed -->
+{% render "partials/order-lens/order-lens", refractionUnitInDpt: model.refractionUnitInDpt, model-od: model.od, model-os: model.os, i18n: i18n %}
+{% render "partials/footer/footer", model: model.footer, i18n: i18n %}
+{% render "partials/imprint/imprint", model: model.imprint, i18n: i18n %}
+</body>
+</html>

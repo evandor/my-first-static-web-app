@@ -1,0 +1,10 @@
+@import "../../../../shared/1.1/assets/css/borders";
+@import "../../../../shared/1.1/assets/css/colors";
+
+div.imprint {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  transform: rotate(-90deg) translateX(9.5mm) translateY(-30mm);
+}

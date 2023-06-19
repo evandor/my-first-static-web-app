@@ -1,0 +1,17 @@
+@import 'colors';
+
+// ====== Border definitions according Styleguide_V1.pdf (page 5) ======
+
+/* only used for at the beginning of a new section */
+$border-section: 0.5pt solid $gs120;
+
+/* used as standard separator in tables */
+$border-default: 0.25pt solid $gs100;
+
+/* used for footer comment box border */
+$border-comment-box: 0.25pt solid $gs120;
+
+// not explicit defined in styleguide, but coordinated with UX design
+
+/* border for selected table line */
+$border-selection: 0.5pt solid $gs120;

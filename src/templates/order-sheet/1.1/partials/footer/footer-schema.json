@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/footer",
+  "title": "Json Schema for footer section in html report templates",
+  "description": "Json Schema for footer section in html report templates",
+  "type": "object",
+  "default": {},
+  "required": [
+    "versionString",
+    "creationDateTime",
+    "creationDateTimeSuffix",
+    "userFirstname",
+    "userLastname"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "versionString": {
+      "title": "The versionString Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "tbd"
+      ]
+    },
+    "creationDateTime": {
+      "title": "The creationDateTime Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "tbd"
+      ]
+    },
+    "creationDateTimeSuffix": {
+      "title": "The creationDateTimeSuffix Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "tbd"
+      ]
+    },
+    "userFirstname": {
+      "title": "The userFirstname Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Sieglinde"
+      ]
+    },
+    "userLastname": {
+      "title": "The userLastname Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Meier"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "versionString": "tbd",
+      "creationDateTime": "tbd",
+      "creationDateTimeSuffix": "tbd",
+      "userFirstname": "Sieglinde",
+      "userLastname": "Meier"
+    }
+  ]
+}
