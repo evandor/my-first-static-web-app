@@ -1,10 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/order-sheet",
-  "title": "Root Schema",
-  "description": "The root schema is the schema that comprises the entire JSON document.",
+  "$id": "http://example.com/example.json",
   "type": "object",
   "default": {},
+  "title": "Root Schema",
   "required": [
     "header",
     "footer",
@@ -13,34 +12,1640 @@
     "os",
     "refractionUnitInDpt"
   ],
-  "additionalProperties": true,
   "properties": {
     "header": {
-      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/header"
+      "type": "object",
+      "default": {},
+      "title": "The header Schema",
+      "required": [
+        "patient",
+        "institution"
+      ],
+      "properties": {
+        "patient": {
+          "type": "object",
+          "default": {},
+          "title": "The patient Schema",
+          "required": [
+            "id",
+            "name1",
+            "name2",
+            "dateOfBirth",
+            "gender"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "default": "",
+              "title": "The id Schema",
+              "examples": [
+                "123"
+              ]
+            },
+            "name1": {
+              "type": "string",
+              "default": "",
+              "title": "The name1 Schema",
+              "examples": [
+                "Mr. Heinz Huber (PN1)"
+              ]
+            },
+            "name2": {
+              "type": "string",
+              "default": "",
+              "title": "The name2 Schema",
+              "examples": [
+                "Mr. Heinz Huber (PN2)"
+              ]
+            },
+            "dateOfBirth": {
+              "type": "string",
+              "default": "",
+              "title": "The dateOfBirth Schema",
+              "examples": [
+                "1945-10-09"
+              ]
+            },
+            "gender": {
+              "type": "string",
+              "default": "",
+              "title": "The gender Schema",
+              "examples": [
+                "male"
+              ]
+            }
+          },
+          "examples": [{
+            "id": "123",
+            "name1": "Mr. Heinz Huber (PN1)",
+            "name2": "Mr. Heinz Huber (PN2)",
+            "dateOfBirth": "1945-10-09",
+            "gender": "male"
+          }]
+        },
+        "institution": {
+          "type": "object",
+          "default": {},
+          "title": "The institution Schema",
+          "required": [
+            "name",
+            "department",
+            "addressLine1",
+            "addressLine2",
+            "city",
+            "zipCode",
+            "state",
+            "country",
+            "phoneNumber",
+            "emailAddress"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "default": "",
+              "title": "The name Schema",
+              "examples": [
+                "Sacred Heart"
+              ]
+            },
+            "department": {
+              "type": "string",
+              "default": "",
+              "title": "The department Schema",
+              "examples": [
+                "Surgery"
+              ]
+            },
+            "addressLine1": {
+              "type": "string",
+              "default": "",
+              "title": "The addressLine1 Schema",
+              "examples": [
+                "Medical Street 123"
+              ]
+            },
+            "addressLine2": {
+              "type": "string",
+              "default": "",
+              "title": "The addressLine2 Schema",
+              "examples": [
+                "Address line 2"
+              ]
+            },
+            "city": {
+              "type": "string",
+              "default": "",
+              "title": "The city Schema",
+              "examples": [
+                "San Francisco"
+              ]
+            },
+            "zipCode": {
+              "type": "string",
+              "default": "",
+              "title": "The zipCode Schema",
+              "examples": [
+                "93402"
+              ]
+            },
+            "state": {
+              "type": "string",
+              "default": "",
+              "title": "The state Schema",
+              "examples": [
+                "California"
+              ]
+            },
+            "country": {
+              "type": "string",
+              "default": "",
+              "title": "The country Schema",
+              "examples": [
+                "United States of America"
+              ]
+            },
+            "phoneNumber": {
+              "type": "string",
+              "default": "",
+              "title": "The phoneNumber Schema",
+              "examples": [
+                "+19111234567"
+              ]
+            },
+            "emailAddress": {
+              "type": "string",
+              "default": "",
+              "title": "The emailAddress Schema",
+              "examples": [
+                "emergency@sacredheard.org"
+              ]
+            }
+          },
+          "examples": [{
+            "name": "Sacred Heart",
+            "department": "Surgery",
+            "addressLine1": "Medical Street 123",
+            "addressLine2": "Address line 2",
+            "city": "San Francisco",
+            "zipCode": "93402",
+            "state": "California",
+            "country": "United States of America",
+            "phoneNumber": "+19111234567",
+            "emailAddress": "emergency@sacredheard.org"
+          }]
+        }
+      },
+      "examples": [{
+        "patient": {
+          "id": "123",
+          "name1": "Mr. Heinz Huber (PN1)",
+          "name2": "Mr. Heinz Huber (PN2)",
+          "dateOfBirth": "1945-10-09",
+          "gender": "male"
+        },
+        "institution": {
+          "name": "Sacred Heart",
+          "department": "Surgery",
+          "addressLine1": "Medical Street 123",
+          "addressLine2": "Address line 2",
+          "city": "San Francisco",
+          "zipCode": "93402",
+          "state": "California",
+          "country": "United States of America",
+          "phoneNumber": "+19111234567",
+          "emailAddress": "emergency@sacredheard.org"
+        }
+      }]
     },
     "footer": {
-      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/footer"
+      "type": "object",
+      "default": {},
+      "title": "The footer Schema",
+      "required": [
+        "versionString",
+        "creationDateTime",
+        "creationDateTimeSuffix",
+        "userFirstName",
+        "userLastName"
+      ],
+      "properties": {
+        "versionString": {
+          "type": "string",
+          "default": "",
+          "title": "The versionString Schema",
+          "examples": [
+            "1.0"
+          ]
+        },
+        "creationDateTime": {
+          "type": "string",
+          "default": "",
+          "title": "The creationDateTime Schema",
+          "examples": [
+            "2022-12-27 9:31"
+          ]
+        },
+        "creationDateTimeSuffix": {
+          "type": "string",
+          "default": "",
+          "title": "The creationDateTimeSuffix Schema",
+          "examples": [
+            "am"
+          ]
+        },
+        "userFirstName": {
+          "type": "string",
+          "default": "",
+          "title": "The userFirstName Schema",
+          "examples": [
+            "Sieglinde"
+          ]
+        },
+        "userLastName": {
+          "type": "string",
+          "default": "",
+          "title": "The userLastName Schema",
+          "examples": [
+            "Meier"
+          ]
+        }
+      },
+      "examples": [{
+        "versionString": "1.0",
+        "creationDateTime": "2022-12-27 9:31",
+        "creationDateTimeSuffix": "am",
+        "userFirstName": "Sieglinde",
+        "userLastName": "Meier"
+      }]
     },
     "imprint": {
-      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/imprint"
-    },
-    "warnings": {
-      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/warnings"
+      "type": "object",
+      "default": {},
+      "title": "The imprint Schema",
+      "required": [
+        "copyrightYear"
+      ],
+      "properties": {
+        "copyrightYear": {
+          "type": "string",
+          "default": "",
+          "title": "The copyrightYear Schema",
+          "examples": [
+            "2022"
+          ]
+        }
+      },
+      "examples": [{
+        "copyrightYear": "2022"
+      }]
     },
     "od": {
-      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/order-lens"
+      "type": "object",
+      "default": {},
+      "title": "The od Schema",
+      "required": [
+        "laterality",
+        "targetRefractionSphericalEquivalent",
+        "axialLength",
+        "keratometryExists",
+        "keratometryDeltaKExists",
+        "totalKeratometryExists",
+        "totalKeratometryDeltaKExists",
+        "keratometryR1",
+        "keratometryK1",
+        "keratometryA1",
+        "keratometryR2",
+        "keratometryK2",
+        "keratometryA2",
+        "keratometryCyl",
+        "keratometryCylAxis",
+        "keratometrySE",
+        "keratometryCR",
+        "totalKeratometryR1",
+        "totalKeratometryK1",
+        "totalKeratometryA1",
+        "totalKeratometryR2",
+        "totalKeratometryK2",
+        "totalKeratometryA2",
+        "totalKeratometryCyl",
+        "totalKeratometryCylAxis",
+        "totalKeratometrySE",
+        "totalKeratometryCR",
+        "acd",
+        "acdMeasurementSource",
+        "incisionOrientation",
+        "sia",
+        "refractiveIndex",
+        "planCreationDate",
+        "surgeon",
+        "planCreator",
+        "warnings",
+        "iolName",
+        "manufacturerName",
+        "variantName",
+        "formulaName",
+        "useTk",
+        "seBased",
+        "estimatedLensPosition",
+        "calculatedIol",
+        "toricLens",
+        "cylinderLabel",
+        "quantity",
+        "surgeryDate"
+      ],
+      "properties": {
+        "laterality": {
+          "type": "string",
+          "default": "",
+          "title": "The laterality Schema",
+          "examples": [
+            "OD"
+          ]
+        },
+        "targetRefractionSphericalEquivalent": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The targetRefractionSphericalEquivalent Schema",
+          "examples": [
+            0.0
+          ]
+        },
+        "axialLength": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The axialLength Schema",
+          "examples": [
+            22.86
+          ]
+        },
+        "keratometryExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The keratometryExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "keratometryDeltaKExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The keratometryDeltaKExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "totalKeratometryExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The totalKeratometryExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "totalKeratometryDeltaKExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The totalKeratometryDeltaKExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "keratometryR1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryR1 Schema",
+          "examples": [
+            7.97
+          ]
+        },
+        "keratometryK1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryK1 Schema",
+          "examples": [
+            42.34
+          ]
+        },
+        "keratometryA1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryA1 Schema",
+          "examples": [
+            0.0
+          ]
+        },
+        "keratometryR2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryR2 Schema",
+          "examples": [
+            7.83
+          ]
+        },
+        "keratometryK2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryK2 Schema",
+          "examples": [
+            43.09
+          ]
+        },
+        "keratometryA2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryA2 Schema",
+          "examples": [
+            100.0
+          ]
+        },
+        "keratometryCyl": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryCyl Schema",
+          "examples": [
+            0.22
+          ]
+        },
+        "keratometryCylAxis": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryCylAxis Schema",
+          "examples": [
+            106.0
+          ]
+        },
+        "keratometrySE": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometrySE Schema",
+          "examples": [
+            42.32
+          ]
+        },
+        "keratometryCR": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryCR Schema",
+          "examples": [
+            4.0
+          ]
+        },
+        "totalKeratometryR1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryR1 Schema",
+          "examples": [
+            7.75
+          ]
+        },
+        "totalKeratometryK1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryK1 Schema",
+          "examples": [
+            42.43
+          ]
+        },
+        "totalKeratometryA1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryA1 Schema",
+          "examples": [
+            0.0
+          ]
+        },
+        "totalKeratometryR2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryR2 Schema",
+          "examples": [
+            7.84
+          ]
+        },
+        "totalKeratometryK2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryK2 Schema",
+          "examples": [
+            43.04
+          ]
+        },
+        "totalKeratometryA2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryA2 Schema",
+          "examples": [
+            100.0
+          ]
+        },
+        "totalKeratometryCyl": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryCyl Schema",
+          "examples": [
+            0.16
+          ]
+        },
+        "totalKeratometryCylAxis": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryCylAxis Schema",
+          "examples": [
+            142.0
+          ]
+        },
+        "totalKeratometrySE": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometrySE Schema",
+          "examples": [
+            42.44
+          ]
+        },
+        "totalKeratometryCR": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryCR Schema",
+          "examples": [
+            7.95
+          ]
+        },
+        "acd": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The acd Schema",
+          "examples": [
+            3.06
+          ]
+        },
+        "acdMeasurementSource": {
+          "type": "string",
+          "default": "",
+          "title": "The acdMeasurementSource Schema",
+          "examples": [
+            "EPITHELIUM"
+          ]
+        },
+        "incisionOrientation": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The incisionOrientation Schema",
+          "examples": [
+            45.0
+          ]
+        },
+        "sia": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The sia Schema",
+          "examples": [
+            1.4
+          ]
+        },
+        "refractiveIndex": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The refractiveIndex Schema",
+          "examples": [
+            1.3375
+          ]
+        },
+        "planCreationDate": {
+          "type": "string",
+          "default": "",
+          "title": "The planCreationDate Schema",
+          "examples": [
+            "2022-12-27"
+          ]
+        },
+        "surgeon": {
+          "type": "string",
+          "default": "",
+          "title": "The surgeon Schema",
+          "examples": [
+            "Dr. Who"
+          ]
+        },
+        "planCreator": {
+          "type": "string",
+          "default": "",
+          "title": "The planCreator Schema",
+          "examples": [
+            "Christina Hernandez"
+          ]
+        },
+        "warnings": {
+          "type": "array",
+          "default": [],
+          "title": "The warnings Schema",
+          "items": {},
+          "examples": [
+            []
+          ]
+        },
+        "iolName": {
+          "type": "string",
+          "default": "",
+          "title": "The iolName Schema",
+          "examples": [
+            "Eyecryl Toric"
+          ]
+        },
+        "manufacturerName": {
+          "type": "string",
+          "default": "",
+          "title": "The manufacturerName Schema",
+          "examples": [
+            "Biotech Vision"
+          ]
+        },
+        "variantName": {
+          "type": "string",
+          "default": "",
+          "title": "The variantName Schema",
+          "examples": [
+            "M"
+          ]
+        },
+        "formulaName": {
+          "type": "string",
+          "default": "",
+          "title": "The formulaName Schema",
+          "examples": [
+            "Haigis Suite"
+          ]
+        },
+        "useTk": {
+          "type": "boolean",
+          "default": false,
+          "title": "The useTk Schema",
+          "examples": [
+            false
+          ]
+        },
+        "seBased": {
+          "type": "boolean",
+          "default": false,
+          "title": "The seBased Schema",
+          "examples": [
+            true
+          ]
+        },
+        "estimatedLensPosition": {
+          "type": "string",
+          "default": "",
+          "title": "The estimatedLensPosition Schema",
+          "examples": [
+            "4.24"
+          ]
+        },
+        "calculatedIol": {
+          "type": "object",
+          "default": {},
+          "title": "The calculatedIol Schema",
+          "required": [
+            "iolRefractivePowerSphericalEquivalent",
+            "iolRefractivePowerSphere",
+            "iolRefractivePowerCylinder",
+            "iolRefractivePowerAxis",
+            "residualRefractionSphericalEquivalent",
+            "residualRefractionSphere",
+            "residualRefractionCylinder",
+            "residualRefractionAxis",
+            "residualRefractionAxisFlipping"
+          ],
+          "properties": {
+            "iolRefractivePowerSphericalEquivalent": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerSphericalEquivalent Schema",
+              "examples": [
+                24.5
+              ]
+            },
+            "iolRefractivePowerSphere": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerSphere Schema",
+              "examples": [
+                23.375
+              ]
+            },
+            "iolRefractivePowerCylinder": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerCylinder Schema",
+              "examples": [
+                2.25
+              ]
+            },
+            "iolRefractivePowerAxis": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerAxis Schema",
+              "examples": [
+                100.0
+              ]
+            },
+            "residualRefractionSphericalEquivalent": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionSphericalEquivalent Schema",
+              "examples": [
+                0.06
+              ]
+            },
+            "residualRefractionSphere": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionSphere Schema",
+              "examples": [
+                0.32
+              ]
+            },
+            "residualRefractionCylinder": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionCylinder Schema",
+              "examples": [-0.52]
+            },
+            "residualRefractionAxis": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionAxis Schema",
+              "examples": [
+                0.0
+              ]
+            },
+            "residualRefractionAxisFlipping": {
+              "type": "boolean",
+              "default": false,
+              "title": "The residualRefractionAxisFlipping Schema",
+              "examples": [
+                true
+              ]
+            }
+          },
+          "examples": [{
+            "iolRefractivePowerSphericalEquivalent": 24.5,
+            "iolRefractivePowerSphere": 23.375,
+            "iolRefractivePowerCylinder": 2.25,
+            "iolRefractivePowerAxis": 100.0,
+            "residualRefractionSphericalEquivalent": 0.06,
+            "residualRefractionSphere": 0.32,
+            "residualRefractionCylinder": -0.52,
+            "residualRefractionAxis": 0.0,
+            "residualRefractionAxisFlipping": true
+          }]
+        },
+        "toricLens": {
+          "type": "boolean",
+          "default": false,
+          "title": "The toricLens Schema",
+          "examples": [
+            true
+          ]
+        },
+        "cylinderLabel": {
+          "type": "string",
+          "default": "",
+          "title": "The cylinderLabel Schema",
+          "examples": [
+            "tbd"
+          ]
+        },
+        "quantity": {
+          "type": "integer",
+          "default": 0,
+          "title": "The quantity Schema",
+          "examples": [
+            1
+          ]
+        },
+        "surgeryDate": {
+          "type": "string",
+          "default": "",
+          "title": "The surgeryDate Schema",
+          "examples": [
+            "2023-03-11"
+          ]
+        }
+      },
+      "examples": [{
+        "laterality": "OD",
+        "targetRefractionSphericalEquivalent": 0.0,
+        "axialLength": 22.86,
+        "keratometryExists": true,
+        "keratometryDeltaKExists": true,
+        "totalKeratometryExists": true,
+        "totalKeratometryDeltaKExists": true,
+        "keratometryR1": 7.97,
+        "keratometryK1": 42.34,
+        "keratometryA1": 0.0,
+        "keratometryR2": 7.83,
+        "keratometryK2": 43.09,
+        "keratometryA2": 100.0,
+        "keratometryCyl": 0.22,
+        "keratometryCylAxis": 106.0,
+        "keratometrySE": 42.32,
+        "keratometryCR": 4.0,
+        "totalKeratometryR1": 7.75,
+        "totalKeratometryK1": 42.43,
+        "totalKeratometryA1": 0.0,
+        "totalKeratometryR2": 7.84,
+        "totalKeratometryK2": 43.04,
+        "totalKeratometryA2": 100.0,
+        "totalKeratometryCyl": 0.16,
+        "totalKeratometryCylAxis": 142.0,
+        "totalKeratometrySE": 42.44,
+        "totalKeratometryCR": 7.95,
+        "acd": 3.06,
+        "acdMeasurementSource": "EPITHELIUM",
+        "incisionOrientation": 45.0,
+        "sia": 1.4,
+        "refractiveIndex": 1.3375,
+        "planCreationDate": "2022-12-27",
+        "surgeon": "Dr. Who",
+        "planCreator": "Christina Hernandez",
+        "warnings": [],
+        "iolName": "Eyecryl Toric",
+        "manufacturerName": "Biotech Vision",
+        "variantName": "M",
+        "formulaName": "Haigis Suite",
+        "useTk": false,
+        "seBased": true,
+        "estimatedLensPosition": "4.24",
+        "calculatedIol": {
+          "iolRefractivePowerSphericalEquivalent": 24.5,
+          "iolRefractivePowerSphere": 23.375,
+          "iolRefractivePowerCylinder": 2.25,
+          "iolRefractivePowerAxis": 100.0,
+          "residualRefractionSphericalEquivalent": 0.06,
+          "residualRefractionSphere": 0.32,
+          "residualRefractionCylinder": -0.52,
+          "residualRefractionAxis": 0.0,
+          "residualRefractionAxisFlipping": true
+        },
+        "toricLens": true,
+        "cylinderLabel": "tbd",
+        "quantity": 1,
+        "surgeryDate": "2023-03-11"
+      }]
     },
     "os": {
-      "ref": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/order-lens"
+      "type": "object",
+      "default": {},
+      "title": "The os Schema",
+      "required": [
+        "laterality",
+        "targetRefractionSphericalEquivalent",
+        "axialLength",
+        "keratometryExists",
+        "keratometryDeltaKExists",
+        "totalKeratometryExists",
+        "totalKeratometryDeltaKExists",
+        "keratometryR1",
+        "keratometryK1",
+        "keratometryA1",
+        "keratometryR2",
+        "keratometryK2",
+        "keratometryA2",
+        "keratometryCyl",
+        "keratometryCylAxis",
+        "keratometrySE",
+        "keratometryCR",
+        "totalKeratometryR1",
+        "totalKeratometryK1",
+        "totalKeratometryA1",
+        "totalKeratometryR2",
+        "totalKeratometryK2",
+        "totalKeratometryA2",
+        "totalKeratometryCyl",
+        "totalKeratometryCylAxis",
+        "totalKeratometrySE",
+        "totalKeratometryCR",
+        "acd",
+        "acdMeasurementSource",
+        "incisionOrientation",
+        "sia",
+        "refractiveIndex",
+        "planCreationDate",
+        "surgeon",
+        "planCreator",
+        "warnings",
+        "iolName",
+        "manufacturerName",
+        "variantName",
+        "formulaName",
+        "useTk",
+        "seBased",
+        "estimatedLensPosition",
+        "calculatedIol",
+        "toricLens",
+        "cylinderLabel",
+        "quantity",
+        "surgeryDate"
+      ],
+      "properties": {
+        "laterality": {
+          "type": "string",
+          "default": "",
+          "title": "The laterality Schema",
+          "examples": [
+            "OS"
+          ]
+        },
+        "targetRefractionSphericalEquivalent": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The targetRefractionSphericalEquivalent Schema",
+          "examples": [
+            0.0
+          ]
+        },
+        "axialLength": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The axialLength Schema",
+          "examples": [
+            22.86
+          ]
+        },
+        "keratometryExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The keratometryExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "keratometryDeltaKExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The keratometryDeltaKExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "totalKeratometryExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The totalKeratometryExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "totalKeratometryDeltaKExists": {
+          "type": "boolean",
+          "default": false,
+          "title": "The totalKeratometryDeltaKExists Schema",
+          "examples": [
+            true
+          ]
+        },
+        "keratometryR1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryR1 Schema",
+          "examples": [
+            7.97
+          ]
+        },
+        "keratometryK1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryK1 Schema",
+          "examples": [
+            42.34
+          ]
+        },
+        "keratometryA1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryA1 Schema",
+          "examples": [
+            0.0
+          ]
+        },
+        "keratometryR2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryR2 Schema",
+          "examples": [
+            7.83
+          ]
+        },
+        "keratometryK2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryK2 Schema",
+          "examples": [
+            43.09
+          ]
+        },
+        "keratometryA2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryA2 Schema",
+          "examples": [
+            100.0
+          ]
+        },
+        "keratometryCyl": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryCyl Schema",
+          "examples": [
+            0.22
+          ]
+        },
+        "keratometryCylAxis": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryCylAxis Schema",
+          "examples": [
+            106.0
+          ]
+        },
+        "keratometrySE": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometrySE Schema",
+          "examples": [
+            42.32
+          ]
+        },
+        "keratometryCR": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The keratometryCR Schema",
+          "examples": [
+            4.0
+          ]
+        },
+        "totalKeratometryR1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryR1 Schema",
+          "examples": [
+            7.75
+          ]
+        },
+        "totalKeratometryK1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryK1 Schema",
+          "examples": [
+            42.43
+          ]
+        },
+        "totalKeratometryA1": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryA1 Schema",
+          "examples": [
+            0.0
+          ]
+        },
+        "totalKeratometryR2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryR2 Schema",
+          "examples": [
+            7.84
+          ]
+        },
+        "totalKeratometryK2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryK2 Schema",
+          "examples": [
+            43.04
+          ]
+        },
+        "totalKeratometryA2": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryA2 Schema",
+          "examples": [
+            100.0
+          ]
+        },
+        "totalKeratometryCyl": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryCyl Schema",
+          "examples": [
+            0.16
+          ]
+        },
+        "totalKeratometryCylAxis": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryCylAxis Schema",
+          "examples": [
+            142.0
+          ]
+        },
+        "totalKeratometrySE": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometrySE Schema",
+          "examples": [
+            42.44
+          ]
+        },
+        "totalKeratometryCR": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The totalKeratometryCR Schema",
+          "examples": [
+            7.95
+          ]
+        },
+        "acd": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The acd Schema",
+          "examples": [
+            3.06
+          ]
+        },
+        "acdMeasurementSource": {
+          "type": "string",
+          "default": "",
+          "title": "The acdMeasurementSource Schema",
+          "examples": [
+            "EPITHELIUM"
+          ]
+        },
+        "incisionOrientation": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The incisionOrientation Schema",
+          "examples": [
+            45.0
+          ]
+        },
+        "sia": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The sia Schema",
+          "examples": [
+            1.4
+          ]
+        },
+        "refractiveIndex": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The refractiveIndex Schema",
+          "examples": [
+            1.3375
+          ]
+        },
+        "planCreationDate": {
+          "type": "string",
+          "default": "",
+          "title": "The planCreationDate Schema",
+          "examples": [
+            "2022-12-27"
+          ]
+        },
+        "surgeon": {
+          "type": "string",
+          "default": "",
+          "title": "The surgeon Schema",
+          "examples": [
+            "Dr. Who"
+          ]
+        },
+        "planCreator": {
+          "type": "string",
+          "default": "",
+          "title": "The planCreator Schema",
+          "examples": [
+            "Christina Hernandez"
+          ]
+        },
+        "warnings": {
+          "type": "array",
+          "default": [],
+          "title": "The warnings Schema",
+          "items": {},
+          "examples": [
+            []
+          ]
+        },
+        "iolName": {
+          "type": "string",
+          "default": "",
+          "title": "The iolName Schema",
+          "examples": [
+            "Eyecryl Toric"
+          ]
+        },
+        "manufacturerName": {
+          "type": "string",
+          "default": "",
+          "title": "The manufacturerName Schema",
+          "examples": [
+            "Biotech Vision"
+          ]
+        },
+        "variantName": {
+          "type": "string",
+          "default": "",
+          "title": "The variantName Schema",
+          "examples": [
+            "M"
+          ]
+        },
+        "formulaName": {
+          "type": "string",
+          "default": "",
+          "title": "The formulaName Schema",
+          "examples": [
+            "Haigis Suite"
+          ]
+        },
+        "useTk": {
+          "type": "boolean",
+          "default": false,
+          "title": "The useTk Schema",
+          "examples": [
+            false
+          ]
+        },
+        "seBased": {
+          "type": "boolean",
+          "default": false,
+          "title": "The seBased Schema",
+          "examples": [
+            true
+          ]
+        },
+        "estimatedLensPosition": {
+          "type": "string",
+          "default": "",
+          "title": "The estimatedLensPosition Schema",
+          "examples": [
+            "4.24"
+          ]
+        },
+        "calculatedIol": {
+          "type": "object",
+          "default": {},
+          "title": "The calculatedIol Schema",
+          "required": [
+            "iolRefractivePowerSphericalEquivalent",
+            "iolRefractivePowerSphere",
+            "iolRefractivePowerCylinder",
+            "iolRefractivePowerAxis",
+            "residualRefractionSphericalEquivalent",
+            "residualRefractionSphere",
+            "residualRefractionCylinder",
+            "residualRefractionAxis",
+            "residualRefractionAxisFlipping"
+          ],
+          "properties": {
+            "iolRefractivePowerSphericalEquivalent": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerSphericalEquivalent Schema",
+              "examples": [
+                24.5
+              ]
+            },
+            "iolRefractivePowerSphere": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerSphere Schema",
+              "examples": [
+                23.375
+              ]
+            },
+            "iolRefractivePowerCylinder": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerCylinder Schema",
+              "examples": [
+                2.25
+              ]
+            },
+            "iolRefractivePowerAxis": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The iolRefractivePowerAxis Schema",
+              "examples": [
+                100.0
+              ]
+            },
+            "residualRefractionSphericalEquivalent": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionSphericalEquivalent Schema",
+              "examples": [
+                0.06
+              ]
+            },
+            "residualRefractionSphere": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionSphere Schema",
+              "examples": [
+                0.32
+              ]
+            },
+            "residualRefractionCylinder": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionCylinder Schema",
+              "examples": [-0.52]
+            },
+            "residualRefractionAxis": {
+              "type": "number",
+              "default": 0.0,
+              "title": "The residualRefractionAxis Schema",
+              "examples": [
+                0.0
+              ]
+            },
+            "residualRefractionAxisFlipping": {
+              "type": "boolean",
+              "default": false,
+              "title": "The residualRefractionAxisFlipping Schema",
+              "examples": [
+                true
+              ]
+            }
+          },
+          "examples": [{
+            "iolRefractivePowerSphericalEquivalent": 24.5,
+            "iolRefractivePowerSphere": 23.375,
+            "iolRefractivePowerCylinder": 2.25,
+            "iolRefractivePowerAxis": 100.0,
+            "residualRefractionSphericalEquivalent": 0.06,
+            "residualRefractionSphere": 0.32,
+            "residualRefractionCylinder": -0.52,
+            "residualRefractionAxis": 0.0,
+            "residualRefractionAxisFlipping": true
+          }]
+        },
+        "toricLens": {
+          "type": "boolean",
+          "default": false,
+          "title": "The toricLens Schema",
+          "examples": [
+            true
+          ]
+        },
+        "cylinderLabel": {
+          "type": "string",
+          "default": "",
+          "title": "The cylinderLabel Schema",
+          "examples": [
+            "tbd"
+          ]
+        },
+        "quantity": {
+          "type": "integer",
+          "default": 0,
+          "title": "The quantity Schema",
+          "examples": [
+            1
+          ]
+        },
+        "surgeryDate": {
+          "type": "string",
+          "default": "",
+          "title": "The surgeryDate Schema",
+          "examples": [
+            "2023-03-11"
+          ]
+        }
+      },
+      "examples": [{
+        "laterality": "OS",
+        "targetRefractionSphericalEquivalent": 0.0,
+        "axialLength": 22.86,
+        "keratometryExists": true,
+        "keratometryDeltaKExists": true,
+        "totalKeratometryExists": true,
+        "totalKeratometryDeltaKExists": true,
+        "keratometryR1": 7.97,
+        "keratometryK1": 42.34,
+        "keratometryA1": 0.0,
+        "keratometryR2": 7.83,
+        "keratometryK2": 43.09,
+        "keratometryA2": 100.0,
+        "keratometryCyl": 0.22,
+        "keratometryCylAxis": 106.0,
+        "keratometrySE": 42.32,
+        "keratometryCR": 4.0,
+        "totalKeratometryR1": 7.75,
+        "totalKeratometryK1": 42.43,
+        "totalKeratometryA1": 0.0,
+        "totalKeratometryR2": 7.84,
+        "totalKeratometryK2": 43.04,
+        "totalKeratometryA2": 100.0,
+        "totalKeratometryCyl": 0.16,
+        "totalKeratometryCylAxis": 142.0,
+        "totalKeratometrySE": 42.44,
+        "totalKeratometryCR": 7.95,
+        "acd": 3.06,
+        "acdMeasurementSource": "EPITHELIUM",
+        "incisionOrientation": 45.0,
+        "sia": 1.4,
+        "refractiveIndex": 1.3375,
+        "planCreationDate": "2022-12-27",
+        "surgeon": "Dr. Who",
+        "planCreator": "Christina Hernandez",
+        "warnings": [],
+        "iolName": "Eyecryl Toric",
+        "manufacturerName": "Biotech Vision",
+        "variantName": "M",
+        "formulaName": "Haigis Suite",
+        "useTk": false,
+        "seBased": true,
+        "estimatedLensPosition": "4.24",
+        "calculatedIol": {
+          "iolRefractivePowerSphericalEquivalent": 24.5,
+          "iolRefractivePowerSphere": 23.375,
+          "iolRefractivePowerCylinder": 2.25,
+          "iolRefractivePowerAxis": 100.0,
+          "residualRefractionSphericalEquivalent": 0.06,
+          "residualRefractionSphere": 0.32,
+          "residualRefractionCylinder": -0.52,
+          "residualRefractionAxis": 0.0,
+          "residualRefractionAxisFlipping": true
+        },
+        "toricLens": true,
+        "cylinderLabel": "tbd",
+        "quantity": 1,
+        "surgeryDate": "2023-03-11"
+      }]
     },
     "refractionUnitInDpt": {
-      "title": "The refractionUnitInDpt Schema",
-      "description": "An explanation about the purpose of this instance.",
       "type": "boolean",
       "default": false,
+      "title": "The refractionUnitInDpt Schema",
       "examples": [
         false
       ]
     }
-  }
+  },
+  "examples": [{
+    "header": {
+      "patient": {
+        "id": "123",
+        "name1": "Mr. Heinz Huber (PN1)",
+        "name2": "Mr. Heinz Huber (PN2)",
+        "dateOfBirth": "1945-10-09",
+        "gender": "male"
+      },
+      "institution": {
+        "name": "Sacred Heart",
+        "department": "Surgery",
+        "addressLine1": "Medical Street 123",
+        "addressLine2": "Address line 2",
+        "city": "San Francisco",
+        "zipCode": "93402",
+        "state": "California",
+        "country": "United States of America",
+        "phoneNumber": "+19111234567",
+        "emailAddress": "emergency@sacredheard.org"
+      }
+    },
+    "footer": {
+      "versionString": "1.0",
+      "creationDateTime": "2022-12-27 9:31",
+      "creationDateTimeSuffix": "am",
+      "userFirstName": "Sieglinde",
+      "userLastName": "Meier"
+    },
+    "imprint": {
+      "copyrightYear": "2022"
+    },
+    "od": {
+      "laterality": "OD",
+      "targetRefractionSphericalEquivalent": 0.0,
+      "axialLength": 22.86,
+      "keratometryExists": true,
+      "keratometryDeltaKExists": true,
+      "totalKeratometryExists": true,
+      "totalKeratometryDeltaKExists": true,
+      "keratometryR1": 7.97,
+      "keratometryK1": 42.34,
+      "keratometryA1": 0.0,
+      "keratometryR2": 7.83,
+      "keratometryK2": 43.09,
+      "keratometryA2": 100.0,
+      "keratometryCyl": 0.22,
+      "keratometryCylAxis": 106.0,
+      "keratometrySE": 42.32,
+      "keratometryCR": 4.0,
+      "totalKeratometryR1": 7.75,
+      "totalKeratometryK1": 42.43,
+      "totalKeratometryA1": 0.0,
+      "totalKeratometryR2": 7.84,
+      "totalKeratometryK2": 43.04,
+      "totalKeratometryA2": 100.0,
+      "totalKeratometryCyl": 0.16,
+      "totalKeratometryCylAxis": 142.0,
+      "totalKeratometrySE": 42.44,
+      "totalKeratometryCR": 7.95,
+      "acd": 3.06,
+      "acdMeasurementSource": "EPITHELIUM",
+      "incisionOrientation": 45.0,
+      "sia": 1.4,
+      "refractiveIndex": 1.3375,
+      "planCreationDate": "2022-12-27",
+      "surgeon": "Dr. Who",
+      "planCreator": "Christina Hernandez",
+      "warnings": [],
+      "iolName": "Eyecryl Toric",
+      "manufacturerName": "Biotech Vision",
+      "variantName": "M",
+      "formulaName": "Haigis Suite",
+      "useTk": false,
+      "seBased": true,
+      "estimatedLensPosition": "4.24",
+      "calculatedIol": {
+        "iolRefractivePowerSphericalEquivalent": 24.5,
+        "iolRefractivePowerSphere": 23.375,
+        "iolRefractivePowerCylinder": 2.25,
+        "iolRefractivePowerAxis": 100.0,
+        "residualRefractionSphericalEquivalent": 0.06,
+        "residualRefractionSphere": 0.32,
+        "residualRefractionCylinder": -0.52,
+        "residualRefractionAxis": 0.0,
+        "residualRefractionAxisFlipping": true
+      },
+      "toricLens": true,
+      "cylinderLabel": "tbd",
+      "quantity": 1,
+      "surgeryDate": "2023-03-11"
+    },
+    "os": {
+      "laterality": "OS",
+      "targetRefractionSphericalEquivalent": 0.0,
+      "axialLength": 22.86,
+      "keratometryExists": true,
+      "keratometryDeltaKExists": true,
+      "totalKeratometryExists": true,
+      "totalKeratometryDeltaKExists": true,
+      "keratometryR1": 7.97,
+      "keratometryK1": 42.34,
+      "keratometryA1": 0.0,
+      "keratometryR2": 7.83,
+      "keratometryK2": 43.09,
+      "keratometryA2": 100.0,
+      "keratometryCyl": 0.22,
+      "keratometryCylAxis": 106.0,
+      "keratometrySE": 42.32,
+      "keratometryCR": 4.0,
+      "totalKeratometryR1": 7.75,
+      "totalKeratometryK1": 42.43,
+      "totalKeratometryA1": 0.0,
+      "totalKeratometryR2": 7.84,
+      "totalKeratometryK2": 43.04,
+      "totalKeratometryA2": 100.0,
+      "totalKeratometryCyl": 0.16,
+      "totalKeratometryCylAxis": 142.0,
+      "totalKeratometrySE": 42.44,
+      "totalKeratometryCR": 7.95,
+      "acd": 3.06,
+      "acdMeasurementSource": "EPITHELIUM",
+      "incisionOrientation": 45.0,
+      "sia": 1.4,
+      "refractiveIndex": 1.3375,
+      "planCreationDate": "2022-12-27",
+      "surgeon": "Dr. Who",
+      "planCreator": "Christina Hernandez",
+      "warnings": [],
+      "iolName": "Eyecryl Toric",
+      "manufacturerName": "Biotech Vision",
+      "variantName": "M",
+      "formulaName": "Haigis Suite",
+      "useTk": false,
+      "seBased": true,
+      "estimatedLensPosition": "4.24",
+      "calculatedIol": {
+        "iolRefractivePowerSphericalEquivalent": 24.5,
+        "iolRefractivePowerSphere": 23.375,
+        "iolRefractivePowerCylinder": 2.25,
+        "iolRefractivePowerAxis": 100.0,
+        "residualRefractionSphericalEquivalent": 0.06,
+        "residualRefractionSphere": 0.32,
+        "residualRefractionCylinder": -0.52,
+        "residualRefractionAxis": 0.0,
+        "residualRefractionAxisFlipping": true
+      },
+      "toricLens": true,
+      "cylinderLabel": "tbd",
+      "quantity": 1,
+      "surgeryDate": "2023-03-11"
+    },
+    "refractionUnitInDpt": false
+  }]
 }
