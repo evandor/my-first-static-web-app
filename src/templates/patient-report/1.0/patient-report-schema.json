@@ -101,50 +101,42 @@
                 ]
               }
             },
-            "examples": [
-              {
-                "comment": "Butchered the left eye.",
-                "doctorEmail": "dr.mabuse@gmail.com"
-              },
-              {
-                "comment": "Patient can see now for miles with right eye.",
-                "doctorEmail": "dr.house@gmail.com"
-              }
-            ]
-          },
-          "examples": [
-            [
-              {
-                "comment": "Butchered the left eye.",
-                "doctorEmail": "dr.mabuse@gmail.com"
-              },
-              {
-                "comment": "Patient can see now for miles with right eye.",
-                "doctorEmail": "dr.house@gmail.com"
-              }
-            ]
-          ]
-        }
-      },
-      "examples": [
-        {
-          "firstName": "Heinz",
-          "lastName": "Huber",
-          "decimalField": 25.5,
-          "integerField": 10,
-          "age": 76,
-          "comments": [
-            {
+            "examples": [{
               "comment": "Butchered the left eye.",
               "doctorEmail": "dr.mabuse@gmail.com"
             },
-            {
-              "comment": "Patient can see now for miles with right eye.",
-              "doctorEmail": "dr.house@gmail.com"
-            }
+              {
+                "comment": "Patient can see now for miles with right eye.",
+                "doctorEmail": "dr.house@gmail.com"
+              }]
+          },
+          "examples": [
+            [{
+              "comment": "Butchered the left eye.",
+              "doctorEmail": "dr.mabuse@gmail.com"
+            },
+              {
+                "comment": "Patient can see now for miles with right eye.",
+                "doctorEmail": "dr.house@gmail.com"
+              }]
           ]
         }
-      ]
+      },
+      "examples": [{
+        "firstName": "Heinz",
+        "lastName": "Huber",
+        "decimalField": 25.5,
+        "integerField": 10,
+        "age": 76,
+        "comments": [{
+          "comment": "Butchered the left eye.",
+          "doctorEmail": "dr.mabuse@gmail.com"
+        },
+          {
+            "comment": "Patient can see now for miles with right eye.",
+            "doctorEmail": "dr.house@gmail.com"
+          }]
+      }]
     },
     "od": {
       "type": "object",
@@ -172,12 +164,10 @@
           ]
         }
       },
-      "examples": [
-        {
-          "laterality": "OD",
-          "surgeon": "Dr. House"
-        }
-      ]
+      "examples": [{
+        "laterality": "OD",
+        "surgeon": "Dr. House"
+      }]
     },
     "os": {
       "type": "object",
@@ -205,42 +195,36 @@
           ]
         }
       },
-      "examples": [
-        {
-          "laterality": "OS",
-          "surgeon": "Dr. Mabuse"
-        }
-      ]
-    }
-  },
-  "examples": [
-    {
-      "templateName": "PatientReportTemplate",
-      "patient": {
-        "firstName": "Heinz",
-        "lastName": "Huber",
-        "decimalField": 25.5,
-        "integerField": 10,
-        "age": 76,
-        "comments": [
-          {
-            "comment": "Butchered the left eye.",
-            "doctorEmail": "dr.mabuse@gmail.com"
-          },
-          {
-            "comment": "Patient can see now for miles with right eye.",
-            "doctorEmail": "dr.house@gmail.com"
-          }
-        ]
-      },
-      "od": {
-        "laterality": "OD",
-        "surgeon": "Dr. House"
-      },
-      "os": {
+      "examples": [{
         "laterality": "OS",
         "surgeon": "Dr. Mabuse"
-      }
+      }]
     }
-  ]
+  },
+  "examples": [{
+    "templateName": "PatientReportTemplate",
+    "patient": {
+      "firstName": "Heinz",
+      "lastName": "Huber",
+      "decimalField": 25.5,
+      "integerField": 10,
+      "age": 76,
+      "comments": [{
+        "comment": "Butchered the left eye.",
+        "doctorEmail": "dr.mabuse@gmail.com"
+      },
+        {
+          "comment": "Patient can see now for miles with right eye.",
+          "doctorEmail": "dr.house@gmail.com"
+        }]
+    },
+    "od": {
+      "laterality": "OD",
+      "surgeon": "Dr. House"
+    },
+    "os": {
+      "laterality": "OS",
+      "surgeon": "Dr. Mabuse"
+    }
+  }]
 }
