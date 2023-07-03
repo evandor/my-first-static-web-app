@@ -1,0 +1,312 @@
+/* Used for OD/OS */
+.h1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 18pt;
+}
+
+/* Used for right/left info */
+.h2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+/* Used for e.g. section headlines. Always used in capital letters. */
+.sub-headline1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  /* no semi-bold version for CJK available */
+  font-weight: 600;
+  font-size: 8pt;
+  text-transform: uppercase;
+}
+
+/* Used for very important information e.g. lens name. Use carefully. */
+.sub-headline2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+/* Used for values in tables and short texts, headlines within tables, when multiple headlines types are needed */
+.body1, .highlighted-text {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+}
+
+/* Should only be used for minor important information or when the amount of content on the report requires a smaller
+font size. Used as Body 1. */
+.body2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 7pt;
+  white-space: nowrap;
+}
+
+/* Standard font styles used for labels and headlines within tables */
+.label1, .normal-text, .normal-text-small {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 8pt;
+  white-space: nowrap;
+  /* not defined in Style guide but always the case for labels */
+}
+
+/* Should only be used for less important information or when the amount of content on the report requires a smaller
+font size. Used in the same way as Label 1. */
+.label2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 7pt;
+}
+
+/* Used for sub label for column header */
+.label2-small {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 6pt;
+}
+
+/* Used for additional info-texts, e.g. legends, captions */
+.caption {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 6pt;
+}
+
+/* Used for info texts, e.g. copyright info, software version, device,... */
+.info {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 5pt;
+}
+
+/* Used for eye schematic scale values and footer elements */
+.caption-medium {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 6pt;
+}
+
+/* Used for large numbers, e.g. inner number in eye schematic graphic */
+.large-number {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+/* used in the selected calculation result */
+.body1-bold {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 700;
+  font-size: 8pt;
+}
+
+.normal-text-small {
+  font-size: 6pt;
+}
+
+.language-ja .h1, .language-ja .h2, .language-ja .sub-headline1, .language-ja .sub-headline2,
+.language-ja .body1,
+.language-ja .highlighted-text, .language-ja .body2,
+.language-ja .label1,
+.language-ja .normal-text,
+.language-ja .normal-text-small, .language-ja .label2, .language-ja .caption, .language-ja .info, .language-ja .caption-medium, .language-ja .large-number, .language-ja .body1-bold {
+  font-family: "Noto Sans CJK JP", "sans-serif";
+}
+
+.language-ko .h1, .language-ko .h2, .language-ko .sub-headline1, .language-ko .sub-headline2,
+.language-ko .body1,
+.language-ko .highlighted-text, .language-ko .body2,
+.language-ko .label1,
+.language-ko .normal-text,
+.language-ko .normal-text-small, .language-ko .label2, .language-ko .caption, .language-ko .info, .language-ko .caption-medium, .language-ko .large-number, .language-ko .body1-bold {
+  font-family: "Noto Sans CJK KR", "sans-serif";
+}
+
+.language-zh .h1, .language-zh .h2, .language-zh .sub-headline1, .language-zh .sub-headline2,
+.language-zh .body1,
+.language-zh .highlighted-text, .language-zh .body2,
+.language-zh .label1,
+.language-zh .normal-text,
+.language-zh .normal-text-small, .language-zh .label2, .language-zh .caption, .language-zh .info, .language-zh .caption-medium, .language-zh .large-number, .language-zh .body1-bold {
+  font-family: "Noto Sans CJK SC", "sans-serif";
+}
+
+/* make sure we use box-sizing for all css elements */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  line-height: 9.6pt;
+  /* default line spacing defined in Styleguilde_V1.pdf (page 3) */
+  color: #0d0a0b;
+  /* default color as defined in Styleguilde_V1.pdf */
+}
+
+/* This class creates the illusion of a page in the browser. It is used mainly in the screen. For print it is only
+      used keep the contained content area in the middle of the page using the benefits of the flex layout. This
+      provides the flexibility that hardware printer margins are absorbed.  
+   */
+.page {
+  /* Please note that the margins are only used here to visually separate the pages. "auto" equally provides
+       margins to the left and right of the page and fills the complete viewport area of the browser */
+  margin: 5mm auto 5mm;
+  padding: 0;
+  /* centers the only child element (div) in the middle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* set width to the preferred page width */
+  width: 210mm;
+  /* set width to the preferred page height */
+  height: 297mm;
+  /* set the default font size, which is implicitly used to calculate the heights of elements */
+  font-size: 8pt;
+  /* defines the shadow around the page */
+  box-shadow: 0 0 5mm rgba(0, 0, 0, 0.59);
+  /*           overflow-y: scroll; */
+  background-color: white;
+  outline: 0;
+}
+
+/* This class defines a rigid box around the printable area. This is the area that is safe to use for print items.
+     Outside of the printable area, printer hardware margins can clip the texts or graphics or might lead to a 
+     unwanted offset of the print face and wrong layout of pages. 
+     This area typically contains a header, page content and a footer plus padding around it. The size of the box
+     must be not changeable, which means min-height=max-height and min-width=max-width */
+div.printable {
+  margin: 0;
+  /* never change this value */
+  padding: 0mm 2mm 0mm 8mm;
+  min-height: 277mm;
+  max-height: 277mm;
+  min-width: 190mm;
+  max-width: 190mm;
+  font-size: 8pt;
+  outline: 0;
+}
+
+/* This class defines a box for the header. It can grow horizontally, but never changes in height. */
+header {
+  /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       This ensures, that child item margins do not exceed the header box-layout! For example: the top margin of  
+       a paragraph <p> element inside the header element exceeds the top border of the header bounding-box and 
+       pushes the whole layout down by the size of the top margin of the <p> element. Only overflow value "auto" 
+       ensures that the margins of the <p> elem are layouted inside of the header bounding box. 
+       Therefore, do not change this value unless you know what you are doing! */
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* set width to 100%, width is limited by the parent containers fixed size width limit */
+  min-height: 43mm;
+  /* define a fixed height (min-height=max=height), so child items */
+  max-height: 43mm;
+  /* cant grow beyond this limit */
+  /*    border: thin dashed rgba(200, 200, 200, 0.7); */
+  background-color: rgba(0, 0, 200, 0.1);
+}
+
+/* This class defines a box for the main (content) area. It can grow horizontally, but never changes in height. */
+main {
+  /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       The scrollbar is used as indicator here, to decide if the page needs to be split. If a scrollbar shows up
+       ,then to many child items are in inside of the page and the page needs to be split into two or more pages.
+       In addition the overflow-y:auto property ensures, that child item margins do not exceed the main box-layout! 
+       For example: the top margin of a paragraph <p> element inside the main element exceeds the top border of the 
+       main bounding-box and pushes the whole layout down by the size of the top margin of the <p> element. Only 
+       overflow value "auto" ensures that the margins of the <p> elem are layouted inside of the footers bounding 
+       box. Therefore, do not change this value unless you know what you are doing! */
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* set width to 100%, width is limited by the parent containers fixed size width limit */
+  min-height: 206.5mm;
+  /* define a fixed height (min-height=max=height), so child items */
+  max-height: 206.5mm;
+  /* cant grow beyond this limit */
+  /*    border: thin dashed rgba(200, 200, 200, 0.7); */
+  background-color: rgba(200, 200, 200, 0.1);
+}
+
+/* This class defines a box for the footer. It can grow horizontally, but never changes in height. */
+footer {
+  /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       This ensures, that child item margins do not exceed the footer box-layout! For example: the top margin of  
+       a paragraph <p> element inside the footer element exceeds the top border of the footer bounding-box and 
+       pushes the whole layout down by the size of the top margin of the <p> element. Only overflow value "auto" 
+       ensures that the margins of the <p> elem are layouted inside of the footers bounding box. 
+       Therefore, do not change this value unless you know what you are doing! */
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 27.5mm;
+  /* define a fixed height (min-height=max=height), so child items */
+  max-height: 27.5mm;
+  /* cant grow beyond this limit */
+  height: 27.5mm;
+  /*   border: thin dashed rgba(200, 200, 200, 0.7); */
+  background-color: rgba(0, 100, 0, 0.1);
+}
+
+@media print {
+  @page {
+    margin: 0;
+    padding: 0;
+    size: 210mm 297mm;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+  }
+  div.printable {
+    margin: 0;
+    padding: 0mm 2mm 0mm 8mm;
+    min-height: 277mm;
+    max-height: 277mm;
+    min-width: 190mm;
+    max-width: 190mm;
+    box-sizing: border-box;
+    outline: 0;
+  }
+  /* can be used to hide an html element, which should not be printed. Remove, if not used */
+  .noprint {
+    display: none;
+  }
+  /* can be used to show an html element, which should be printed. Remove, if not used */
+  .enable-print {
+    display: block;
+  }
+  /* avoid that there are page breaks inside paragraphs. */
+  p {
+    page-break-inside: avoid;
+  }
+  /* avoid page breaks inside sections. */
+  section {
+    page-break-inside: avoid;
+  }
+}

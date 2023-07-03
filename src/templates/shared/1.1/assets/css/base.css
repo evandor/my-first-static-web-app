@@ -1,0 +1,139 @@
+/* Used for OD/OS */
+.h1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 18pt;
+}
+
+/* Used for right/left info */
+.h2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+/* Used for e.g. section headlines. Always used in capital letters. */
+.sub-headline1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  /* no semi-bold version for CJK available */
+  font-weight: 600;
+  font-size: 8pt;
+  text-transform: uppercase;
+}
+
+/* Used for very important information e.g. lens name. Use carefully. */
+.sub-headline2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+/* Used for values in tables and short texts, headlines within tables, when multiple headlines types are needed */
+.body1, .highlighted-text {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+}
+
+/* Should only be used for minor important information or when the amount of content on the report requires a smaller
+font size. Used as Body 1. */
+.body2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 7pt;
+  white-space: nowrap;
+}
+
+/* Standard font styles used for labels and headlines within tables */
+.label1, .normal-text, .normal-text-small {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 8pt;
+  white-space: nowrap;
+  /* not defined in Style guide but always the case for labels */
+}
+
+/* Should only be used for less important information or when the amount of content on the report requires a smaller
+font size. Used in the same way as Label 1. */
+.label2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 7pt;
+}
+
+/* Used for sub label for column header */
+.label2-small {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 6pt;
+}
+
+/* Used for additional info-texts, e.g. legends, captions */
+.caption {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 6pt;
+}
+
+/* Used for info texts, e.g. copyright info, software version, device,... */
+.info {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 5pt;
+}
+
+/* Used for eye schematic scale values and footer elements */
+.caption-medium {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 6pt;
+}
+
+/* Used for large numbers, e.g. inner number in eye schematic graphic */
+.large-number {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+/* used in the selected calculation result */
+.body1-bold {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 700;
+  font-size: 8pt;
+}
+
+.normal-text-small {
+  font-size: 6pt;
+}
+
+.language-ja .h1, .language-ja .h2, .language-ja .sub-headline1, .language-ja .sub-headline2,
+.language-ja .body1,
+.language-ja .highlighted-text, .language-ja .body2,
+.language-ja .label1,
+.language-ja .normal-text,
+.language-ja .normal-text-small, .language-ja .label2, .language-ja .caption, .language-ja .info, .language-ja .caption-medium, .language-ja .large-number, .language-ja .body1-bold {
+  font-family: "Noto Sans CJK JP", "sans-serif";
+}
+
+.language-ko .h1, .language-ko .h2, .language-ko .sub-headline1, .language-ko .sub-headline2,
+.language-ko .body1,
+.language-ko .highlighted-text, .language-ko .body2,
+.language-ko .label1,
+.language-ko .normal-text,
+.language-ko .normal-text-small, .language-ko .label2, .language-ko .caption, .language-ko .info, .language-ko .caption-medium, .language-ko .large-number, .language-ko .body1-bold {
+  font-family: "Noto Sans CJK KR", "sans-serif";
+}
+
+.language-zh .h1, .language-zh .h2, .language-zh .sub-headline1, .language-zh .sub-headline2,
+.language-zh .body1,
+.language-zh .highlighted-text, .language-zh .body2,
+.language-zh .label1,
+.language-zh .normal-text,
+.language-zh .normal-text-small, .language-zh .label2, .language-zh .caption, .language-zh .info, .language-zh .caption-medium, .language-zh .large-number, .language-zh .body1-bold {
+  font-family: "Noto Sans CJK SC", "sans-serif";
+}
+
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}

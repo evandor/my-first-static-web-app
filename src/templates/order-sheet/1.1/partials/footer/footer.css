@@ -2,8 +2,14 @@
 /* used as standard separator in tables */
 /* used for footer comment box border */
 /* border for selected table line */
+/*
 footer {
   padding-right: 3mm;
+}
+*/
+.footer-section {
+  padding: 0 3mm 0 0;
+  margin: 0;
 }
 
 .signature-section {

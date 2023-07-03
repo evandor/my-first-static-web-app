@@ -1,7 +1,11 @@
-/* only used for at the beginning of a new section */
-/* used as standard separator in tables */
-/* used for footer comment box border */
-/* border for selected table line */
+.align-right {
+  text-align: right;
+}
+
+.flex-spacer {
+  flex: auto;
+}
+
 .column {
   float: left;
 }
@@ -14,53 +18,16 @@
 }
 
 /*
-h1 {
-    line-height: 18pt; */
-/* to match the font size */
-/*
-}
+.content {
+    max-height: 206.5mm;*/
+/* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+/*        font-size: 8pt;
+    }
 */
-table.order-sheet {
-  width: 100%;
-  border-collapse: collapse;
+.sub-headline2 ellipsis {
+  line-height: 13pt;
 }
 
-table.order-sheet tr:first-child {
-  line-height: 18pt;
-}
-
-table.order-sheet tr td {
-  border-bottom: 0.25pt solid #394047;
-}
-
-table.order-sheet tr:first-child td {
-  border-bottom: 0.5pt solid #0d0a0b;
-}
-
-table.order-sheet td {
-  width: 32%;
-  padding: 5px;
-  text-align: right;
-}
-
-table.order-sheet td:first-child {
-  text-align: left;
-  width: 36%;
-}
-
-.disclaimer {
-  padding-top: 2mm;
-}
-
-.reusable-stacy {
-  padding-top: 4mm;
-}
-
-.reusable-stacy div#box {
-  display: inline-block;
-  position: relative;
-  top: 0.25em;
-  width: 1.125em;
-  height: 1.125em;
-  border: 0.25pt solid #394047;
+.grayed-out {
+  color: #838d9b;
 }
