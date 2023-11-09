@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://zeiss.com/med/cataract/schemas/order-sheet/1/0/warnings",
+  "title": "Root Schema",
+  "description": "The root schema is the schema that comprises the entire JSON document.",
+  "type": "object",
+  "required": [
+    "common",
+    "od",
+    "os"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "common": {
+      "title": "The common Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "object",
+      "required": [
+        "warnings"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "warnings": {
+          "title": "The warnings Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "additionalItems": false,
+          "items": {
+            "title": "A Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "od": {
+      "title": "The od Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "object",
+      "required": [
+        "warnings"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "warnings": {
+          "title": "The warnings Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "additionalItems": false,
+          "items": {
+            "title": "A Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "os": {
+      "title": "The os Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "type": "object",
+      "required": [
+        "warnings"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "warnings": {
+          "title": "The warnings Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "additionalItems": false,
+          "items": {
+            "title": "A Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

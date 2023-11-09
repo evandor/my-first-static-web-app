@@ -1,0 +1,236 @@
+{
+  "header": {
+    "patient": {
+      "mrm": "123",
+      "name1": "Mr. Heinz Huber (PN1)",
+      "name2": "Mr. Heinz Huber (PN2)",
+      "dateOfBirth": "1945-10-09",
+      "gender": "male"
+    },
+    "institution": {
+      "name": "Sacred Heart",
+      "department": "Surgery",
+      "addressLine1": "Medical Street 123",
+      "addressLine2": "Address line 2",
+      "city": "San Francisco",
+      "zipCode": "93402",
+      "state": "California",
+      "country": "United States of America",
+      "phoneNumber": "+19111234567",
+      "emailAddress": "emergency@sacredheard.org"
+    }
+  },
+  "footer": {
+    "versionString": "1.0",
+    "creationDateTime": "2022-12-27 9:31",
+    "creationDateTimeSuffix": "am",
+    "userFirstName": "Sieglinde",
+    "userLastName": "Meier"
+  },
+  "surgeryPlan" : {
+    "laterality": "OD",
+    "lateralityDescription": "Right Eye",
+    "planApprovalState": "Plan not approved",
+    "procedure": {
+      "summary": "Cataract extraction with IOL - 1st eye",
+      "subtype": "ECCE",
+      "supplemental": {
+        "procedure": "iStent inject (no code)",
+        "techniques": "Suture fixation of IOL (Yamane)"
+      },
+      "specialNeeds": "None"
+    },
+    "surgeryInfo" : {
+      "day" : "2022-12-28",
+      "facility": "West Texas ASC Lorem ipsum dolor",
+      "surgeon": "Frodo Baggins",
+      "anesthesia": "Topical"
+    },
+    "concerns" : {
+      "lensStatus" : "Phakic",
+      "priorRefractiveSurgery": "LASIK or PRK - hyperopic",
+      "diabetes" : "No",
+      "keratoconus" : "Yes",
+      "medication" : "None",
+      "allergy" : "Latex",
+      "other" : "None"
+    },
+    "toricLens": true,
+    "recommended" : {
+      "iol" : {
+        "name": "ZEISS AT LISA tri toric 949MP",
+        "predictedRefraction": "-0.24 +0.41 x 5° (SE -0.03)",
+        "formulaUsed": "Z CALC | Total Keratometry",
+        "targetRange": "Intermediate",
+        "targetSe": "-1.75 D",
+        "netAstigmatism" :
+        {
+          "cylinder" : "+0.10",
+          "axis": "16°"
+        }
+      },
+      "iols" : [
+        {
+          "favored" : false,
+          "nonToric" : {
+            "se": "+21.00",
+            "resRefSe": "-0.20"
+          },
+          "toric" : {
+            "cylinderLabel" : "",
+            "cylinder": "+2.25",
+            "axis" : "16°",
+            "resRefCylinder" : "+0.10",
+            "resRefAxis" : "111°",
+            "resRefAxisFlip" : false
+          }
+        },
+        {
+          "favored" : true,
+          "nonToric": {
+            "se": "+20.50",
+            "resRefSe": "+0.45"
+          },
+          "toric": {
+            "cylinderLabel": "",
+            "cylinder": "+2.00",
+            "axis": "111°",
+            "resRefCylinder": "+0.10",
+            "resRefAxis": "21°",
+            "resRefAxisFlip": false
+          }
+        },
+        {
+          "favored" : false,
+          "nonToric" : {
+            "se": "+20.00",
+            "resRefSe": "+0.45"
+          },
+          "toric" : {
+            "cylinderLabel": "",
+            "cylinder": "+1.50",
+            "axis": "35°",
+            "resRefCylinder": "+0.15",
+            "resRefAxis": "25°",
+            "resRefAxisFlip": false
+          }
+        }
+      ]
+    },
+    "arcuateIncisions" : "000° @ 000°, 000° @ 000°, 000 µm / 000 %",
+    "backupIols" : [
+      {
+        "location" : "Capsular bag",
+        "model" : "Tecnis ZCB00",
+        "power" : "+25.50",
+        "predictedSE" : "-1.79",
+        "available" : "false"
+      },
+      {
+        "location" : "Sulcus (adjusted)",
+        "model" : "CT LUCIA 602",
+        "power" : "+23.50",
+        "predictedSE" : "-1.87",
+        "available" : "false"
+      },
+      {
+        "location" : "Anterior Chamber",
+        "model" : "MTA 4UO",
+        "power" : "+21.50",
+        "predictedSE" : "-1.85",
+        "available" : "false"
+      }
+    ],
+    "biometry" : {
+      "keratometry" : {
+        "astigmatism" : "+0.22",
+        "astigmatismAxis" : "106",
+        "cornealRadius" : "4.00",
+        "r1" : "7.97",
+        "r1Axis" : "0",
+        "r2" : "7.83",
+        "r2Axis" : "100"
+      },
+      "totalKeratometry" : {
+        "astigmatism" : "+0.16",
+        "astigmatismAxis" : "142",
+        "cornealRadius" : "7.95",
+        "r1" : "7.97",
+        "r1Axis" : "0",
+        "r2" : "7.83",
+        "r2Axis" : "100"
+      },
+      "axialLength" : "22.86",
+      "anteriorChamberDepth" : "3.06",
+      "lensThickness" : "4.06",
+      "centralCorneaThickness" : "416",
+      "whiteToWhite" : "12.10",
+      "pupil" : "12.40",
+      "alphaCartesianX" : "0.4",
+      "alphaCartesianY" : "0.5",
+      "kappaCartesianX" : "-0.2",
+      "kappaCartesianY": "-0.4",
+      "acquisitionDate" : "2020-02-12",
+      "refractiveIndex" : "1.3375"
+    },
+    "preOpRefraction" : "+0.24 + 0.25 x 000° (20/16)",
+    "averageAnteriorCornealPower" : "43.83 D"
+  },
+  "imprint": {
+    "copyright": "Carl Zeiss Meditec AG - Copyright {0} All rights reserved."
+  },
+  "refractionUnitInDpt": false,
+  "commonWarnings": [
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!",
+    "Ough, lens could not be calculated!"
+  ]
+}

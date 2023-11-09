@@ -1,0 +1,85 @@
+{% comment %}
+- Description: Partial for the header of the report
+- Parameters:
+- model: data model for the header 
+- i18n access to the i18n properties  
+- documentTitle: title of the report
+- compact: flag indicating, if the warning indication should be displayed in compact or non-compact fashion
+- displayWarningReference: flag indicating if a warning indication should be displayed 
+- hasWarnings: flag indicating if warnings are present or not
+{% endcomment %}
+<section class="headerSection">
+  <div class="patientDetailsHeader">
+    <div class="headline subheadline3">{{ documentTitle | default: "&#160;" }}</div> 
+    {%- comment -%} <div class="headline h1">{{ model.patient.name1 | default: "&#160;" }}</div> {%- endcomment -%}
+    <table class="patient-details">
+
+      <tr>
+        <td class="label1">
+          {% if model.patient.name1 or model.patient.name2 %}
+            {{ i18n.header.patient.label }}
+          {% else %}
+            {{ "&#160;" }}{% endif %}
+        </td>
+        <td class="patientName subheadline3">
+          <div class="ellipsis">{{ model.patient.name1 | default: "&#160;" }}</div>
+        </td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td class="patientName2 subheadline3">
+          <div class="ellipsis">{{ model.patient.name2 | default: "&#160;" }}</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label1">{{ i18n.header.date_of_birth }}</td>
+        <td>{{ model.patient.dateOfBirth | format_date: i18n.header.date_format_date_of_birth | default: "&#160;" }}</td>
+      </tr>
+      <tr>
+        <td class="label1">{{ i18n.header.gender | default: "&#160;" }}</td>
+        <td>{{ model.patient.gender | default: "&#160;" }}</td>
+      </tr>
+      <tr>
+        <td class="label1">{{ i18n.header.patient.mrm | default: "&#160;" }}</td>
+        <td colspan="3">{{ model.patient.mrm | default: "&#160;" }}</td>
+      </tr>{% comment %} 
+      {% unless compact %}
+        <tr>
+          {% if displayWarningReference and hasWarnings %}
+            <td colspan="2">{% render "partials/header/warning-hint", icon_small: true, message: i18n.warning.second_page %}</td>
+          {% endif %}
+        </tr>
+        <tr>
+          {% unless displayWarningReference and hasWarnings %}
+            <td colspan="2" class="label1 headerWarningSection"></td>
+          {% endunless %}
+        </tr>
+      {% endunless %}{% endcomment %}
+    </table>
+  </div>
+  <div class="institutionDetailsHeader">
+    <div class="institution-logo">
+      {% comment %} reserved space for institution logo {% endcomment %}
+      &#160;
+    </div>
+    <div class="institution-details">
+      <div class="institutionName body2">{{ model.institution.name | default: "Institution name" }}</div>
+      {% if compact and displayWarningReference and hasWarnings %}
+        {% render "warning-hint", icon_small: false, message: i18n.warning.all_pages %}
+      {% endif %}
+      {% unless compact %}
+        <div class="department">{{ model.institution.department | default: "Department" }}</div>
+        <div class="addressLine1">{{ model.institution.addressLine1 | default: "Address line 1" }}</div>
+        {% comment %}
+        <div class="addressLine2">{{ model.institution.addressLine2 | default: "Address line 2" }}</div>
+        {% endcomment %}
+        <div class="addressLine3">{{ i18n.header.addressLine3 | format_string: model.institution.zipCode, model.institution.city, model.institution.state }}</div>
+        {% comment %}
+        <div class="country">{{ model.institution.country | default: "Country" }}</div>
+        {% endcomment %}
+        <div class="phoneNumber">{{ model.institution.phoneNumber | default: "++0049 123 1234567" }}</div>
+        <div class="emailAddress">{{ model.institution.emailAddress | default: "emergency@sacredheart.org" }}</div>
+      {% endunless %}
+    </div>
+  </div>
+</section>

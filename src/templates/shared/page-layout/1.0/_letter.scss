@@ -1,0 +1,20 @@
+// definition of the width of the page width that corresponds to the defined page format and page orientation
+$czm-page-width: 215.9mm;
+// definition of the height of the page that corresponds to the defined page format and page orientation
+$czm-page-height: 279.4mm;
+// definition of the page format
+$czm-page-format: $czm-page-width $czm-page-height;
+// definition of the height of the page header. This value does not include the vertical page margins
+$czm-page-header-height: 34.4mm;
+// definition of the height of the page footer. This value does not include the vertical page margins
+$czm-page-footer-height: 18.5mm;
+// definition of the page margins
+$czm-page-margin: 12mm;
+// definition of the page top padding
+$czm-page-padding-top: 0mm;
+// definition of the page left padding
+$czm-page-padding-left: 10.9mm; // page padding left + page margin left = style guide left page margin = 18mm
+// definition of the page right padding
+$czm-page-padding-right: 2mm; // page padding right + page margin right = style guide right page margin = 10mm
+// definition of the page bottom padding
+$czm-page-padding-bottom: 0mm;

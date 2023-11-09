@@ -1,0 +1,475 @@
+@import "../../shared/zui-base-style/1.0/assets/css/colors";
+@import "../../shared/zui-base-style/1.0/assets/css/borders";
+@import "../../shared/zui-base-style/1.0/assets/css/fonts";
+
+.h1 {
+  line-height: 18pt;
+  /* to match the font size if h1 needed*/
+
+}
+
+/* Used for sens */
+.h3 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 14pt;
+}
+
+main {
+  overflow: hidden !important;
+  /*Test um Scrollbalken zu verhindern*/
+}
+
+
+table {
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0.5mm 0;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.flex-spacer {
+  flex: auto;
+}
+
+.column {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-2 {
+  width: 89.86mm;
+  /** 180mm (page width) /2 - 1x thin border (center line) */
+  min-height: 1pt;
+  /** force height for empty column */
+}
+
+// Two column layout with 10mm gap
+.flexbox-2 {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 10mm;
+  margin: 1.5mm 0;
+  padding: 2mm 0;
+
+  >div {
+    flex: 50%;
+
+    table {
+      width: 100%;
+
+      th {
+        text-align: left;
+      }
+
+      th.align-right {
+        text-align: right;
+      }
+    }
+  }
+
+  &.iol-calc {
+    column-gap: 5mm;
+    margin: 3mm 0 0;
+    padding: 0;
+
+    table {
+      border-bottom: $divider-gs120;
+
+      th {
+        padding: 0.6mm 0;
+        border-bottom: $divider-gs120;
+        border-top: $divider-default;
+      }
+    }
+
+  }
+
+}
+
+.flexbox-3 {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 10mm;
+  margin: 0;
+  padding: 0;
+
+  >div {
+    flex: 33%;
+
+  }
+}
+
+.margin-3 {
+  margin: 3mm 0;
+}
+
+
+// E.g. Procedure block
+.data-table-2-col {
+
+  .subheadline2 {
+    padding: 1.5mm 0;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 1.5mm;
+
+    td {
+      width: 50%;
+      text-align: right;
+      padding: 0.5mm 0;
+    }
+
+    td:first-child {
+      text-align: left;
+      @extend .label1;
+    }
+  }
+}
+
+// Smaller column for availability
+.data-table-3-col {
+  table {
+    width: 100%;
+
+    td,
+    th {
+      width: 40%;
+    }
+
+    td:last-child,
+    th:last-child {
+      width: 20%;
+      text-align: right;
+    }
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-top: 1.5mm;
+  /* reduce the specified gap of 3mm to 1.5mm to compensate for unprinted ascenders of section headline */
+  border-bottom: $divider-gs120;
+  border-top: $divider-default;
+  padding: 1.2mm 0 1mm;
+}
+
+.approved-banner {
+  text-align: center;
+  text-transform: uppercase;
+
+  >span {
+    display: inline-block;
+    border: 1pt solid $gs120;
+    padding: 1.5mm 2.5mm;
+  }
+
+}
+
+.bordertop {
+  border-top: $divider-default;
+}
+
+.borderbottom {
+  border-bottom: $divider-default;
+}
+
+.check-box img {
+  width: 3mm;
+  height: 3mm;
+}
+
+
+/*
+.content {
+    max-height: 206.5mm;*/
+/* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+/*        font-size: 8pt;
+    }
+*/
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}
+
+.grayed-out {
+  color: $gs80;
+}
+
+.disclaimer {
+  padding-top: 2mm;
+}
+
+.reusable-stacy {
+  padding-top: 4mm;
+
+  div#box {
+    display: inline-block;
+    position: relative;
+    top: 0.25em;
+    width: 1.125em;
+    height: 1.125em;
+    border: $divider-default;
+  }
+}
+
+
+
+.table-separator {
+  border-bottom: $divider-default;
+  border-collapse: collapse;
+}
+
+.border-thin-right {
+  border-right: $divider-default;
+  border-collapse: collapse;
+}
+
+.border-thin-left {
+  border-left: $divider-default;
+  border-collapse: collapse;
+}
+
+
+
+/* Used for table with margin and border, e.g. Eye status and Biometry */
+.data-table {
+  border-bottom: $divider-default;
+
+  >div {
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    padding: 0 5mm;
+  }
+
+  /* right side */
+  >div:nth-child(1) {
+    padding-left: 0;
+  }
+
+  /* left side */
+  >div:nth-child(2) {
+    padding-right: 0;
+  }
+
+  >div.column-2 {
+    width: 50%;
+    /*Test*/
+    /* 87.86mm 88.36mm = 89.9mm (side width) - 1.5mm (middle padding) - 1px border (1px = 0,04‬) */
+  }
+
+}
+
+
+
+div.calculation-result {
+
+  >table {
+    border-bottom: $divider-default;
+    margin-top: 1.0mm;
+    padding-bottom: 1.5mm;
+
+    td {
+      vertical-align: top;
+    }
+
+    min-height: 202mm; // to ensure that middle line goes down until end of content area
+
+    &:nth-of-type(1) {
+      min-height: 128mm; //reduced height for first page
+    }
+
+  }
+
+  div.result-section-container {
+    box-sizing: border-box;
+  }
+
+  div.result-section-od,
+  div.result-section-os {
+    display: inline-block;
+    height: 42.0mm;
+
+    margin-top: 1.0mm;
+    /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+
+    &.spheric {
+      width: 27.7mm;
+      /* max value to display three spheric result sections in one line with a gap of 2mm */
+    }
+
+    &.toric {
+      width: 87.1mm;
+      /* 3 x sphericWidth + 2 x (margin-x-spheric) */
+    }
+  }
+
+  div.result-section-od {
+    margin-right: 2mm;
+  }
+
+  div.result-section-os {
+    margin-left: 2mm;
+  }
+}
+
+
+
+
+// page breaks would happen also without but to avoid cases where the OD-OS header would just fit on the previous page
+// we make here explicit page breaks before the OD-OS header of the next page
+.calculation-result .od-os-section-header {
+  page-break-before: always;
+}
+
+
+/* horizontal gap between CCT and Ast. K */
+tr.spaceUnder>td {
+  padding-bottom: 3.0mm;
+}
+
+/* default gap if not others gap applies */
+table.innerTable tr td {
+  padding-right: 1.0mm;
+}
+
+/* gap after labels */
+table.innerTable tr td:first-child {
+  padding-right: 3.0mm;
+}
+
+/* no gap between value and degree, e.g. 42° */
+table.innerTable tr td:nth-child(5) {
+  padding-right: 0;
+}
+
+td.paddingLeft {
+  padding-left: 1.0mm;
+}
+
+/* table biometry */
+table.biometry {
+  white-space: nowrap;
+
+  td:first-child {
+    padding-right: 8.0mm;
+  }
+
+  td:first-child table.innerTable td:first-child {
+    min-width: 14.0mm;
+    max-width: 14.0mm;
+  }
+
+  td:nth-child(2) table.innerTable td:first-child {
+    min-width: 14.0mm;
+    max-width: 14.0mm;
+  }
+
+}
+
+
+
+// date-of-measurement-line with a gap after n
+.date-of-measurement-line {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 2.0mm;
+
+  .left {
+    float: left;
+    text-align: left;
+
+    span:first-child {
+      padding-right: 1.5mm;
+    }
+  }
+
+  .right {
+    float: right;
+    text-align: right;
+
+    span:first-child {
+      padding-right: 3.0mm;
+    }
+  }
+}
+
+// simple left and right aligned line e. g. Pre-op refraction 
+.simple-line {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5mm 0;
+
+  .left {
+    float: left;
+    text-align: left;
+  }
+
+  .right {
+    float: right;
+    text-align: right;
+  }
+}
+
+
+
+
+// Unused
+
+.od-os-section-header {
+
+  padding-bottom: -0.5mm;
+
+  >* {
+    display: inline-block;
+  }
+
+  .h3 {
+    // new style
+    margin: 0 0.5mm;
+  }
+
+  .left {
+    float: left;
+    width: 140pt;
+    text-align: left;
+  }
+
+  >span {
+    position: relative;
+    border: 1pt solid $gs120;
+    padding: 1.5mm 2.5mm;
+  }
+
+  .right {
+    float: right;
+    width: 140pt;
+    text-align: right;
+  }
+}
+
+#leftBiometryValues,
+#rightBiometryValues {
+  margin-top: 2mm;
+  /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+  margin-bottom: 2mm;
+  /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+  padding-top: 0;
+  padding-bottom: 0;
+  /*min-height: 33mm;*/
+}

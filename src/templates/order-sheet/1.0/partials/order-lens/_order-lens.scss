@@ -1,0 +1,65 @@
+@import "../../../../shared/zui-base-style/1.0/assets/css/borders";
+
+
+.column {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+h1 {
+    line-height: 18pt; */
+/* to match the font size */
+/*
+}
+*/
+table.order-sheet {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr:first-child {
+    line-height: 18pt
+  }
+
+  tr td {
+    border-bottom: $divider-default;
+  }
+
+  tr:first-child td {
+    border-bottom: $divider-gs120 ;
+  }
+
+  td {
+    width: 32%;
+    padding: 5px;
+    text-align: right;
+  }
+
+  td:first-child {
+    text-align: left;
+    width: 36%;
+  }
+}
+
+.disclaimer {
+  padding-top: 2mm;
+}
+
+.reusable-stacy {
+  padding-top: 4mm;
+
+  div#box {
+    display: inline-block;
+    position: relative;
+    top: 0.25em;
+    width: 1.125em;
+    height: 1.125em;
+    border: $divider-default;
+  }
+}

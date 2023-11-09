@@ -1,0 +1,455 @@
+// ID Test um Scrollbalken zu verhindern
+// main {
+//overflow: hidden !important;
+//}
+
+table {
+  border-spacing: 0;
+}
+
+// ID Styles for all content tables - th with border, last column right-aligned
+main {
+  table {
+    width: 100%;
+
+    td,
+    th {
+      padding: 0.5mm 0;
+      text-align: left;
+
+      &:last-child {
+        text-align: right;
+        padding-right: 0;
+      }
+    }
+
+    th {
+      @extend .label1;
+      padding: 0.6mm 0;
+      border-bottom: $divider-default;
+      border-top: $divider-default;
+    }
+  }
+}
+
+
+// ID Reusable 
+main {
+  .align-right {
+    text-align: right;
+  }
+
+  .highlighted-text,
+  tr.highlighted-text>td {
+    font-weight: 700;
+  }
+
+  .subheadline1 {
+    padding: 0.5mm 0 2mm;
+  }
+
+  .flex-spacer {
+    flex: auto;
+  }
+
+  .spacer-sizeXS {
+    margin-top: 2mm;
+  }
+
+  .spacer-sizeS {
+    margin-top: 3mm;
+  }
+
+  .spacer-sizeM {
+    margin-top: 4mm;
+  }
+
+  .bordertop {
+    border-top: $divider-default;
+  }
+
+  .borderbottom {
+    border-bottom: $divider-default;
+  }
+}
+
+// ID Two column layout with 10mm gap
+.flexbox-2 {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 10mm;
+  margin: 0;
+  padding: 2mm 0;
+
+  >div {
+    flex: 50%;
+  }
+
+}
+
+// ID Section header one eye
+.od-os-section-header1 {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 10mm;
+  margin: 0;
+  padding: 0 0 2mm;
+
+  >div {
+    flex: 33%;
+  }
+
+  .h1 {
+    padding-right: 1.5mm;
+  }
+}
+
+.data-table-1 {
+
+  td:first-child {
+    @extend .label1;
+  }
+}
+
+// ID Small Tables in IOL Calculations 
+.data-table-2 {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 5mm;
+  margin: 1.5mm 0 0;
+  padding: 0;
+
+  table {
+    border-bottom: $divider-default;
+
+    td {
+      text-align: right;
+
+      &:first-child {
+        text-align: left;
+      }
+    }
+  }
+}
+
+// ID Large table Backup IOL with gap
+.data-table-3 {
+  table {
+
+    td,
+    th {
+      width: 25%;
+
+      &:nth-child(3) {
+        width: 20%;
+        padding-left: 5mm;
+      }
+
+      &:nth-child(4) {
+        width: 20%;
+      }
+
+      &:last-child {
+        width: 10%;
+        text-align: right;
+      }
+    }
+  }
+}
+
+// ID Table Measurements 
+table.measurements {
+  white-space: nowrap;
+  margin-top: 2mm;
+
+  >tbody>tr>td {
+    width: 25%;
+    padding-right: 3.0mm;
+
+    &:nth-child(2) {
+      padding-right: 5.0mm;
+    }
+
+    &:nth-child(3) {
+      padding-left: 5.0mm;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      text-align: right;
+    }
+
+    table.innerTable {
+      width: auto;
+
+      td:first-child {
+
+        min-width: 13.0mm;
+        max-width: 13.0mm;
+      }
+    }
+  }
+
+  td.caption {
+    padding-top: 1mm;
+    text-align: left;
+    white-space: nowrap;
+
+    span:first-child {
+      padding-right: 1.5mm;
+    }
+  }
+
+}
+
+// ID simple left and right aligned line e. g. Pre-op refraction 
+.simple-line {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5mm 0;
+  line-height: 10pt;
+
+  >span {
+    float: left;
+    text-align: left;
+
+    &:last-child {
+      float: right;
+      text-align: right;
+    }
+
+    &:first-child {
+      @extend .label1;
+    }
+  }
+
+  &.highlighted-text>span {
+    font-weight: 700;
+  }
+
+
+}
+
+// ID
+.section-header {
+  text-align: center;
+  margin: 3mm 0 0;
+  border-top: $divider-default;
+  border-bottom: $divider-default;
+  padding: 1.2mm 0 1.4mm;
+  @extend .subheadline2;
+}
+
+// ID
+.approval-banner {
+  text-align: center;
+  text-transform: uppercase;
+
+  >span {
+    display: inline-block;
+    border: 2pt solid $gs120;
+    padding: 1.5mm 2.5mm;
+    @extend .body1;
+  }
+}
+
+// ID
+.iol {
+  .h2 {
+    padding: 0.5mm 0;
+  }
+
+  .subheadline3 {
+    padding: 1.5mm 0 3mm;
+  }
+}
+
+.check-box img {
+  width: 3mm;
+  height: 3mm;
+}
+
+.eye_img {
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 5mm;
+
+  img {
+    height: 31mm;
+  }
+}
+
+
+
+/*
+.content {
+    max-height: 206.5mm;*/
+/* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+/*        font-size: 8pt;
+    }
+*/
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}
+
+.grayed-out {
+  color: $gs80;
+}
+
+.disclaimer {
+  padding-top: 2mm;
+}
+
+.reusable-stacy {
+  padding-top: 4mm;
+
+  div#box {
+    display: inline-block;
+    position: relative;
+    top: 0.25em;
+    width: 1.125em;
+    height: 1.125em;
+    border: $divider-default;
+  }
+}
+
+
+
+/* horizontal gap between CCT and Ast. K */
+tr.spaceUnder>td {
+  padding-bottom: 3.0mm;
+}
+
+/* default gap if not others gap applies */
+table.innerTable tr td {
+  padding-right: 1.0mm;
+}
+
+/* gap after labels */
+table.innerTable tr td:first-child {
+  padding-right: 3.0mm;
+}
+
+/* no gap between value and degree, e.g. 42° */
+table.innerTable tr td:nth-child(5) {
+  padding-right: 0;
+}
+
+td.paddingLeft {
+  padding-left: 1.0mm;
+}
+
+
+
+// date-of-measurement-line with a gap after n 
+.date-of-measurement-line {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 2.0mm;
+
+  .left {
+    float: left;
+    text-align: left;
+
+    span:first-child {
+      padding-right: 1.5mm;
+    }
+  }
+
+  .right {
+    float: right;
+    text-align: right;
+
+    span:first-child {
+      padding-right: 3.0mm;
+    }
+  }
+}
+
+
+
+
+
+
+// Unused
+
+.column {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-2 {
+  width: 89.86mm;
+  /** 180mm (page width) /2 - 1x thin border (center line) */
+  min-height: 1pt;
+  /** force height for empty column */
+}
+
+.od-os-section-header {
+
+  padding-bottom: -0.5mm;
+
+  >* {
+    display: inline-block;
+  }
+
+  .h3 {
+    // new style
+    margin: 0 0.5mm;
+  }
+
+  .left {
+    float: left;
+    width: 140pt;
+    text-align: left;
+  }
+
+  >span {
+    position: relative;
+    border: 1pt solid $gs120;
+    padding: 1.5mm 2.5mm;
+  }
+
+  .right {
+    float: right;
+    width: 140pt;
+    text-align: right;
+  }
+}
+
+#leftBiometryValues,
+#rightBiometryValues {
+  margin-top: 2mm;
+  /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+  margin-bottom: 2mm;
+  /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+  padding-top: 0;
+  padding-bottom: 0;
+  /*min-height: 33mm;*/
+}
+
+.table-separator {
+  border-bottom: $divider-default;
+  border-collapse: collapse;
+}
+
+.border-thin-right {
+  border-right: $divider-default;
+  border-collapse: collapse;
+}
+
+.border-thin-left {
+  border-left: $divider-default;
+  border-collapse: collapse;
+}

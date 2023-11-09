@@ -1,0 +1,22 @@
+@import '../../../../shared/page-layout/1.0/_letter';
+@import '../../../../shared/page-layout/1.0/_letter-page';
+
+// you can overwrite the following variables listed here.  
+// - $czm-debug-mode: [true,false] true=header, footer & main will be visualized with a background color
+// - $czm-page-header-height: [e.g. 50mm] need to use millimeter, 
+// - $czm-page-footer-height: [e.g. 27.5mm] you need to use millimeter
+// DO NOT OVERWRITE ANY OF THE OTHER variables as they define the DIN-A4 layout
+$czm-debug-mode: true;
+
+@include set-format(
+                $czm-page-format,
+                $czm-page-width,
+                $czm-page-height,
+                $czm-page-header-height,
+                $czm-page-footer-height,
+                $czm-page-margin,
+                $czm-page-padding-top,
+                $czm-page-padding-left,
+                $czm-page-padding-right,
+                $czm-page-padding-bottom,
+                $czm-debug-mode);

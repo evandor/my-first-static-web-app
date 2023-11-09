@@ -1,0 +1,35 @@
+{% comment %}
+- Description: Sub-partial for warnings on a separate page. Therefore the complete page content (main) is 
+  provided by this partial. Please note the flat structure of the child elements of the main element 
+  (h2 and div.warning-rows). Both elements are layouted as block (display: block) and their heights are defined rigidly 
+  with min-/max-heights. The div elements inside are layouted as inside-block (display: inside-block). The latter is 
+  important, so it is ensured that the elements inside of the h2 or div.warning-rows elements do not change the rigid 
+  boundaries. These measures take care that the warning elements can be layouted dynamically via java-script (split 
+  warning messages across multiple pages if there are to many messages for one page).   
+- Parameters:
+  - common-warnings: string array containing common warnings
+  - od-warnings: string array containing warnings for the OD eye
+  - os-warnings: string array containing warnings for the OS eye
+  - i18n: access to the i18n properties  
+{% endcomment %}
+{% unless common-warnings == empty and od-warnings == empty and os-warnings == empty %}
+    <h3 class="warnings-header">{{ i18n.warning.header }}</h3>
+    {% for warning in common-warnings %}
+        <div class="warning-row">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning_small.svg" alt="!"/>
+            <div class="warnings2 label2">{{ warning }}</div>
+        </div>
+    {% endfor %}
+    {% for warning in od-warnings %}
+        <div class="warning-row">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning_small.svg" alt="!"/>
+            <div class="warnings2 label2">{{ warning }}</div>
+        </div>
+    {% endfor %}
+    {% for warning in os-warnings %}
+        <div class="warning-row">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning_small.svg" alt="!"/>
+            <div class="warnings2 label2">{{ warning }}</div>
+        </div>
+    {% endfor %}
+{% endunless %}

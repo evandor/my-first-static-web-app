@@ -1,0 +1,78 @@
+{
+  "enum": {
+    "AnteriorChamberDepthMeasurementSource": [
+      {
+        "name": "ENDOTHELIUM",
+        "value": "Endothelium"
+      },
+      {
+        "name": "EPITHELIUM",
+        "value": "Epithelium"
+      }
+    ]
+  },
+  "footer": {
+    "comment": "Comment",
+    "date_format_printed": "g",
+    "date_format_surgery": "d",
+    "page_number": "Page {0} of {1}",
+    "page": "Page",
+    "of": "of",
+    "printed_by": "Created on {0} by {1}, {2}",
+    "signature": "Signature"
+  },
+  "imprint": {
+    "copyright": "Carl Zeiss Meditec AG - Copyright {0} All rights reserved."
+  },
+  "header": {
+    "addressLine3": "{0} {1} {2}",
+    "date_format_date_of_birth": "d",
+    "date_of_birth": "Date of birth",
+    "doctor": "Surgeon",
+    "gender": "Gender",
+    "patient": {
+      "label": "Patient",
+      "mrm": "MRM"
+    }
+  },
+  "surgery_plan": {
+    "surgery_info": {
+      "day_date_format": "d"
+    }
+  },
+  "order": {
+    "acd": "Anterior chamber depth",
+    "axial_length": "Axial length",
+    "disclaimer": "Disclaimer",
+    "disclaimer_text": "The order request is based on a non-binding recommendation. I have accepted the Terms and Conditions of use of the ZEISS product that generated this order request. The recommendation is merely an approximate value on the basis of general experience and a calculation algorithm and I have verified it on the basis of my specialist expertise. The order request and a resulting order are based on the General Terms and Conditions of Carl Zeiss Meditec AG that I was able to access online at https://www.zeiss.com/meditec/us/imprint/terms-and-conditions.html.",
+    "elp": "ELP",
+    "from_acd_measurement_source": "from {0}",
+    "incision_orientation": "Incision orientation",
+    "iol_name": "IOL",
+    "keratometry_cyl": "Ast. K",
+    "keratometry_cyl_tk": "Ast. TK",
+    "keratometry_n": "Keratometric index",
+    "left_os": "OS",
+    "order_request": "Surgery Planner Report",
+    "order_reusable_stacy": "Order reusable STACY",
+    "plan_creation_date": "Plan created on",
+    "plan_creation_date_format": "d",
+    "plan_creator": "Plan created by",
+    "quantity": "Order quantity",
+    "residual_refraction": "Predicted outcome (SE / Sph / Cyl / Axis)",
+    "right_od": "OD",
+    "sia_effect": "SIA",
+    "surgeon": "Surgeon",
+    "surgery_date": "Surgery date",
+    "surgery_date_date_format": "d",
+    "target_refraction_se": "Target refraction (SE)"
+  },
+  "unit": {
+    "dpt": "D"
+  },
+  "warning": {
+    "all_pages": "Observe further warning notes on all pages!",
+    "second_page": "Observe further warning notes on page 2 ff.",
+    "header": "Warnings"
+  }
+}

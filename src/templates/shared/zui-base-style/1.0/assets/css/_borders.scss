@@ -1,0 +1,13 @@
+@import 'colors';
+
+/* used as standard separator in sections and tables */
+// ID $divider-sizeS
+$divider-default: 0.25pt solid $gs100;
+
+/* used for footer comment box border */
+// ID $divider-sizeM
+$divider-default-gs120: 0.25pt solid $gs120;
+
+/* only used for at the beginning of a new section */
+// ID divider-sizeL - not used for Surgery Planner
+$divider-gs120: 0.5pt solid $gs120;

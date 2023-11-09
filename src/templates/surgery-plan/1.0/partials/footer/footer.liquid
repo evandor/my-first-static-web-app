@@ -1,0 +1,47 @@
+{% comment %}
+- Description: Partial for the footer of the report
+- Parameters:
+  - model: data model for the footer 
+  - i18n access to the i18n properties  
+{% endcomment %}
+<section class="footer-section">
+    <section class="signature-section">
+        <div class="print-comment">
+            <div><span class="label2">{{ i18n.footer.comment }}</span></div>
+        </div>
+        <div class="signature">
+            <div><span class="label2">{{ i18n.footer.signature }}</span></div>
+        </div>
+        <!--div class="footer-spacer">&#160;</div-->
+        <div class="zeiss-logo">
+            <!--img src="{{ versionedReportBaseUrl }}/assets/images/ZEISS_logo.gif" alt="ZEISS logo"/-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+<path d="M80.0001 80C67.8053 74.5236 54.2555 71.4185 40.0283 71.4185C25.7445 71.4185 12.1948 74.4672 0 80V0H80.0001V80Z" fill="#0F2DB3"/>
+<path d="M9.59772 24.2205C5.81509 24.2205 5.5328 28.0031 5.5328 28.0031H3.72617V22.3574H17.7276C17.7276 22.3574 17.8405 26.7046 13.7191 31.3341C13.7191 31.3341 9.76709 35.9072 9.65418 37.9396H11.9125C15.187 37.9396 15.5257 34.157 15.5257 34.157H17.3888V39.8027H3.04868C3.04868 39.8027 2.54056 35.5119 7.5088 30.3179C7.5088 30.3179 10.5575 26.9304 11.2914 24.2205H9.59772Z" fill="white"/>
+<path d="M45.2215 39.8026V37.9395H44.7699C43.9795 37.9395 43.3584 37.3185 43.3584 36.5281V25.6318C43.3584 24.8414 43.9795 24.2204 44.7699 24.2204H45.2215V22.3573H35.9625V24.2204H36.4142C37.2046 24.2204 37.8256 24.8414 37.8256 25.6318V36.5281C37.8256 37.3185 37.2046 37.9395 36.4142 37.9395H35.9625V39.8026H45.2215Z" fill="white"/>
+<path d="M34.0438 39.8027V34.1569H32.1807C32.1807 34.1569 31.842 37.996 28.5675 37.996H26.7044V32.068H27.3819C28.1723 32.068 28.7933 32.6891 28.7933 33.4795V34.1569H30.6564V28.0596H28.7933V28.7935C28.7933 29.5839 28.1723 30.2049 27.3819 30.2049H26.7044V24.2769H28.5675C31.842 24.2769 32.1807 28.0596 32.1807 28.0596H34.0438V22.4138H19.252V24.2769H19.7037C20.4941 24.2769 21.1151 24.898 21.1151 25.6884V36.5846C21.1151 37.375 20.4941 37.996 19.7037 37.996H19.252V39.8591L34.0438 39.8027Z" fill="white"/>
+<path d="M54.9897 24.2204C58.7724 24.2204 59.0546 28.003 59.0546 28.003H60.8613V22.3573H47.4809C47.4809 22.3573 45.392 25.1237 50.8683 31.334C50.8683 31.334 54.8203 35.9071 54.8768 37.9395H52.6185C49.344 37.9395 49.0052 34.1569 49.0052 34.1569H47.1421V39.8026H60.6354C60.6354 39.8026 63.0631 37.1491 57.0222 30.3178C57.0222 30.3178 53.8606 27.0433 53.2395 24.2204H54.9897Z" fill="white"/>
+<path d="M70.6279 24.2204C74.3541 24.2204 74.6929 28.003 74.6929 28.003H76.4995V22.3573H63.1191C63.1191 22.3573 60.9737 25.1237 66.5065 31.334C66.5065 31.334 70.4586 35.9071 70.515 37.9395H68.2567C64.9822 37.9395 64.6434 34.1569 64.6434 34.1569H62.7804V39.8026H76.2737C76.2737 39.8026 78.7013 37.1491 72.6604 30.3178C72.6604 30.3178 69.4988 27.0433 68.8777 24.2204H70.6279Z" fill="white"/>
+</svg>
+        </div>
+    </section>
+
+    <section class="device-info-section caption">
+        <span>
+            {{ model.versionString }}
+        </span>
+        <span>
+            {%- capture creationDateTime %}{{ model.creationDateTime | format_date: i18n.footer.date_format_printed }}{% endcapture -%}
+            {{ i18n.footer.printed_by | format_string: creationDateTime, model.userFirstName, model.userLastName }}
+        </span>
+        <span class="flex-spacer"></span>
+        {% comment %} 
+        The span elements are placeholders. The values will be replaced by javascript when the document is loaded. 
+        See dynamic-page-layout.js in shared assets folder 
+        {% endcomment %}
+        <span class="page-number">
+            {{ i18n.footer.page }} <span class="current-page-no">0</span> {{ i18n.footer.of }} <span
+                    class="total-pages-no">0</span>
+        </span>
+    </section>
+</section>

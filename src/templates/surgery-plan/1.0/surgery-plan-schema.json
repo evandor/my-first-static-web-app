@@ -1,0 +1,765 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "title": "Root Schema",
+  "type": "object",
+  "default": {},
+  "required": [
+    "header",
+    "footer",
+    "surgeryPlan",
+    "imprint",
+    "refractionUnitInDpt",
+    "commonWarnings"
+  ],
+  "properties": {
+    "header": {
+      "title": "The header Schema",
+      "type": "object",
+      "default": {},
+      "required": [
+        "patient",
+        "institution"
+      ],
+      "properties": {
+        "patient": {
+          "title": "The patient Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "mrm",
+            "name1",
+            "name2",
+            "dateOfBirth",
+            "gender"
+          ],
+          "properties": {
+            "mrm": {
+              "title": "The mrm Schema",
+              "type": "string",
+              "default": ""
+            },
+            "name1": {
+              "title": "The name1 Schema",
+              "type": "string",
+              "default": ""
+            },
+            "name2": {
+              "title": "The name2 Schema",
+              "type": "string",
+              "default": ""
+            },
+            "dateOfBirth": {
+              "title": "The dateOfBirth Schema",
+              "type": "string",
+              "default": ""
+            },
+            "gender": {
+              "title": "The gender Schema",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "institution": {
+          "title": "The institution Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "name",
+            "department",
+            "addressLine1",
+            "addressLine2",
+            "city",
+            "zipCode",
+            "state",
+            "country",
+            "phoneNumber",
+            "emailAddress"
+          ],
+          "properties": {
+            "name": {
+              "title": "The name Schema",
+              "type": "string",
+              "default": ""
+            },
+            "department": {
+              "title": "The department Schema",
+              "type": "string",
+              "default": ""
+            },
+            "addressLine1": {
+              "title": "The addressLine1 Schema",
+              "type": "string",
+              "default": ""
+            },
+            "addressLine2": {
+              "title": "The addressLine2 Schema",
+              "type": "string",
+              "default": ""
+            },
+            "city": {
+              "title": "The city Schema",
+              "type": "string",
+              "default": ""
+            },
+            "zipCode": {
+              "title": "The zipCode Schema",
+              "type": "string",
+              "default": ""
+            },
+            "state": {
+              "title": "The state Schema",
+              "type": "string",
+              "default": ""
+            },
+            "country": {
+              "title": "The country Schema",
+              "type": "string",
+              "default": ""
+            },
+            "phoneNumber": {
+              "title": "The phoneNumber Schema",
+              "type": "string",
+              "default": ""
+            },
+            "emailAddress": {
+              "title": "The emailAddress Schema",
+              "type": "string",
+              "default": ""
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "title": "The footer Schema",
+      "type": "object",
+      "default": {},
+      "required": [
+        "versionString",
+        "creationDateTime",
+        "creationDateTimeSuffix",
+        "userFirstName",
+        "userLastName"
+      ],
+      "properties": {
+        "versionString": {
+          "title": "The versionString Schema",
+          "type": "string",
+          "default": ""
+        },
+        "creationDateTime": {
+          "title": "The creationDateTime Schema",
+          "type": "string",
+          "default": ""
+        },
+        "creationDateTimeSuffix": {
+          "title": "The creationDateTimeSuffix Schema",
+          "type": "string",
+          "default": ""
+        },
+        "userFirstName": {
+          "title": "The userFirstName Schema",
+          "type": "string",
+          "default": ""
+        },
+        "userLastName": {
+          "title": "The userLastName Schema",
+          "type": "string",
+          "default": ""
+        }
+      }
+    },
+    "surgeryPlan": {
+      "title": "The surgeryPlan Schema",
+      "type": "object",
+      "default": {},
+      "required": [
+        "laterality",
+        "lateralityDescription",
+        "planApprovalState",
+        "procedure",
+        "surgeryInfo",
+        "concerns",
+        "toricLens",
+        "recommended",
+        "arcuateIncisions",
+        "backupIols",
+        "biometry",
+        "preOpRefraction",
+        "averageAnteriorCornealPower"
+      ],
+      "properties": {
+        "laterality": {
+          "title": "The laterality Schema",
+          "type": "string",
+          "default": ""
+        },
+        "lateralityDescription": {
+          "title": "The lateralityDescription Schema",
+          "type": "string",
+          "default": ""
+        },
+        "planApprovalState": {
+          "title": "The planApprovalState Schema",
+          "type": "string",
+          "default": ""
+        },
+        "procedure": {
+          "title": "The procedure Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "summary",
+            "subtype",
+            "supplemental",
+            "specialNeeds"
+          ],
+          "properties": {
+            "summary": {
+              "title": "The summary Schema",
+              "type": "string",
+              "default": ""
+            },
+            "subtype": {
+              "title": "The subtype Schema",
+              "type": "string",
+              "default": ""
+            },
+            "supplemental": {
+              "title": "The supplemental Schema",
+              "type": "object",
+              "default": {},
+              "required": [
+                "procedure",
+                "techniques"
+              ],
+              "properties": {
+                "procedure": {
+                  "title": "The procedure Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "techniques": {
+                  "title": "The techniques Schema",
+                  "type": "string",
+                  "default": ""
+                }
+              }
+            },
+            "specialNeeds": {
+              "title": "The specialNeeds Schema",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "surgeryInfo": {
+          "title": "The surgeryInfo Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "day",
+            "facility",
+            "surgeon",
+            "anesthesia"
+          ],
+          "properties": {
+            "day": {
+              "title": "The day Schema",
+              "type": "string",
+              "default": ""
+            },
+            "facility": {
+              "title": "The facility Schema",
+              "type": "string",
+              "default": ""
+            },
+            "surgeon": {
+              "title": "The surgeon Schema",
+              "type": "string",
+              "default": ""
+            },
+            "anesthesia": {
+              "title": "The anesthesia Schema",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "concerns": {
+          "title": "The concerns Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "lensStatus",
+            "priorRefractiveSurgery",
+            "diabetes",
+            "keratoconus",
+            "medication",
+            "allergy",
+            "other"
+          ],
+          "properties": {
+            "lensStatus": {
+              "title": "The lensStatus Schema",
+              "type": "string",
+              "default": ""
+            },
+            "priorRefractiveSurgery": {
+              "title": "The priorRefractiveSurgery Schema",
+              "type": "string",
+              "default": ""
+            },
+            "diabetes": {
+              "title": "The diabetes Schema",
+              "type": "string",
+              "default": ""
+            },
+            "keratoconus": {
+              "title": "The keratoconus Schema",
+              "type": "string",
+              "default": ""
+            },
+            "medication": {
+              "title": "The medication Schema",
+              "type": "string",
+              "default": ""
+            },
+            "allergy": {
+              "title": "The allergy Schema",
+              "type": "string",
+              "default": ""
+            },
+            "other": {
+              "title": "The other Schema",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "toricLens": {
+          "title": "The toricLens Schema",
+          "type": "boolean",
+          "default": false
+        },
+        "recommended": {
+          "title": "The recommended Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "iol",
+            "iols"
+          ],
+          "properties": {
+            "iol": {
+              "title": "The iol Schema",
+              "type": "object",
+              "default": {},
+              "required": [
+                "name",
+                "predictedRefraction",
+                "formulaUsed",
+                "targetRange",
+                "targetSe",
+                "netAstigmatism"
+              ],
+              "properties": {
+                "name": {
+                  "title": "The name Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "predictedRefraction": {
+                  "title": "The predictedRefraction Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "formulaUsed": {
+                  "title": "The formulaUsed Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "targetRange": {
+                  "title": "The targetRange Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "targetSe": {
+                  "title": "The targetSe Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "netAstigmatism": {
+                  "title": "The netAstigmatism Schema",
+                  "type": "object",
+                  "default": {},
+                  "required": [
+                    "cylinder",
+                    "axis"
+                  ],
+                  "properties": {
+                    "cylinder": {
+                      "title": "The cylinder Schema",
+                      "type": "string",
+                      "default": ""
+                    },
+                    "axis": {
+                      "title": "The axis Schema",
+                      "type": "string",
+                      "default": ""
+                    }
+                  }
+                }
+              }
+            },
+            "iols": {
+              "title": "The iols Schema",
+              "type": "array",
+              "default": [],
+              "items": {
+                "title": "A Schema",
+                "type": "object",
+                "required": [
+                  "favored",
+                  "nonToric",
+                  "toric"
+                ],
+                "properties": {
+                  "favored": {
+                    "title": "The favored Schema",
+                    "type": "boolean"
+                  },
+                  "nonToric": {
+                    "title": "The nonToric Schema",
+                    "type": "object",
+                    "required": [
+                      "se",
+                      "resRefSe"
+                    ],
+                    "properties": {
+                      "se": {
+                        "title": "The se Schema",
+                        "type": "string"
+                      },
+                      "resRefSe": {
+                        "title": "The resRefSe Schema",
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "toric": {
+                    "title": "The toric Schema",
+                    "type": "object",
+                    "required": [
+                      "cylinderLabel",
+                      "cylinder",
+                      "axis",
+                      "resRefCylinder",
+                      "resRefAxis",
+                      "resRefAxisFlip"
+                    ],
+                    "properties": {
+                      "cylinderLabel": {
+                        "title": "The cylinderLabel Schema",
+                        "type": "string"
+                      },
+                      "cylinder": {
+                        "title": "The cylinder Schema",
+                        "type": "string"
+                      },
+                      "axis": {
+                        "title": "The axis Schema",
+                        "type": "string"
+                      },
+                      "resRefCylinder": {
+                        "title": "The resRefCylinder Schema",
+                        "type": "string"
+                      },
+                      "resRefAxis": {
+                        "title": "The resRefAxis Schema",
+                        "type": "string"
+                      },
+                      "resRefAxisFlip": {
+                        "title": "The resRefAxisFlip Schema",
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "arcuateIncisions": {
+          "title": "The arcuateIncisions Schema",
+          "type": "string",
+          "default": ""
+        },
+        "backupIols": {
+          "title": "The backupIols Schema",
+          "type": "array",
+          "default": [],
+          "items": {
+            "title": "A Schema",
+            "type": "object",
+            "required": [
+              "location",
+              "model",
+              "power",
+              "predictedSE",
+              "available"
+            ],
+            "properties": {
+              "location": {
+                "title": "The location Schema",
+                "type": "string"
+              },
+              "model": {
+                "title": "The model Schema",
+                "type": "string"
+              },
+              "power": {
+                "title": "The power Schema",
+                "type": "string"
+              },
+              "predictedSE": {
+                "title": "The predictedSE Schema",
+                "type": "string"
+              },
+              "available": {
+                "title": "The available Schema",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "biometry": {
+          "title": "The biometry Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "keratometry",
+            "totalKeratometry",
+            "axialLength",
+            "anteriorChamberDepth",
+            "lensThickness",
+            "centralCorneaThickness",
+            "whiteToWhite",
+            "pupil",
+            "alphaCartesianX",
+            "alphaCartesianY",
+            "kappaCartesianX",
+            "kappaCartesianY",
+            "acquisitionDate",
+            "refractiveIndex"
+          ],
+          "properties": {
+            "keratometry": {
+              "title": "The keratometry Schema",
+              "type": "object",
+              "default": {},
+              "required": [
+                "astigmatism",
+                "astigmatismAxis",
+                "cornealRadius",
+                "r1",
+                "r1Axis",
+                "r2",
+                "r2Axis"
+              ],
+              "properties": {
+                "astigmatism": {
+                  "title": "The astigmatism Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "astigmatismAxis": {
+                  "title": "The astigmatismAxis Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "cornealRadius": {
+                  "title": "The cornealRadius Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r1": {
+                  "title": "The r1 Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r1Axis": {
+                  "title": "The r1Axis Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r2": {
+                  "title": "The r2 Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r2Axis": {
+                  "title": "The r2Axis Schema",
+                  "type": "string",
+                  "default": ""
+                }
+              }
+            },
+            "totalKeratometry": {
+              "title": "The totalKeratometry Schema",
+              "type": "object",
+              "default": {},
+              "required": [
+                "astigmatism",
+                "astigmatismAxis",
+                "cornealRadius",
+                "r1",
+                "r1Axis",
+                "r2",
+                "r2Axis"
+              ],
+              "properties": {
+                "astigmatism": {
+                  "title": "The astigmatism Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "astigmatismAxis": {
+                  "title": "The astigmatismAxis Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "cornealRadius": {
+                  "title": "The cornealRadius Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r1": {
+                  "title": "The r1 Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r1Axis": {
+                  "title": "The r1Axis Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r2": {
+                  "title": "The r2 Schema",
+                  "type": "string",
+                  "default": ""
+                },
+                "r2Axis": {
+                  "title": "The r2Axis Schema",
+                  "type": "string",
+                  "default": ""
+                }
+              }
+            },
+            "axialLength": {
+              "title": "The axialLength Schema",
+              "type": "string",
+              "default": ""
+            },
+            "anteriorChamberDepth": {
+              "title": "The anteriorChamberDepth Schema",
+              "type": "string",
+              "default": ""
+            },
+            "lensThickness": {
+              "title": "The lensThickness Schema",
+              "type": "string",
+              "default": ""
+            },
+            "centralCorneaThickness": {
+              "title": "The centralCorneaThickness Schema",
+              "type": "string",
+              "default": ""
+            },
+            "whiteToWhite": {
+              "title": "The whiteToWhite Schema",
+              "type": "string",
+              "default": ""
+            },
+            "pupil": {
+              "title": "The pupil Schema",
+              "type": "string",
+              "default": ""
+            },
+            "alphaCartesianX": {
+              "title": "The alphaCartesianX Schema",
+              "type": "string",
+              "default": ""
+            },
+            "alphaCartesianY": {
+              "title": "The alphaCartesianY Schema",
+              "type": "string",
+              "default": ""
+            },
+            "kappaCartesianX": {
+              "title": "The kappaCartesianX Schema",
+              "type": "string",
+              "default": ""
+            },
+            "kappaCartesianY": {
+              "title": "The kappaCartesianY Schema",
+              "type": "string",
+              "default": ""
+            },
+            "acquisitionDate": {
+              "title": "The acquisitionDate Schema",
+              "type": "string",
+              "default": ""
+            },
+            "refractiveIndex": {
+              "title": "The refractiveIndex Schema",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "preOpRefraction": {
+          "title": "The preOpRefraction Schema",
+          "type": "string",
+          "default": ""
+        },
+        "averageAnteriorCornealPower": {
+          "title": "The averageAnteriorCornealPower Schema",
+          "type": "string",
+          "default": ""
+        }
+      }
+    },
+    "imprint": {
+      "title": "The imprint Schema",
+      "type": "object",
+      "default": {},
+      "required": [
+        "copyright"
+      ],
+      "properties": {
+        "copyright": {
+          "title": "The copyright Schema",
+          "type": "string",
+          "default": ""
+        }
+      }
+    },
+    "refractionUnitInDpt": {
+      "title": "The refractionUnitInDpt Schema",
+      "type": "boolean",
+      "default": false
+    },
+    "commonWarnings": {
+      "title": "The commonWarnings Schema",
+      "type": "array",
+      "default": [],
+      "items": {
+        "title": "A Schema",
+        "type": "string"
+      }
+    }
+  }
+}

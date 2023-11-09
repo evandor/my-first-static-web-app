@@ -1,0 +1,588 @@
+@charset "UTF-8";
+/* used as standard separator in sections and tables */
+/* used for footer comment box border */
+/* only used for at the beginning of a new section */
+/* UI TBD */
+body,
+table,
+th,
+td {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+  line-height: 10pt;
+}
+
+/* Used for OD/OS */
+h1,
+.h1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 18pt;
+  line-height: 18pt;
+}
+
+h2,
+.h2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 14pt;
+  line-height: 14pt;
+}
+
+h3,
+.h3 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+  line-height: 10pt;
+}
+
+/* Used for right/left info */
+.subheadline1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+/* Used for e.g. section headlines. Always used in capital letters. */
+.subheadline2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  /* no semi-bold version for CJK available */
+  font-weight: 500;
+  font-size: 10pt;
+  text-transform: uppercase;
+}
+
+.subheadline3 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+.subheadline4 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 8pt;
+  text-transform: uppercase;
+}
+
+.body1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 700;
+  font-size: 8pt;
+}
+
+.body2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+}
+
+/* Standard font styles used for labels and headlines within tables */
+.label1, .data-table-2-col table td:first-child {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 8pt;
+  white-space: nowrap;
+}
+
+.label2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 7pt;
+}
+
+/* Used for additional info-texts, e.g. legends, captions */
+.caption {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 6pt;
+}
+
+/* Used for info texts, e.g. copyright info, software version, device,... */
+.info {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 5pt;
+}
+
+.language-ja .h1,
+.language-ja .h2,
+.language-ja .h3,
+.language-ja .subheadline1,
+.language-ja .subheadline2,
+.language-ja .subheadline3,
+.language-ja .subheadline4,
+.language-ja .body1,
+.language-ja .body2,
+.language-ja .label1,
+.language-ja .data-table-2-col table td:first-child,
+.data-table-2-col table .language-ja td:first-child,
+.language-ja .label2,
+.language-ja .caption,
+.language-ja .info {
+  font-family: "Noto Sans CJK JP", "sans-serif";
+}
+
+.language-ko .h1,
+.language-ko .h2,
+.language-ko .h3,
+.language-ko .subheadline1,
+.language-ko .subheadline2,
+.language-ko .subheadline3,
+.language-ko .subheadline4,
+.language-ko .body1,
+.language-ko .body2,
+.language-ko .label1,
+.language-ko .data-table-2-col table td:first-child,
+.data-table-2-col table .language-ko td:first-child,
+.language-ko .label2,
+.language-ko .caption,
+.language-ko .info {
+  font-family: "Noto Sans CJK KR", "sans-serif";
+}
+
+.language-zh .h1,
+.language-zh .h2,
+.language-zh .h3,
+.language-zh .subheadline1,
+.language-zh .subheadline2,
+.language-zh .subheadline3,
+.language-zh .subheadline4,
+.language-zh .body1,
+.language-zh .body2,
+.language-zh .label1,
+.language-zh .data-table-2-col table td:first-child,
+.data-table-2-col table .language-zh td:first-child,
+.language-zh .label2,
+.language-zh .caption,
+.language-zh .info {
+  font-family: "Noto Sans CJK SC", "sans-serif";
+}
+
+.h1 {
+  line-height: 18pt;
+  /* to match the font size if h1 needed*/
+}
+
+/* Used for sens */
+.h3 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 14pt;
+}
+
+main {
+  overflow: hidden !important;
+  /*Test um Scrollbalken zu verhindern*/
+}
+
+table {
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0.5mm 0;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.flex-spacer {
+  flex: auto;
+}
+
+.column {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-2 {
+  width: 89.86mm;
+  /** 180mm (page width) /2 - 1x thin border (center line) */
+  min-height: 1pt;
+  /** force height for empty column */
+}
+
+.flexbox-2 {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 10mm;
+  margin: 1.5mm 0;
+  padding: 2mm 0;
+}
+
+.flexbox-2 > div {
+  flex: 50%;
+}
+
+.flexbox-2 > div table {
+  width: 100%;
+}
+
+.flexbox-2 > div table th {
+  text-align: left;
+}
+
+.flexbox-2 > div table th.align-right {
+  text-align: right;
+}
+
+.flexbox-2.iol-calc {
+  column-gap: 5mm;
+  margin: 3mm 0 0;
+  padding: 0;
+}
+
+.flexbox-2.iol-calc table {
+  border-bottom: 0.5pt solid #07090D;
+}
+
+.flexbox-2.iol-calc table th {
+  padding: 0.6mm 0;
+  border-bottom: 0.5pt solid #07090D;
+  border-top: 0.25pt solid #394047;
+}
+
+.flexbox-3 {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 1pt;
+  column-gap: 10mm;
+  margin: 0;
+  padding: 0;
+}
+
+.flexbox-3 > div {
+  flex: 33%;
+}
+
+.margin-3 {
+  margin: 3mm 0;
+}
+
+.data-table-2-col .subheadline2 {
+  padding: 1.5mm 0;
+}
+
+.data-table-2-col table {
+  width: 100%;
+  margin-bottom: 1.5mm;
+}
+
+.data-table-2-col table td {
+  width: 50%;
+  text-align: right;
+  padding: 0.5mm 0;
+}
+
+.data-table-2-col table td:first-child {
+  text-align: left;
+}
+
+.data-table-3-col table {
+  width: 100%;
+}
+
+.data-table-3-col table td,
+.data-table-3-col table th {
+  width: 40%;
+}
+
+.data-table-3-col table td:last-child,
+.data-table-3-col table th:last-child {
+  width: 20%;
+  text-align: right;
+}
+
+.section-header {
+  text-align: center;
+  margin-top: 1.5mm;
+  /* reduce the specified gap of 3mm to 1.5mm to compensate for unprinted ascenders of section headline */
+  border-bottom: 0.5pt solid #07090D;
+  border-top: 0.25pt solid #394047;
+  padding: 1.2mm 0 1mm;
+}
+
+.approved-banner {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.approved-banner > span {
+  display: inline-block;
+  border: 1pt solid #07090D;
+  padding: 1.5mm 2.5mm;
+}
+
+.bordertop {
+  border-top: 0.25pt solid #394047;
+}
+
+.borderbottom {
+  border-bottom: 0.25pt solid #394047;
+}
+
+.check-box img {
+  width: 3mm;
+  height: 3mm;
+}
+
+/*
+.content {
+    max-height: 206.5mm;*/
+/* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+/*        font-size: 8pt;
+    }
+*/
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}
+
+.grayed-out {
+  color: #828D9E;
+}
+
+.disclaimer {
+  padding-top: 2mm;
+}
+
+.reusable-stacy {
+  padding-top: 4mm;
+}
+
+.reusable-stacy div#box {
+  display: inline-block;
+  position: relative;
+  top: 0.25em;
+  width: 1.125em;
+  height: 1.125em;
+  border: 0.25pt solid #394047;
+}
+
+.table-separator {
+  border-bottom: 0.25pt solid #394047;
+  border-collapse: collapse;
+}
+
+.border-thin-right {
+  border-right: 0.25pt solid #394047;
+  border-collapse: collapse;
+}
+
+.border-thin-left {
+  border-left: 0.25pt solid #394047;
+  border-collapse: collapse;
+}
+
+/* Used for table with margin and border, e.g. Eye status and Biometry */
+.data-table {
+  border-bottom: 0.25pt solid #394047;
+  /* right side */
+  /* left side */
+}
+
+.data-table > div {
+  margin-top: 1.5mm;
+  margin-bottom: 1.5mm;
+  padding: 0 5mm;
+}
+
+.data-table > div:nth-child(1) {
+  padding-left: 0;
+}
+
+.data-table > div:nth-child(2) {
+  padding-right: 0;
+}
+
+.data-table > div.column-2 {
+  width: 50%;
+  /*Test*/
+  /* 87.86mm 88.36mm = 89.9mm (side width) - 1.5mm (middle padding) - 1px border (1px = 0,04‬) */
+}
+
+div.calculation-result > table {
+  border-bottom: 0.25pt solid #394047;
+  margin-top: 1.0mm;
+  padding-bottom: 1.5mm;
+  min-height: 202mm;
+}
+
+div.calculation-result > table td {
+  vertical-align: top;
+}
+
+div.calculation-result > table:nth-of-type(1) {
+  min-height: 128mm;
+}
+
+div.calculation-result div.result-section-container {
+  box-sizing: border-box;
+}
+
+div.calculation-result div.result-section-od,
+div.calculation-result div.result-section-os {
+  display: inline-block;
+  height: 42.0mm;
+  margin-top: 1.0mm;
+  /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+}
+
+div.calculation-result div.result-section-od.spheric,
+div.calculation-result div.result-section-os.spheric {
+  width: 27.7mm;
+  /* max value to display three spheric result sections in one line with a gap of 2mm */
+}
+
+div.calculation-result div.result-section-od.toric,
+div.calculation-result div.result-section-os.toric {
+  width: 87.1mm;
+  /* 3 x sphericWidth + 2 x (margin-x-spheric) */
+}
+
+div.calculation-result div.result-section-od {
+  margin-right: 2mm;
+}
+
+div.calculation-result div.result-section-os {
+  margin-left: 2mm;
+}
+
+.calculation-result .od-os-section-header {
+  page-break-before: always;
+}
+
+/* horizontal gap between CCT and Ast. K */
+tr.spaceUnder > td {
+  padding-bottom: 3.0mm;
+}
+
+/* default gap if not others gap applies */
+table.innerTable tr td {
+  padding-right: 1.0mm;
+}
+
+/* gap after labels */
+table.innerTable tr td:first-child {
+  padding-right: 3.0mm;
+}
+
+/* no gap between value and degree, e.g. 42° */
+table.innerTable tr td:nth-child(5) {
+  padding-right: 0;
+}
+
+td.paddingLeft {
+  padding-left: 1.0mm;
+}
+
+/* table biometry */
+table.biometry {
+  white-space: nowrap;
+}
+
+table.biometry td:first-child {
+  padding-right: 8.0mm;
+}
+
+table.biometry td:first-child table.innerTable td:first-child {
+  min-width: 14.0mm;
+  max-width: 14.0mm;
+}
+
+table.biometry td:nth-child(2) table.innerTable td:first-child {
+  min-width: 14.0mm;
+  max-width: 14.0mm;
+}
+
+.date-of-measurement-line {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 2.0mm;
+}
+
+.date-of-measurement-line .left {
+  float: left;
+  text-align: left;
+}
+
+.date-of-measurement-line .left span:first-child {
+  padding-right: 1.5mm;
+}
+
+.date-of-measurement-line .right {
+  float: right;
+  text-align: right;
+}
+
+.date-of-measurement-line .right span:first-child {
+  padding-right: 3.0mm;
+}
+
+.simple-line {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5mm 0;
+}
+
+.simple-line .left {
+  float: left;
+  text-align: left;
+}
+
+.simple-line .right {
+  float: right;
+  text-align: right;
+}
+
+.od-os-section-header {
+  padding-bottom: -0.5mm;
+}
+
+.od-os-section-header > * {
+  display: inline-block;
+}
+
+.od-os-section-header .h3 {
+  margin: 0 0.5mm;
+}
+
+.od-os-section-header .left {
+  float: left;
+  width: 140pt;
+  text-align: left;
+}
+
+.od-os-section-header > span {
+  position: relative;
+  border: 1pt solid #07090D;
+  padding: 1.5mm 2.5mm;
+}
+
+.od-os-section-header .right {
+  float: right;
+  width: 140pt;
+  text-align: right;
+}
+
+#leftBiometryValues,
+#rightBiometryValues {
+  margin-top: 2mm;
+  /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+  margin-bottom: 2mm;
+  /* reduced from specified 3mm to compensate for unprinted ascenders and descenders */
+  padding-top: 0;
+  padding-bottom: 0;
+  /*min-height: 33mm;*/
+}

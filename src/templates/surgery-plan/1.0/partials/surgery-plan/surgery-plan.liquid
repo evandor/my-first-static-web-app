@@ -1,0 +1,440 @@
+{% comment %}
+- Description: Partial for the surgery plan
+- Parameters: 
+  - model data model for the imprint
+  - i18n access to the i18n properties  
+{% endcomment %}
+<main>
+  <div class="od-os-section-header1">
+    <div>
+      <span class="h1">{{ model.laterality | default:"*OD" }}</span>
+      <span class="subheadline1">{{ model.lateralityDescription | default: "*Right Eye"}}</span>
+    </div>
+    <div class="approval-banner">
+      <span>{{ model.planApprovalState | default: "*Plan not approved"}}</span>
+    </div>
+    <div></div>
+  </div>
+  <div>
+    <div class="flexbox-2 bordertop data-table-1"> 
+        <div>
+          <div class="subheadline1">Procedure</div>
+          <div class="simple-line">
+            <!-- Special case - procedure longer than right column -->
+            <span id="">Procedure</span>
+            <span id="">{{ model.procedure.summary | default: "*Cataract extraction with IOL (66984) - 1st eye"}}</span>
+          </div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Procedure subtype</td>
+                  <td>{{ model.procedure.subtype | default: "*ECCE"}}</td>
+                </tr>
+                <tr>
+                  <td>Supplemental procedure</td>
+                  <td>{{ model.procedure.supplemental.procedure | default: "*iStent inject (no code)"}}</td>
+                </tr>
+                <tr>
+                  <td>Supplemental techniques</td>
+                  <td>{{ model.procedure.supplemental.techniques | default: "*Suture fixation of IOL (Yamane)"}}</td>
+                </tr>
+                <tr>
+                  <td>Special needs</td>
+                  <td>{{ model.procedure.specialNeeds | default: "*None"}}</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          <div class="subheadline1 spacer-sizeM">Surgery Day</div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Date</td>
+                  <td>{{ model.surgeryInfo.day | format_date: i18n.surgery_plan.surgery_info.day_date_format | default: "*12/07/2021" }}</td>
+                </tr>
+                <tr>
+                  <td>Facility</td>
+                  <td>{{ model.surgeryInfo.facility | default: "*West Texas ASC Lorem ipsum dolor" }}</td>
+                </tr>
+                <tr>
+                  <td>Surgeon</td>
+                  <td>{{ model.surgeryInfo.surgeon | default: "*Frodo Baggins" }}</td>
+                </tr>
+                <tr>
+                  <td>Anesthesia</td>
+                  <td>{{ model.surgeryInfo.anesthesia | default: "*Topical" }}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div>
+          <div class="subheadline1">Concerns</div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Lens status</td>
+                  <td>{{ model.concerns.lensStatus | default: "*Phakic" }}</td>
+                </tr>
+                <tr>
+                  <td>Prior Refractive Surgery</td>
+                  <td>{{ model.concerns.priorRefractiveSurgery | default: "*LASIK or PRK - hyperopic" }}</td>
+                </tr>
+                <tr>
+                  <td>Diabetes</td>
+                  <td>{{ model.concerns.diabetes | default: "*No" }}</td>
+                </tr>
+                <tr>
+                  <td>Keratoconus</td>
+                  <td>{{ model.concerns.keratoconus | default: "*No" }}</td>
+                </tr>
+                <tr>
+                  <td>Medication</td>
+                  <td>{{ model.concerns.medication | default: "*None" }}</td>
+                </tr>
+                <tr>
+                  <td>Allergy</td>
+                  <td>{{ model.concerns.allergy | default: "*Latex" }}</td>
+                </tr>
+                <tr>
+                  <td>Other</td>
+                  <td>{{ model.concerns.other | default: "*None" }}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-header">IOL Calculations</div>
+    <div class="flexbox-2">
+      <div class="iol"><!-- min-font-size="7" -->
+        <div
+          class="h2 iol-line ellipsis toric" lines="2" >{{ model.recommended.iol.name | default: "*ZEISS AT LISA tri toric 949MP" }}
+        </div>
+        {% assign favoredIol = model.recommended.iols | where: "favored", true | first %}
+        {% echo favoredIol%}
+        <div class="subheadline3">
+          <span id="">{{ favoredIol.nonToric.se | default: "*+20.50 D"}}</span>
+          {% if model.toricLens %}
+            <span id=""> ({{ favoredIol.toric.cylinder | default: "*2.50"}} @ {{ favoredIol.toric.axis | default: "*86°"}})</span>
+          {% endif %}
+        </div>
+        <div class="eye_img">
+            <img src="{{ versionedReportBaseUrl }}/assets/images/schematic_eye.png" alt="Schematic Eye"/>
+        
+            <img src="{{ versionedReportBaseUrl }}/assets/images/heat_map.png" alt="Image Heat Map"/>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="simple-line">
+              <span id="">Target Range</span>
+              <span id="">{{- model.recommended.iol.targetRange | default: "*Intermediate" }}</span>
+          </div>
+          <div class="simple-line highlighted-text">
+              <span id="">Target SE</span>
+              <span id="">{{ model.recommended.iol.targetSe | default: "*-1.75 D" }}</span>
+          </div>
+          <div class="simple-line highlighted-text">
+              <span id="">Predicted Refraction</span>
+              <span id="">{{ model.recommended.iol.predictedRefraction | default: "*-0.24+ 0.41 x 5° (SE -0.03)" }}</span>
+          </div>
+        </div>
+        <div class="label1 spacer-sizeM">
+          <span id="">{{ model.recommended.iol.formulaUsed | default: "*Z CALC | Total Keratometry" }} </span>
+          <span id="">| A constant = 118.117 SF = 4.56 </span>
+        </div>
+        <div class="flexbox-2 data-table-2">
+          <div>
+            <table class="spheric-table">
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <span>
+                      <span>IOL</span>
+                    </span>
+                    <!-- NonBreakingSpace necessary to ensure vertical alignment of result boxes -->
+                    <span class="label2">SE</span>
+                  </th>
+                  <th scope="row">Res. SE</th>
+                </tr>
+                {%- for candidateIol in model.recommended.iols -%}
+                  <tr class="{% if candidateIol.favored %}highlighted-text{% else %}label1{% endif %}">
+                    <td>{{ candidateIol.nonToric.se }}</td>
+                    <td>{{ candidateIol.nonToric.resRefSe }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div>
+            {%  if model.toricLens %}
+            <table class="toric-table">
+              <tbody>
+                <tr>
+                  <th>Toric Power</th>
+                  <th colspan="4">Res. Ast.</th>
+                </tr>
+                {% for candidateIol in model.recommended.iols %}
+                  <tr class="{% if candidateIol.favored %}highlighted-text{% else %}label1{% endif %}">
+                    <td class="toric-power">{{ candidateIol.toric.cylinder | default : "*+2.25"}}</td>
+                    <td class="res-ast">{{ candidateIol.toric.resRefCylinder | default : "*+0.10"}}</td>
+                    <td>@</td>
+                    <td>{{ candidateIol.toric.resRefAxis | default : "*111°"}}</td>
+                    <td class="axis-flip"></td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            {%  endif  %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flexbox-2">
+      <div>
+        <div class="simple-line">
+          <span id="">Arcuate Incisions</span>
+          <span id="">{{ model.arcuateIncisions | default: "*000° @ 000°, 000° @ 000°, 000 µm / 000 %"}}</span>
+        </div>
+      </div>
+      <div>
+        <div class="simple-line">
+          <span id="">Net Astigmatism</span>
+          <span id="">{{ model.recommended.iol.netAstigmatism.cylinder | default: "*+0.10"}} @ {{ model.recommended.iol.netAstigmatism.axis | default: "*16" }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="flexbox-2 data-table-3">
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>Backup IOL Location</th>
+              <th>Model</th>
+              <th>Power (D)</th>
+              <th>Predicted SE (D)</th>
+              <th class="align-right">Availability</th>
+            </tr>
+            {%- for backupIol in model.backupIols -%}
+              <tr>
+                <td>{{ backupIol.location | default: "*Capsular bag"}}</td>
+                <td>{{ backupIol.model | default: "*Tecnis ZCB00"}}</td>
+                <td>{{ backupIol.power | default: "*+25.50"}}</td>
+                <td>{{ backupIol.predictedSE | default: "*1.79"}}</td>
+                <td class="align-right">
+                  <div class="check-box">
+                    {%- if backupIol.available -%}
+                      <!-- IDX Do we need a checked checkbox? Ich denke, dass die Checkbox im Ausdruck angehakt wird? -->
+                      <!--img src="{{ versionedReportBaseUrl }}/assets/images/check-box-checked.png" alt="Checkbox" /-->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill="none">
+  <rect x="0.5" y="0.5" width="8" height="8" rx="1.5" fill="white" stroke="#353D45"/>
+</svg>
+                    {%- else -%}
+                      <!--img src="{{ versionedReportBaseUrl }}/assets/images/check-box-empty.png" alt="Checkbox" /-->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill="none">
+  <rect x="0.5" y="0.5" width="8" height="8" rx="1.5" fill="white" stroke="#353D45"/>
+</svg>
+                    {%- endif -%}
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="section-header">Measurements</div>
+    <div>
+      <table class="measurements">
+          <tbody>
+            <tr>
+              <td>
+                <table class="innerTable">
+                  <tbody>
+                    <tr class="highlighted-text">
+                      <td>Ast. K</td>
+                      <td class="align-right" id="keratometryCyl">{{ model.biometry.keratometry.astigmatism | default:"*+0.22"}}</td>
+                      <td>D</td>
+                      <td>@</td>
+                      <td class="align-right" id="keratometryCyl-axis">{{ model.biometry.keratometry.astigmatismAxis | default:"*106"}}</td>
+                      <td>°</td>
+                    </tr>
+                    <tr>
+                      <td id="keratometryCr-label">Avg. R</td>
+                      <td class="align-right" id="keratometryCr">{{ model.biometry.keratometry.cornealRadius | default:"*4.00"}}</td>
+                      <td>mm</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                    </tr>
+                    <tr>
+                      <td id="r1-label">R1</td>
+                      <td class="align-right" id="r1">{{ model.biometry.keratometry.r1 | default:"*7.97"}}</td>
+                      <td>mm</td>
+                      <td>@</td>
+                      <td class="align-right" id="r1-axis">{{ model.biometry.keratometry.r1Axis | default:"*0"}}</td>
+                      <td>°</td>
+                    </tr>
+                    <tr>
+                      <td id="r2-label">R2</td>
+                      <td class="align-right" id="r2">{{ model.biometry.keratometry.r2 | default:"*7.83"}}</td>
+                      <td>mm</td>
+                      <td>@</td>
+                      <td class="align-right" id="r2-axis">{{ model.biometry.keratometry.r2Axis | default:"*100"}}</td>
+                      <td>°</td>
+                    </tr>
+                    <tr>
+                      <td colspan="6" class="caption">
+                        <span class="acquisitionDateLabel">IOLMaster 700 (04/20/2023){%- comment -%}NEW{%- endcomment -%}</span>
+                        {%- comment -%}<span id="acquisitionDate">{{ model.biometry.acquisitionDate | default:"2023-04-20" }}</span>{%- endcomment -%}
+                        <span>
+                        <span>n</span>
+                        <span id="refractiveIndex">{{ model.biometry.refractiveIndex | default:"*1.3375" }}</span>
+                        </span>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                <table class="innerTable">
+                  <tbody>
+                    <tr class="highlighted-text">
+                      <td>Ast. TK</td>
+                      <td class="align-right" id="totalKeratometryCyl">{{ model.biometry.totalKeratometry.astigmatism | default:"*+0.16"}}</td>
+                      <td>D</td>
+                      <td>@</td>
+                      <td class="align-right" id="totalKeratometryCyl-axis">{{ model.biometry.totalKeratometry.astigmatismAxis | default:"*142"}}</td>
+                      <td>°</td>
+                    </tr>
+                    <tr>
+                      <td id="totalKeratometryCr-label">Avg. TR</td>
+                      <td class="align-right" id="totalKeratometryCr">{{ model.biometry.totalKeratometry.cornealRadius | default:"*7.95"}}</td>
+                      <td>mm</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                    </tr>
+                    <tr>
+                      <td id="tr1-label">TR1</td>
+                      <td class="align-right" id="tr1">{{ model.biometry.totalKeratometry.r1 | default:"*7.75"}}</td>
+                      <td>mm</td>
+                      <td>@</td>
+                      <td class="align-right" id="tr1-axis">{{ model.biometry.totalKeratometry.r1Axis | default:"*0"}}</td>
+                      <td>°</td>
+                    </tr>
+                    <tr>
+                      <td id="tr2-label">TR2</td>
+                      <td class="align-right" id="tr2">{{ model.biometry.totalKeratometry.r1 | default:"*7.84"}}</td>
+                      <td>mm</td>
+                      <td>@</td>
+                      <td class="align-right" id="tr2-axis">{{ model.biometry.totalKeratometry.r1Axis | default:"*100"}}</td>
+                      <td>°</td>
+                    </tr>
+                    <tr>
+                      <td colspan="6" class="caption">
+                        <span class="acquisitionDateLabel">Pentacam (04/20/2023){%- comment -%}NEW{%- endcomment -%}</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                <table class="innerTable">
+                  <tbody>
+                    <tr class="highlighted-text body1">
+                      <td>AL</td>
+                      <td class="align-right" id="axialLength">{{ model.biometry.axialLength | default:"*22.86" }}</td>
+                      <td>mm</td>
+                    </tr>
+                    <tr>
+                      <td id="acd-label">ACD</td>
+                      <td class="align-right" id="acd">{{ model.biometry.anteriorChamberDepth | default:"*3.06" }}</td>
+                      <td>mm</td>
+                    </tr>
+                    <tr>
+                      <td>LT</td>
+                      <td class="align-right" id="lensThickness">{{ model.biometry.lensThickness | default:"*4.06" }}</td>
+                      <td>mm</td>
+                    </tr>
+                    <tr>
+                      <td>CCT</td>
+                      <td class="align-right" id="centralCorneaThickness">{{ model.biometry.centralCorneaThickness | default:"*416" }}</td>
+                      <td>µm</td>
+                    </tr>
+                    
+                    <tr>
+                      <td colspan="6" class="caption">
+                        <span class="acquisitionDateLabel">Lensstar (04/20/2023){%- comment -%}NEW{%- endcomment -%}</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                <table class="innerTable">
+                  <tbody>
+                    <tr>
+                      <td>WTW</td>
+                      <td class="align-right" id="whiteToWhite">{{ model.biometry.whiteToWhite | default:"*12.10" }}</td>
+                      <td>mm</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                    </tr>
+                    <tr>
+                      <td>Pupil</td>
+                      <td class="align-right" id="pupil">{{ model.biometry.pupil | default:"*12.40" }}</td>
+                      <td>mm</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                      <td>&#160;</td>
+                    </tr>
+                    <tr>
+                      <td>Ix / Iy</td>
+                      <td class="align-right" id="alpha-cartesian-x">{{ model.biometry.alphaCartesianX | default:"*0.4" }}</td>
+                      <td>mm</td>
+                      <td>/</td>
+                      <td class="align-right" id="alpha-cartesian-y">{{ model.biometry.alphaCartesianY | default:"*0.5" }}</td>
+                      <td class="paddingLeft">mm</td>
+                    </tr>
+                    <tr>
+                      <td>Px / Py</td>
+                      <td class="align-right" id="kappa-cartesian-x">{{ model.biometry.kappaCartesianX | default:"*-0.2" }}</td>
+                      <td>mm</td>
+                      <td>/</td>
+                      <td class="align-right" id="kappa-cartesian-y">{{ model.biometry.kappaCartesianY | default:"*-0.4" }}</td>
+                      <td class="paddingLeft">mm</td>
+                    </tr>
+                    
+                    <tr>
+                      <td colspan="6" class="caption">
+                        <span></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+    </div>
+    <div class="flexbox-2">
+      <div>
+        <div class="simple-line">
+          <span id="">Pre-op refraction</span>
+          <span>
+            <span id="">{{ model.preOpRefraction | default:"*+0.24 + 0.25 x 000° (20/16)" }} | </span>
+            <span id="" class="caption"> Manifest (04/20/2023)</span>
+          </span>
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+
+  </main>

@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="de">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>{{ model.footer.userLastName }}</title>
+    {%  comment %}
+    <link
+      href="{{ sharedBaseUrl }}/1.1/assets/css/base.css"
+      media="print,screen"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      rel="stylesheet"
+      media="print,screen"
+      href="{{ versionedReportBaseUrl }}/assets/css/a4-page.css"
+      type="text/css" />
+    <link
+      rel="stylesheet"
+      media="print,screen"
+      href="{{ versionedReportBaseUrl }}/partials/header/header.css"
+      type="text/css" />
+    <link
+      rel="stylesheet"
+      media="print,screen"
+      href="{{ versionedReportBaseUrl }}/partials/footer/footer.css"
+      type="text/css" />
+    <link
+      rel="stylesheet"
+      media="print,screen"
+      href="{{ versionedReportBaseUrl }}/partials/warnings/warnings.css"
+      type="text/css" />
+    <link
+      rel="stylesheet"
+      media="print,screen"
+      href="{{ versionedReportBaseUrl }}/partials/imprint/imprint.css"
+      type="text/css" />
+    <link
+      rel="stylesheet"
+      media="print,screen"
+      href="{{ versionedReportBaseUrl }}/surgery-plan-template.css"
+      type="text/css" />
+
+    <link
+      rel="stylesheet"
+      media="print,screen"
+      href="{{ versionedReportBaseUrl }}/partials/procedure/procedure-template.css"
+      type="text/css" />
+    {%  endcomment %}
+    <link rel="stylesheet" media="print,screen" href="{{ versionedReportBaseUrl }}/surgery-plan-template.css"
+           type="text/css"/>
+
+    <script type="text/javascript" src="{{ versionedReportBaseUrl }}/assets/js/dynamic-page-layout.js"></script>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="printable">
+        <header>
+          {% render "partials/header/header", model: model.header, i18n: i18n, documentTitle: i18n.order.order_request, compact: false, displayWarningReference: true, hasWarnings: true %}
+        </header>
+        <main>
+          {% render "partials/surgery-plan/surgery-plan", model: model.surgeryPlan, i18n: i18n %}
+        </main>
+        <aside>
+          {% render "partials/imprint/imprint", model: model.imprint, i18n: i18n %}
+        </aside>
+        <footer>
+          {% render "partials/footer/footer", model: model.footer, i18n: i18n %}
+        </footer>
+      </div>
+    </div>
+    <div class="page auto-layout">
+      <div class="printable">
+        <header>
+          {% render "partials/header/header", model: model.header, i18n: i18n, documentTitle: i18n.order.order_request, compact: false, displayWarningReference: true, hasWarnings: true %}
+        </header>
+        <main>
+          {% render "partials/warnings/warnings-page", common-warnings: model.commonWarnings, od-warnings: model.od.warnings, os-warnings: model.os.warnings, i18n: i18n %}
+        </main>
+        <aside>
+          {% render "partials/imprint/imprint", model: model.imprint, i18n: i18n %}
+        </aside>
+        <footer>
+          {% render "partials/footer/footer", model: model.footer, i18n: i18n %}
+        </footer>
+      </div>
+    </div>
+    {% comment %}
+    // This page is left here intentionally. It is used to demonstrate a page whith paragraphs. Such a page might be used
+    // by Veracity to add medical advices to the doctor. If uncommented this page will be dynically layouted. 
+    <div class="page auto-layout">
+    <div class="printable">
+    <header>
+    {% render "partials/header/header", model: model.header, i18n: i18n, documentTitle: i18n.order.order_request, compact: false, displayWarningReference: true, hasWarnings: true %}
+    </header>
+    <main>
+    <h1>
+    Title
+    </h1>
+    <p> 1 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <p>2 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <p>3 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <!--h1>
+    Hey you!
+    </h1-->
+    <p>4 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean f ermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <p>5 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean f ermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <p>6 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean f ermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <p>7 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean f ermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <h1>
+    Hey you!
+    </h1>
+    <p>8 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean f ermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    <p>9 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    Vestibulum
+    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+    semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+    condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean f ermentum, elit eget tincidunt
+    condimentum,
+    eros ipsum rutrum orci, sagittis tempus
+    lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id
+    cursus
+    faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+    mi,
+    tincidunt quis, accumsan porttitor,
+    facilisis luctus, metus</p>
+    </main>
+    <aside>
+    {% render "partials/imprint/imprint", model: model.imprint, i18n: i18n %}
+    </aside>
+    <footer>
+    {% render "partials/footer/footer", model: model.footer, i18n: i18n %}
+    </footer>
+    </div>
+    </div>
+    {% endcomment %}</body>
+</html>

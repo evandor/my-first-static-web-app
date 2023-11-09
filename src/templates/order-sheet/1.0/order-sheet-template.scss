@@ -1,50 +1,41 @@
-@import "../../shared/1.0/assets/css/borders";
+// @import "../../shared/1.1/assets/css/colors";
+@import "assets/css/a4-page-format";
+@import "partials/header/header";
+@import "partials/footer/footer";
+@import "partials/warnings/warnings";
+@import "partials/imprint/imprint";
+@import "partials/order-lens/order-lens";
 
-@page {
-  margin: 0mm 0mm 0mm 15mm; /* page header and footer areas belongs to the margin */
+.align-right {
+  text-align: right;
 }
 
-.h1 {
-  line-height: 18pt; /* to match the font size */
+.flex-spacer {
+  flex: auto;
 }
 
-table.order-sheet {
-  width: 100%;
-  border-collapse: collapse;
+.column {
+   float: left;
+ }
 
-  tr td {
-    border-bottom: $border-default;
-  }
-
-  tr:first-child td {
-    border-bottom: $border-section;
-  }
-
-  td {
-    width: 32%;
-    padding: 5px;
-    text-align: right;
-  }
-
-  td:first-child {
-    text-align: left;
-    width: 36%;
-  }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.disclaimer {
-  padding-top: 2mm;
+/*
+.content {
+    max-height: 206.5mm;*/
+/* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+/*        font-size: 8pt;
+    }
+*/
+.sub-headline2 ellipsis {
+  line-height: 13pt;
 }
 
-.reusable-stacy {
-  padding-top: 4mm;
-
-  div#box {
-    display: inline-block;
-    position: relative;
-    top: 0.25em;
-    width: 1.125em;
-    height: 1.125em;
-    border: $border-default;
-  }
+.grayed-out {
+  color: $gs80;
 }

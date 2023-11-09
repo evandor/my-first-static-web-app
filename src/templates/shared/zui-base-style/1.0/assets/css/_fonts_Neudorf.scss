@@ -1,0 +1,143 @@
+@import 'variables';
+
+// ====== Font definitions according Styleguide_V1.pdf (page 2) ======
+
+/* Used for OD/OS */
+.h1 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 18pt;
+}
+
+/* Used for right/left info */
+.h2 {
+  font-family: $defaultFontFamily;
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+.h3 {
+  
+}
+
+/* Used for e.g. section headlines. Always used in capital letters. */
+.sub-headline1 {
+  font-family: $defaultFontFamily; /* no semi-bold version for CJK available */
+  font-weight: 600;
+  font-size: 8pt;
+  text-transform: uppercase;
+}
+
+/* Used for very important information e.g. lens name. Use carefully. */
+.sub-headline2 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+/* Used for values in tables and short texts, headlines within tables, when multiple headlines types are needed */
+.body1 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 8pt;
+}
+
+/* Should only be used for minor important information or when the amount of content on the report requires a smaller
+font size. Used as Body 1. */
+.body2 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 7pt;
+  white-space: nowrap;
+}
+
+/* Standard font styles used for labels and headlines within tables */
+.label1 {
+  font-family: $defaultFontFamily;
+  font-weight: 300;
+  font-size: 8pt;
+  white-space: nowrap; /* not defined in Style guide but always the case for labels */
+}
+
+/* Should only be used for less important information or when the amount of content on the report requires a smaller
+font size. Used in the same way as Label 1. */
+.label2 {
+  font-family: $defaultFontFamily;
+  font-weight: 300;
+  font-size: 7pt;
+}
+
+/* Used for sub label for column header */
+.label2-small {
+  font-family: $defaultFontFamily;
+  font-weight: 300;
+  font-size: 6pt;
+}
+
+/* Used for additional info-texts, e.g. legends, captions */
+.caption {
+  font-family: $defaultFontFamily;
+  font-weight: 300;
+  font-size: 6pt;
+}
+
+/* Used for info texts, e.g. copyright info, software version, device,... */
+.info {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 5pt;
+}
+
+// ====== Additional font definition from Selected-IOL-Report-Measurements.pdf ======
+
+/* Used for eye schematic scale values and footer elements */
+.caption-medium {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 6pt;
+}
+
+/* Used for large numbers, e.g. inner number in eye schematic graphic */
+.large-number {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+/* used in the selected calculation result */
+.body1-bold {
+  font-family: $defaultFontFamily;
+  font-weight: 700;
+  font-size: 8pt;
+}
+
+// ====== Usage redefinition of used fonts styles for normal and highlighted texts (CZMND-5927) ======
+
+.normal-text {
+  @extend .label1;
+}
+
+.normal-text-small {
+  @extend .normal-text;
+  font-size: 6pt;
+}
+
+.highlighted-text {
+  @extend .body1;
+}
+
+// ====== mixins ======
+
+@mixin fontSelector($specialFontLanguages, $defaultFont : "sans-serif") {
+  @each $language, $font in $specialFontLanguages {
+    .language-#{$language} {
+      .h1, .h2, .sub-headline1, .sub-headline2,
+      .body1, .body2,
+      .label1, .label2, .caption, .info, .caption-medium, .large-number, .body1-bold {
+        font-family: $font, $defaultFont;
+      }
+    }
+  }
+}
+
+@include fontSelector($specialFontLanguages);

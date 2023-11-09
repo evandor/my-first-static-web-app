@@ -1,0 +1,91 @@
+@import "../../../../shared/zui-base-style/1.0/assets/css/colors";
+
+/*
+.warnings-component {
+    min-height: 12.5mm;
+    display: table;
+    width: 180mm;
+    background-color: $y100;
+    margin-bottom: 3mm;
+}
+
+.warning-logo {
+    align-items:center;
+    justify-content:center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.warning-logo img {
+    width: 5mm;
+}
+
+.warnings {
+    background-color: $y30;
+    padding: 1.5mm 2.5mm;
+    display: table-cell;
+    width:175mm;
+}
+*/
+
+main {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+h3.warnings-header {
+  margin: 0;
+  display: block;
+  max-width: 180mm;
+  padding: 1.5mm 2.5mm;
+  background-color: $y100
+}
+
+.warning-row {
+  margin: 0;
+  padding: 0;
+  min-width: 180mm;
+  max-width: 180mm;
+  min-height: 5mm;
+  max-height: 5mm;
+  background-color: $y30;
+  display: block;
+}
+
+.warning-logo2 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.warning-row img {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  min-width: 5mm;
+  max-width: 5mm;
+  min-height: 5mm;
+  max-height: 5mm;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  background-color: $y100;
+}
+
+.warnings2 {
+  margin: 0;
+  display: inline-block;
+  padding: 0;
+  min-width: 170mm;
+  max-width: 170mm;
+  min-height: 5mm;
+  max-height: 5mm;
+}

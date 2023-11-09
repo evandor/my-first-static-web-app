@@ -4,22 +4,32 @@
   - icon_small: flag indicating if a small or medium icon should be rendered
   - message: warning message text 
 {% endcomment %}
-<div id="headerWarningSection" class="label2 headerWarningSection">
+<div class="label2 header-warning-section">
+    {% comment %} 
     <!-- inner table only used to align icon and text vertically. Other tried variants like with
     "diplay-inlineblock" or "vertical-align:middle" works in browser but seems not to work with
     IText (HTML2PDF version 4.01) -->
+    {% endcomment %}
     <table>
         <tr>
             {% if icon_small %}
+                <!--td><svg width="16" height="16">
+                    <title>Warning Icon Small</title>
+                    <use href="#warning_icon_small" />
+                    </svg></td-->
                 <td><img src="{{ versionedReportBaseUrl }}/assets/images/icon_warning_small.svg" alt="!"/></td>
             {% endif %}
             {% unless icon_small %}
+                <!--td><svg width="8.5" height="17.01">
+                        <title>Warning Icon</title>
+                        <use href="#warning_icon" />
+                    </svg></td-->
                 <td><img class="square" src="{{ versionedReportBaseUrl }}/assets/images/icon_warning.svg" alt="!"/></td>
             {% endunless %}
             {% comment %} 
                     <td class="headerWarningText">{{ message | default: "Please consider the warnings"}}</td> 
             {% endcomment %}
-            <td class="label2">{{ message | default: "Please consider the warnings" }}</td>
+            <td class="label1">{{ message | default: "Please consider the warnings" }}</td>
         </tr>
     </table>
 </div>

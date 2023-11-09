@@ -10,7 +10,8 @@
     "imprint",
     "od",
     "os",
-    "refractionUnitInDpt"
+    "refractionUnitInDpt",
+    "commonWarnings"
   ],
   "properties": {
     "header": {
@@ -638,9 +639,17 @@
           "type": "array",
           "default": [],
           "title": "The warnings Schema",
-          "items": {},
+          "items": {
+            "type": "string",
+            "default": "",
+            "title": "A Schema",
+            "examples": [
+              "No lens available for the given parameters for the OD eye!"
+            ]
+          },
           "examples": [
-            []
+            [
+              "No lens available for the given parameters for the OD eye!"]
           ]
         },
         "iolName": {
@@ -867,7 +876,9 @@
         "planCreationDate": "2022-12-27",
         "surgeon": "Dr. Who",
         "planCreator": "Christina Hernandez",
-        "warnings": [],
+        "warnings": [
+          "No lens available for the given parameters for the OD eye!"
+        ],
         "iolName": "Eyecryl Toric",
         "manufacturerName": "Biotech Vision",
         "variantName": "M",
@@ -1231,9 +1242,17 @@
           "type": "array",
           "default": [],
           "title": "The warnings Schema",
-          "items": {},
+          "items": {
+            "type": "string",
+            "default": "",
+            "title": "A Schema",
+            "examples": [
+              "No lens available for the given parameters for the OS eye!"
+            ]
+          },
           "examples": [
-            []
+            [
+              "No lens available for the given parameters for the OS eye!"]
           ]
         },
         "iolName": {
@@ -1460,7 +1479,9 @@
         "planCreationDate": "2022-12-27",
         "surgeon": "Dr. Who",
         "planCreator": "Christina Hernandez",
-        "warnings": [],
+        "warnings": [
+          "No lens available for the given parameters for the OS eye!"
+        ],
         "iolName": "Eyecryl Toric",
         "manufacturerName": "Biotech Vision",
         "variantName": "M",
@@ -1491,6 +1512,72 @@
       "title": "The refractionUnitInDpt Schema",
       "examples": [
         false
+      ]
+    },
+    "commonWarnings": {
+      "type": "array",
+      "default": [],
+      "title": "The commonWarnings Schema",
+      "items": {
+        "type": "string",
+        "title": "A Schema",
+        "examples": [
+          "Ough, lens could not be calculated!"
+        ]
+      },
+      "examples": [
+        ["Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!",
+          "Ough, lens could not be calculated!"
+        ]
       ]
     }
   },
@@ -1562,7 +1649,9 @@
       "planCreationDate": "2022-12-27",
       "surgeon": "Dr. Who",
       "planCreator": "Christina Hernandez",
-      "warnings": [],
+      "warnings": [
+        "No lens available for the given parameters for the OD eye!"
+      ],
       "iolName": "Eyecryl Toric",
       "manufacturerName": "Biotech Vision",
       "variantName": "M",
@@ -1622,7 +1711,9 @@
       "planCreationDate": "2022-12-27",
       "surgeon": "Dr. Who",
       "planCreator": "Christina Hernandez",
-      "warnings": [],
+      "warnings": [
+        "No lens available for the given parameters for the OS eye!"
+      ],
       "iolName": "Eyecryl Toric",
       "manufacturerName": "Biotech Vision",
       "variantName": "M",
@@ -1646,6 +1737,59 @@
       "quantity": 1,
       "surgeryDate": "2023-03-11"
     },
-    "refractionUnitInDpt": false
+    "refractionUnitInDpt": false,
+    "commonWarnings": [
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!",
+      "Ough, lens could not be calculated!"
+    ]
   }]
 }

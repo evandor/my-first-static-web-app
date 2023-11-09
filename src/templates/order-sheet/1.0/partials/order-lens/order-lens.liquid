@@ -9,189 +9,163 @@
   - i18n access to the i18n properties  
 {% endcomment %}
 
-{% comment %}
-Dev-Note: the macros should be provided in a separate measurements.liquid file, but the include statement 
-to include the measurement is not working. A ticket is open to get in contact with the development team of fluid.
-I also found a note that using include statement together with the render statement is not provided.
-Therefore I started putting each macro in its own measurement liquid file and include it via the rendr statement.
-
-{%- macro formatDiopterWithPlus( number, unit = ' D') -%}
-{{ number | format_number: 'N2' | append: unit | prepend: "+" | default: "---" }}
-{%- endmacro -%}
-
-{%- macro formatDiopterNoPlus( number, unit = ' D') %}
-{{ number | format_number: 'N2' | append: unit | default: "---" }}
-{%- endmacro %}
-
-{%- macro formatDegree( number, unit = '°') %}
-{{ number | format_number: 'N0' | append: unit | default: "---" }}
-{%- endmacro %}
-
-{%- macro formatMillimeter1Digit( number, unit = ' mm') -%}
-{{ number | format_number: 'N0' | append: unit | default: "---" }}
-{%- endmacro -%}
-
-{%- macro formatMicrometer( number, unit = ' µm') -%}
-{{ number | times: 1000 | format_number: 'N0' | append: unit | default: "---" }}
-{%- endmacro -%}
-{% endcomment %}
-<div class="sheet">
-    <div class="column content">
-        {% comment %}
-               {% render "partials/warnings/warnings", common-warnings: model.common.warnings, od-warnings: model.od.warnings, os-warnings: model.os.warnings %}
-        {% endcomment %}
-        {% assign unitDpt = i18n.unit.dpt %}
-        <table class="order-sheet">
-            <tr>
-                <td></td>
-                <td class="h1">{{ i18n.order.right_od | default: "error" }}</td>
-                <td class="h1">{{ i18n.order.left_os | default: "error" }}</td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.iol_name | default: "IOL" }}</td>
-                <td class="body1" id="odIolName">
-                    {% if model-od %}
-                        <span>
+<main>
+    <!--div class="column"-->
+    {% comment %}
+       {% render "partials/warnings/warnings", common-warnings: model.commonWarnings, od-warnings: model.od.warnings, os-warnings: model.os.warnings, i18n: i18n %}
+    {% endcomment %}
+    {% assign unitDpt = i18n.unit.dpt %}
+    <table class="order-sheet">
+        <tr>
+            <td></td>
+            <td class="h1">{{ i18n.order.right_od | default: "error" }}</td>
+            <td class="h1">{{ i18n.order.left_os | default: "error" }}</td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.iol_name | default: "IOL" }}</td>
+            <td class="body2" id="odIolName">
+                {% if model-od %}
+                    <span>
                        <span>{{ model-od.manufacturerName | default: "error" }}</span>
                        <span>{{ model-od.iolName | default: "AT LISA&#174; toric 909" }}</span>
                        <span>{{ model-od.variantName | default: "MP" }}</span>
                        <span>{{ model-od.cylinderLabel | prepend: "| " | default: "" }}</span>
                     </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osIolName">
-                    {% if model-os %}
-                        <span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osIolName">
+                {% if model-os %}
+                    <span>
                        <span>{{ model-os.manufacturerName | default: "error" }}</span>
                        <span>{{ model-os.iolName | default: "AT LISA&#174; toric 909" }}</span>
                        <span>{{ model-os.variantName | default: "MP" }}</span>
                        <span>{{ model-os.cylinderLabel | prepend: "| " | default: "" }}</span>
                     </span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.iol_refractive_power | default: "IOL refractive power (SE / Sph / Cyl / Axis)" }}</td>
-                <td class="body1">
-                    {% if model-od %}
-                        <span id="odIolRefractivePower">
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.iol_refractive_power | default: "IOL refractive power (SE / Sph / Cyl / Axis)" }}</td>
+            <td class="body2">
+                {% if model-od %}
+                    <span id="odIolRefractivePower">
                            {%- assign odIol = model-od.calculatedIol -%}
                            <span id="odIolRefractivePowerSE"
-                                 class="{% if model-od.seBased == true or model-od.toricLens == false %}body1-bold{% else %}grayed-out{% endif %}">
+                                 class="{% if model-od.seBased == true or model-od.toricLens == false %}body1{% else %}grayed-out{% endif %}">
                                {%- render "partials/formats/formatDiopterWithPlus", number: odIol.iolRefractivePowerSphericalEquivalent, displayUnit: true -%}</span>/ 
                            <span id="odIolRefractivePowerSphere"
-                                 {% if model-od.seBased == false and model-od.toricLens == true %}class="body1-bold"{% endif %}>
+                                 {% if model-od.seBased == false and model-od.toricLens == true %}class="body1"{% endif %}>
                                {%- render "partials/formats/formatDiopterWithPlus", number: odIol.iolRefractivePowerSphere, displayUnit: true -%}</span>/
                            <span id="odIolRefractivePowerCyl"
-                                 {% if model-od.toricLens == true %}class="body1-bold"{% endif %}>
+                                 {% if model-od.toricLens == true %}class="body1"{% endif %}>
                                {%- render "partials/formats/formatDiopterWithPlus", number: odIol.iolRefractivePowerCylinder, displayUnit: true -%}</span>/
                            <span id="odIolRefractivePowerAxis"
-                                 {% if model-od.toricLens == true %}class="body1-bold"{% endif %}>
+                                 {% if model-od.toricLens == true %}class="body1"{% endif %}>
                                {%- render "partials/formats/formatDegree", number: odIol.iolRefractivePowerAxis, displayUnit: true -%}</span>
                        </span>
-                    {% endif %}
-                </td>
-                <td class="body1">
-                    {% if model-os %}
-                        <span id="osIolRefractivePower">
+                {% endif %}
+            </td>
+            <td class="body2">
+                {% if model-os %}
+                    <span id="osIolRefractivePower">
                            {% assign osIol = model-os.calculatedIol %}
                            <span id="osIolRefractivePowerSE"
-                                 class="{% if model-os.seBased == true or model-os.toricLens == false %}body1-bold{% else %}grayed-out{% endif %}">
+                                 class="{% if model-os.seBased == true or model-os.toricLens == false %}body1{% else %}grayed-out{% endif %}">
                                {%- render "partials/formats/formatDiopterWithPlus", number: osIol.iolRefractivePowerSphericalEquivalent, displayUnit: true -%}</span> / 
                            <span id="osIolRefractivePowerSphere"
-                                 {% if model-os.seBased == false and model-os.toricLens == true %}class="body1-bold"{% endif %}>
+                                 {% if model-os.seBased == false and model-os.toricLens == true %}class="body1"{% endif %}>
                                {%- render "partials/formats/formatDiopterWithPlus", number: osIol.iolRefractivePowerSphere, displayUnit: true -%}</span> /
                            <span id="osIolRefractivePowerCyl"
-                                 {% if model-od.toricLens == true %}class="body1-bold"{% endif %}>
+                                 {% if model-od.toricLens == true %}class="body1"{% endif %}>
                                {%- render "partials/formats/formatDiopterWithPlus", number: osIol.iolRefractivePowerCylinder, displayUnit: true -%}</span> /
                            <span id="osIolRefractivePowerAxis"
-                                 {% if model-od.toricLens == true %}class="body1-bold"{% endif %}>
+                                 {% if model-od.toricLens == true %}class="body1"{% endif %}>
                                {%- render "partials/formats/formatDegree", number: osIol.iolRefractivePowerAxis, displayUnit: true -%}</span>
                        </span>
-                    {% endif %}
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.quantity | default: "Quantity" }}</td>
+            <td class="body2" id="odQuantity">{{ model-od.quantity | default: "" }}</td>
+            <td class="body2" id="osQuantity">{{ model-os.quantity | default: "" }}</td>
+        </tr>
+        {% if model-od.planCreationDate or model-os.planCreationDate %}
+            <tr id="planCreationDateRow">
+                <td class="label1">{{ i18n.order.plan_creation_date | default: "Created on" }}</td>
+                <td class="body2" id="odCreatedDate">
+                    {{ model-od.planCreationDate | format_date: i18n.order.plan_creation_date_format | default: "" }}
+                </td>
+                <td class="body2" id="osCreatedDate">
+                    {{ model-os.planCreationDate | format_date: i18n.order.plan_creation_date_format | default: "" }}
                 </td>
             </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.quantity | default: "Quantity" }}</td>
-                <td class="body1" id="odQuantity">{{ model-od.quantity | default: "" }}</td>
-                <td class="body1" id="osQuantity">{{ model-os.quantity | default: "" }}</td>
-            </tr>
-            {% if model-od.planCreationDate or model-os.planCreationDate %}
-                <tr id="planCreationDateRow">
-                    <td class="label1">{{ i18n.order.plan_creation_date | default: "Created on" }}</td>
-                    <td class="body1" id="odCreatedDate">
-                        {{ model-od.planCreationDate | format_date: i18n.order.plan_creation_date_format | default: "" }}
-                    </td>
-                    <td class="body1" id="osCreatedDate">
-                        {{ model-os.planCreationDate | format_date: i18n.order.plan_creation_date_format | default: "" }}
-                    </td>
-                </tr>
-            {% endif %}
-            {% if model-od.planCreator or model-os.planCreator %}
-                <tr id="planCreatorRow">
-                    <td class="label1">{{ i18n.order.plan_creator | default: "by" }}</td>
-                    <td class="body1" id="odCreatedBy">
-                        {{ model-od.planCreator | default: "" }}
-                    </td>
-                    <td class="body1" id="osCreatedBy">
-                        {{ model-os.planCreator | default: "" }}
-                    </td>
-                </tr>
-            {% endif %}
-            <tr>
-                <td class="label1">
-                    {{ i18n.order.surgery_date | default: "Surgery date" }}
+        {% endif %}
+        {% if model-od.planCreator or model-os.planCreator %}
+            <tr id="planCreatorRow">
+                <td class="label1">{{ i18n.order.plan_creator | default: "by" }}</td>
+                <td class="body2" id="odCreatedBy">
+                    {{ model-od.planCreator | default: "" }}
                 </td>
-                <td class="body1" id="odSurgeryDate">
-                    {{ model-od.surgeryDate | format_date: i18n.order.date_format_surgery | default: "" }}
-                </td>
-                <td class="body1" id="osSurgeryDate">
-                    {{ model-os.surgeryDate | format_date: i18n.order.date_format_surgery | default: "" }}
+                <td class="body2" id="osCreatedBy">
+                    {{ model-os.planCreator | default: "" }}
                 </td>
             </tr>
-            {% if model-od.surgeon or model-os.surgeon %}
-                <tr id="surgeonRow">
-                    <td class="label1">{{ i18n.order.surgeon | default: Surgeon }}</td>
-                    <td class="body1" id="odSurgeon">
-                        {{ model-od.surgeryDate | default: "" }}
-                    </td>
-                    <td class="body1" id="osSurgeon">
-                        {{ model-os.surgeryDate | default: "" }}
-                    </td>
-                </tr>
-            {% endif %}
-            <tr>
-                <td class="label1">{{ i18n.order.target_refraction_se | default: "Target refraction (SE)" }}</td>
-                <td class="body1" id="odTargetRefractionSphericalEquivalent">
-                    {%- if model-od -%}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.targetRefractionSphericalEquivalent, displayUnit: true -%}</span>
-                    {% endif %}
+        {% endif %}
+        <tr>
+            <td class="label1">
+                {{ i18n.order.surgery_date | default: "Surgery date" }}
+            </td>
+            <td class="body2" id="odSurgeryDate">
+                {{ model-od.surgeryDate | format_date: i18n.order.surgery_date_date_format | default: "" }}
+            </td>
+            <td class="body2" id="osSurgeryDate">
+                {{ model-os.surgeryDate | format_date: i18n.order.surgery_date_date_format | default: "" }}
+            </td>
+        </tr>
+        {% if model-od.surgeon or model-os.surgeon %}
+            <tr id="surgeonRow">
+                <td class="label1">{{ i18n.order.surgeon | default: Surgeon }}</td>
+                <td class="body2" id="odSurgeon">
+                    {{ model-od.surgeon | default: "" }}
                 </td>
-                <td class="body1" id="osTargetRefractionSphericalEquivalent">
-                    {%- if model-os -%}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.targetRefractionSphericalEquivalent, displayUnit: true -%}</span>
-                    {% endif %}
+                <td class="body2" id="osSurgeon">
+                    {{ model-os.surgeon | default: "" }}
                 </td>
             </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.axial_length | default: "Axial length" }}</td>
-                <td class="body1" id="odAxialLength">
-                    {%- if model-od -%}
-                        <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-od.axialLength, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osAxialLength">
-                    {%- if model-os -%}
-                        <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-os.axialLength, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-            </tr>
-
-            <tr>
-                <td class="label1">{{ i18n.order.acd | default: "Anterior chamber depth" }}</td>
-                <td class="body1" id="odAcd">
-                    {%- if model-od -%}
-                        <span>
+        {% endif %}
+        <tr>
+            <td class="label1">{{ i18n.order.target_refraction_se | default: "Target refraction (SE)" }}</td>
+            <td class="body2" id="odTargetRefractionSphericalEquivalent">
+                {%- if model-od -%}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.targetRefractionSphericalEquivalent, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osTargetRefractionSphericalEquivalent">
+                {%- if model-os -%}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.targetRefractionSphericalEquivalent, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.axial_length | default: "Axial length" }}</td>
+            <td class="body2" id="odAxialLength">
+                {%- if model-od -%}
+                    <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-od.axialLength, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osAxialLength">
+                {%- if model-os -%}
+                    <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-os.axialLength, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="label1">{{ i18n.order.acd | default: "Anterior chamber depth" }}</td>
+            <td class="body2" id="odAcd">
+                {%- if model-od -%}
+                    <span>
                            {%- if model-od.acdMeasurementSource -%}
                                <span>
                                    {% assign acdMeasurementSourceText = i18n.enum.AnteriorChamberDepthMeasurementSource | where: 'name', model-od.acdMeasurementSource | map: 'value' | first %}
@@ -200,11 +174,11 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            {%- endif -%}
                            <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-od.acd, displayUnit: true -%}</span>
                        </span>
-                    {%- endif -%}
-                </td>
-                <td class="body1" id="osAcd">
-                    {%- if model-os -%}
-                        <span>
+                {%- endif -%}
+            </td>
+            <td class="body2" id="osAcd">
+                {%- if model-os -%}
+                    <span>
                            {%- if model-os.acdMeasurementSource -%}
                                <span>
                                    {% assign acdMeasurementSourceText = i18n.enum.AnteriorChamberDepthMeasurementSource | where: 'name', model-os.acdMeasurementSource | map: 'value' | first %}
@@ -213,28 +187,28 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            {%- endif -%}
                            <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-os.acd, displayUnit: true -%}</span>
                        </span>
-                    {%- endif -%}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.keratometry_n | default: "Keratometry / n'" }}</td>
-                <td class="body1" id="odRefractiveIndex">
-                    {%- if model-od -%}
-                        <span>{%- render "partials/formats/formatDecimal", number: model-od.refractiveIndex -%}</span>
-                    {%- endif -%}
-                </td>
-                <td class="body1" id="osRefractiveIndex">
-                    {%- if model-os -%}
-                        <span>{%- render "partials/formats/formatDecimal", number: model-os.refractiveIndex -%}</span>
-                    {%- endif -%}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1"
-                    id="keratometry1Label">{% if refractionUnitInDpt %}{{ 'K1' }}{% else %}{{ 'R1' }}{% endif %}</td>
-                <td class="body1" id="odKeratometry1">
-                    {% if model-od %}
-                        <span>
+                {%- endif -%}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.keratometry_n | default: "Keratometry / n'" }}</td>
+            <td class="body2" id="odRefractiveIndex">
+                {%- if model-od -%}
+                    <span>{%- render "partials/formats/formatDecimal", number: model-od.refractiveIndex -%}</span>
+                {%- endif -%}
+            </td>
+            <td class="body2" id="osRefractiveIndex">
+                {%- if model-os -%}
+                    <span>{%- render "partials/formats/formatDecimal", number: model-os.refractiveIndex -%}</span>
+                {%- endif -%}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1"
+                id="keratometry1Label">{% if refractionUnitInDpt %}{{ 'K1' }}{% else %}{{ 'R1' }}{% endif %}</td>
+            <td class="body2" id="odKeratometry1">
+                {% if model-od %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-od.keratometryK1, displayUnit: true -%}
@@ -244,11 +218,11 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-od.keratometryA1, displayUnit: true -%}</span>
                        </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osKeratometry1">
-                    {% if model-os %}
-                        <span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osKeratometry1">
+                {% if model-os %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-os.keratometryK1, displayUnit: true -%}
@@ -258,15 +232,15 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-os.keratometryA1, displayUnit: true -%}</span>
                        </span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1"
-                    id="keratometry2Label">{% if refractionUnitInDpt %}{{ 'K2' }}{% else %}{{ 'R2' }}{% endif %}</td>
-                <td class="body1" id="odKeratometry2">
-                    {% if model-od %}
-                        <span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1"
+                id="keratometry2Label">{% if refractionUnitInDpt %}{{ 'K2' }}{% else %}{{ 'R2' }}{% endif %}</td>
+            <td class="body2" id="odKeratometry2">
+                {% if model-od %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-od.keratometryK2, displayUnit: true -%}
@@ -276,11 +250,11 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-od.keratometryA2, displayUnit: true -%}</span>
                        </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osKeratometry2">
-                    {% if model-os %}
-                        <span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osKeratometry2">
+                {% if model-os %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-os.keratometryK2, displayUnit: true -%}
@@ -290,32 +264,32 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-os.keratometryA2, displayUnit: true -%}</span>
                        </span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.keratometry_cyl | default: "Cyl" }}</td>
-                <td class="body1" id="odKeratometryCyl">
-                    {% if model-od %}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.keratometryCyl, displayUnit: true -%}{{ " @ " }}
-                            {%- render "partials/formats/formatDegree", number: model-od.keratometryCylAxis, displayUnit: true -%}
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.keratometry_cyl | default: "Cyl" }}</td>
+            <td class="body2" id="odKeratometryCyl">
+                {% if model-od %}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.keratometryCyl, displayUnit: true -%}{{ " @ " }}
+                        {%- render "partials/formats/formatDegree", number: model-od.keratometryCylAxis, displayUnit: true -%}
                        </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osKeratometryCyl">
-                    {% if model-os %}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.keratometryCyl, displayUnit: true -%}{{ " @ " }}
-                            {%- render "partials/formats/formatDegree", number: model-os.keratometryCylAxis, displayUnit: true -%}
+                {% endif %}
+            </td>
+            <td class="body2" id="osKeratometryCyl">
+                {% if model-os %}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.keratometryCyl, displayUnit: true -%}{{ " @ " }}
+                        {%- render "partials/formats/formatDegree", number: model-os.keratometryCylAxis, displayUnit: true -%}
                        </span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1"
-                    id="totalKeratometry1Label">{% if refractionUnitInDpt %}{{ 'TK1' }}{% else %}{{ 'TR1' }}{% endif %}</td>
-                <td class="body1" id="odTotalKeratometry1">
-                    {% if model-od %}
-                        <span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1"
+                id="totalKeratometry1Label">{% if refractionUnitInDpt %}{{ 'TK1' }}{% else %}{{ 'TR1' }}{% endif %}</td>
+            <td class="body2" id="odTotalKeratometry1">
+                {% if model-od %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-od.totalKeratometryK1, displayUnit: true -%}
@@ -325,11 +299,11 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-od.totalKeratometryA1, displayUnit: true -%}</span>
                       </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osTotalKeratometry1">
-                    {% if model-os %}
-                        <span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osTotalKeratometry1">
+                {% if model-os %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-os.totalKeratometryK1, displayUnit: true -%}
@@ -339,15 +313,15 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-os.totalKeratometryA1, displayUnit: true -%}</span>
                       </span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1"
-                    id="totalKeratometry2Label">{% if refractionUnitInDpt %}{{ 'TK2' }}{% else %}{{ 'TR2' }}{% endif %}</td>
-                <td class="body1" id="odTotalKeratometry2">
-                    {% if model-od %}
-                        <span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1"
+                id="totalKeratometry2Label">{% if refractionUnitInDpt %}{{ 'TK2' }}{% else %}{{ 'TR2' }}{% endif %}</td>
+            <td class="body2" id="odTotalKeratometry2">
+                {% if model-od %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-od.totalKeratometryK2, displayUnit: true -%}
@@ -357,11 +331,11 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-od.totalKeratometryA2, displayUnit: true -%}</span>
                       </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osTotalKeratometry2">
-                    {% if model-os %}
-                        <span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osTotalKeratometry2">
+                {% if model-os %}
+                    <span>
                            <span>
                                {%- if refractionUnitInDpt -%}
                                    {%- render "partials/formats/formatDiopterWithoutPlus", number: model-os.totalKeratometryK2, displayUnit: true -%}
@@ -371,113 +345,113 @@ Therefore I started putting each macro in its own measurement liquid file and in
                            </span>
                            <span>{{ "@ " }}{%- render "partials/formats/formatDegree", number: model-os.totalKeratometryA2, displayUnit: true -%}</span>
                       </span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.keratometry_cyl_tk | default: "Cyl TK" }}</td>
-                <td class="body1" id="odTotalKeratometryCyl">
-                    {% if model-od %}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.totalKeratometryCyl, displayUnit: true -%}{{ " @ " }}
-                            {%- render "partials/formats/formatDegree", number: model-od.totalKeratometryCylAxis, displayUnit: true -%}
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.keratometry_cyl_tk | default: "Cyl TK" }}</td>
+            <td class="body2" id="odTotalKeratometryCyl">
+                {% if model-od %}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.totalKeratometryCyl, displayUnit: true -%}{{ " @ " }}
+                        {%- render "partials/formats/formatDegree", number: model-od.totalKeratometryCylAxis, displayUnit: true -%}
                        </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osTotalKeratometryCyl">
-                    {% if model-os %}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.totalKeratometryCyl, displayUnit: true -%}{{ " @ " }}
-                            {%- render "partials/formats/formatDegree", number: model-os.totalKeratometryCylAxis, displayUnit: true -%}
+                {% endif %}
+            </td>
+            <td class="body2" id="osTotalKeratometryCyl">
+                {% if model-os %}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.totalKeratometryCyl, displayUnit: true -%}{{ " @ " }}
+                        {%- render "partials/formats/formatDegree", number: model-os.totalKeratometryCylAxis, displayUnit: true -%}
                        </span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.incision_orientation | default: "Incision orientation" }}</td>
-                <td class="body1" id="odIncisionOrientation">
-                    {% if model-od %}
-                        <span>{%- render "partials/formats/formatDegree", number: model-od.incisionOrientation, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osIncisionOrientation">
-                    {% if model-os %}
-                        <span>{%- render "partials/formats/formatDegree", number: model-os.incisionOrientation, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.sia_effect | default: "SIA effect on incision axis" }}</td>
-                <td class="body1" id="odSia">
-                    {% if model-od %}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.sia, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osSia">
-                    {% if model-os %}
-                        <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.sia, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.elp | default: "ELP" }}</td>
-                <td class="body1" id="odElp">
-                    {% if model-od %}
-                        <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-od.estimatedLensPosition, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osElp">
-                    {% if model-os %}
-                        <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-os.estimatedLensPosition, displayUnit: true -%}</span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td class="label1">{{ i18n.order.residual_refraction | default: "Predicted Refraction (SE / Sph / Cyl / Axis)" }}</td>
-                <td class="body1" id="odResidualRefraction">
-                    {% if model-od %}
-                        {%- assign odIol = model-od.calculatedIol -%}
-                        <span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.incision_orientation | default: "Incision orientation" }}</td>
+            <td class="body2" id="odIncisionOrientation">
+                {% if model-od %}
+                    <span>{%- render "partials/formats/formatDegree", number: model-od.incisionOrientation, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osIncisionOrientation">
+                {% if model-os %}
+                    <span>{%- render "partials/formats/formatDegree", number: model-os.incisionOrientation, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.sia_effect | default: "SIA effect on incision axis" }}</td>
+            <td class="body2" id="odSia">
+                {% if model-od %}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-od.sia, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osSia">
+                {% if model-os %}
+                    <span>{%- render "partials/formats/formatDiopterWithPlus", number: model-os.sia, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.elp | default: "ELP" }}</td>
+            <td class="body2" id="odElp">
+                {% if model-od %}
+                    <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-od.estimatedLensPosition, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osElp">
+                {% if model-os %}
+                    <span>{%- render "partials/formats/formatMillimeter2Digit", number: model-os.estimatedLensPosition, displayUnit: true -%}</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td class="label1">{{ i18n.order.residual_refraction | default: "Predicted Refraction (SE / Sph / Cyl / Axis)" }}</td>
+            <td class="body2" id="odResidualRefraction">
+                {% if model-od %}
+                    {%- assign odIol = model-od.calculatedIol -%}
+                    <span>
                            {%- render "partials/formats/formatDiopterWithPlus", number: odIol.residualRefractionSphericalEquivalent -%}{{ ' / ' }}
-                            {% if model-od.toricLens %}
-                                {%- render "partials/formats/formatDiopterWithPlus", number: odIol.residualRefractionSphere -%}
-                            {% else %}
-                                {{- "---" -}}
-                            {% endif %}
-                            {{ ' / ' }}
-                            {%- render "partials/formats/formatDiopterWithPlus", number: odIol.residualRefractionCylinder -%}{{ ' / ' }}
-                            {%- render "partials/formats/formatDegree", number: odIol.residualRefractionAxis, displayUnit: true -%}
+                        {% if model-od.toricLens %}
+                            {%- render "partials/formats/formatDiopterWithPlus", number: odIol.residualRefractionSphere -%}
+                        {% else %}
+                            {{- "---" -}}
+                        {% endif %}
+                        {{ ' / ' }}
+                        {%- render "partials/formats/formatDiopterWithPlus", number: odIol.residualRefractionCylinder -%}{{ ' / ' }}
+                        {%- render "partials/formats/formatDegree", number: odIol.residualRefractionAxis, displayUnit: true -%}
                        </span>
-                    {% endif %}
-                </td>
-                <td class="body1" id="osResidualRefraction">
-                    {% if model-os %}
-                        {%- assign osIol = model-os.calculatedIol -%}
-                        <span>
+                {% endif %}
+            </td>
+            <td class="body2" id="osResidualRefraction">
+                {% if model-os %}
+                    {%- assign osIol = model-os.calculatedIol -%}
+                    <span>
                            {%- render "partials/formats/formatDiopterWithPlus", number: osIol.residualRefractionSphericalEquivalent -%}{{ ' / ' }}
-                            {% if model-os.toricLens %}
-                                {%- render "partials/formats/formatDiopterWithPlus", number: osIol.residualRefractionSphere -%}
-                            {% else %}
-                                {{- "---" -}}
-                            {% endif %}
-                            {{ ' / ' }}
-                            {%- render "partials/formats/formatDiopterWithPlus", number: osIol.residualRefractionCylinder -%}{{ ' / ' }}
-                            {%- render "partials/formats/formatDegree", number: osIol.residualRefractionAxis, displayUnit: true -%}
+                        {% if model-os.toricLens %}
+                            {%- render "partials/formats/formatDiopterWithPlus", number: osIol.residualRefractionSphere -%}
+                        {% else %}
+                            {{- "---" -}}
+                        {% endif %}
+                        {{ ' / ' }}
+                        {%- render "partials/formats/formatDiopterWithPlus", number: osIol.residualRefractionCylinder -%}{{ ' / ' }}
+                        {%- render "partials/formats/formatDegree", number: osIol.residualRefractionAxis, displayUnit: true -%}
                        </span>
-                    {% endif %}
-                </td>
-            </tr>
-        </table>
-        <div id="reusableStacy" class="body1 reusable-stacy">
-            <span>{{ i18n.order.order_reusable_stacy | default: "Order reusable STACY" }}</span>:
-            <div id="box"></div>
-        </div>
-        <div class="caption disclaimer">
-            <p><span>{{ i18n.order.disclaimer | default: "Disclaimer" }}</span>:</p>
-            <p>{{ i18n.order.disclaimer_text | default: "The order enquiry is pursuant to a non-binding recommendation through Zeiss Calculation Web Services,
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <div id="reusableStacy" class="body2 reusable-stacy">
+        <span>{{ i18n.order.order_reusable_stacy | default: "Order reusable STACY" }}</span>:
+        <div id="box"></div>
+    </div>
+    <div class="caption disclaimer">
+        <p><span>{{ i18n.order.disclaimer | default: "Disclaimer" }}</span>:</p>
+        <p>{{ i18n.order.disclaimer_text | default: "The order enquiry is pursuant to a non-binding recommendation through Zeiss Calculation Web Services,
                whose Terms of Use I have accepted. The recommendation is solely an approximation on the basis of
                general experience and a proprietary calculation algorithm and has been verified by me as a medical
                specialist. The order enquiry and any resulting order are subject to the General Terms and Conditions
                of Carl Zeiss Meditec AG as ascertained in the Internet at http://www.meditec.zeiss.com/Terms." }}
-            </p>
-        </div>
+        </p>
     </div>
-</div>
+    <!--/div-->
+</main>

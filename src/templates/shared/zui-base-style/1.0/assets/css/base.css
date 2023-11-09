@@ -1,0 +1,156 @@
+/* UI TBD */
+body,
+table,
+th,
+td {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+  line-height: 10pt;
+}
+
+/* Used for OD/OS */
+h1,
+.h1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 18pt;
+  line-height: 18pt;
+}
+
+h2,
+.h2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 14pt;
+  line-height: 14pt;
+}
+
+h3,
+.h3 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+  line-height: 10pt;
+}
+
+/* Used for right/left info */
+.subheadline1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+/* Used for e.g. section headlines. Always used in capital letters. */
+.subheadline2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  /* no semi-bold version for CJK available */
+  font-weight: 500;
+  font-size: 10pt;
+  text-transform: uppercase;
+}
+
+.subheadline3 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+.subheadline4 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 8pt;
+  text-transform: uppercase;
+}
+
+.body1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 700;
+  font-size: 8pt;
+}
+
+.body2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+}
+
+/* Standard font styles used for labels and headlines within tables */
+.label1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 8pt;
+  white-space: nowrap;
+}
+
+.label2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 7pt;
+}
+
+/* Used for additional info-texts, e.g. legends, captions */
+.caption {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 6pt;
+}
+
+/* Used for info texts, e.g. copyright info, software version, device,... */
+.info {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 5pt;
+}
+
+.language-ja .h1,
+.language-ja .h2,
+.language-ja .h3,
+.language-ja .subheadline1,
+.language-ja .subheadline2,
+.language-ja .subheadline3,
+.language-ja .subheadline4,
+.language-ja .body1,
+.language-ja .body2,
+.language-ja .label1,
+.language-ja .label2,
+.language-ja .caption,
+.language-ja .info {
+  font-family: "Noto Sans CJK JP", "sans-serif";
+}
+
+.language-ko .h1,
+.language-ko .h2,
+.language-ko .h3,
+.language-ko .subheadline1,
+.language-ko .subheadline2,
+.language-ko .subheadline3,
+.language-ko .subheadline4,
+.language-ko .body1,
+.language-ko .body2,
+.language-ko .label1,
+.language-ko .label2,
+.language-ko .caption,
+.language-ko .info {
+  font-family: "Noto Sans CJK KR", "sans-serif";
+}
+
+.language-zh .h1,
+.language-zh .h2,
+.language-zh .h3,
+.language-zh .subheadline1,
+.language-zh .subheadline2,
+.language-zh .subheadline3,
+.language-zh .subheadline4,
+.language-zh .body1,
+.language-zh .body2,
+.language-zh .label1,
+.language-zh .label2,
+.language-zh .caption,
+.language-zh .info {
+  font-family: "Noto Sans CJK SC", "sans-serif";
+}
+
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}

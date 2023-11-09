@@ -1,0 +1,650 @@
+/* Used for OD/OS */
+.h1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 18pt;
+}
+
+/* Used for right/left info */
+.h2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 14pt;
+}
+
+.h3 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+/* Used for e.g. section headlines. Always used in capital letters. */
+.sub-headline1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  /* no semi-bold version for CJK available */
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+.sub-headline2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  /* no semi-bold version for CJK available */
+  font-weight: 500;
+  font-size: 10pt;
+  text-transform: uppercase;
+}
+
+/* Used for very important information e.g. lens name. Use carefully. */
+.sub-headline3 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+.sub-headline4 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 600;
+  font-size: 8pt;
+  text-transform: uppercase;
+}
+
+/* Used for values in tables and short texts, headlines within tables, when multiple headlines types are needed */
+.body1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 700;
+  font-size: 8pt;
+}
+
+.body2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+  white-space: nowrap;
+}
+
+/* Standard font styles used for labels and headlines within tables */
+.label1 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 8pt;
+  white-space: nowrap;
+}
+
+.label2 {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 7pt;
+}
+
+/* Used for additional info-texts, e.g. legends, captions */
+.caption {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 400;
+  font-size: 6pt;
+}
+
+/* Used for info texts, e.g. copyright info, software version, device,... */
+.info {
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  font-weight: 500;
+  font-size: 5pt;
+}
+
+.language-ja .h1, .language-ja .h2, .language-ja .h3 .sub-headline1, .language-ja .sub-headline2, .language-ja .sub-headline3, .language-ja .sub-headline4,
+.language-ja .body1, .language-ja .body2,
+.language-ja .label1, .language-ja .caption, .language-ja .info {
+  font-family: "Noto Sans CJK JP", "sans-serif";
+}
+
+.language-ko .h1, .language-ko .h2, .language-ko .h3 .sub-headline1, .language-ko .sub-headline2, .language-ko .sub-headline3, .language-ko .sub-headline4,
+.language-ko .body1, .language-ko .body2,
+.language-ko .label1, .language-ko .caption, .language-ko .info {
+  font-family: "Noto Sans CJK KR", "sans-serif";
+}
+
+.language-zh .h1, .language-zh .h2, .language-zh .h3 .sub-headline1, .language-zh .sub-headline2, .language-zh .sub-headline3, .language-zh .sub-headline4,
+.language-zh .body1, .language-zh .body2,
+.language-zh .label1, .language-zh .caption, .language-zh .info {
+  font-family: "Noto Sans CJK SC", "sans-serif";
+}
+
+/*
+@include set-format(
+                $czm-page-format,
+                $czm-page-width,
+                $czm-page-height,
+                $czm-page-header-height,
+                $czm-page-footer-height,
+                $czm-page-margin,
+                $czm-page-padding-top,
+                $czm-page-padding-left,
+                $czm-page-padding-right,
+                $czm-page-padding-bottom);
+*/
+/* make sure we use box-sizing for all css elements */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", "Noto Sans Georgian", "Noto Sans Thai", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans CJK SC", sans-serif;
+  line-height: 9.6pt;
+  /* default line spacing defined in Styleguilde_V1.pdf (page 3) */
+  color: #07090D;
+  /* default color as defined in Styleguilde_V1.pdf */
+}
+
+/* This class creates the illusion of a page in the browser. It is used mainly in the screen. For print it is only
+      used keep the contained content area in the middle of the page using the benefits of the flex layout. This
+      provides the flexibility that hardware printer margins are absorbed.  
+   */
+.page {
+  /* Please note that the margins are only used here to visually separate the pages. "auto" equally provides
+       margins to the left and right of the page and fills the complete viewport area of the browser */
+  margin: 5mm auto 5mm;
+  padding: 0;
+  /* centers the only child element (div) in the middle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* set width to the preferred page width */
+  width: 210mm;
+  /* set width to the preferred page height */
+  height: 297mm;
+  /* set the default font size, which is implicitly used to calculate the heights of elements */
+  font-size: 8pt;
+  /* defines the shadow around the page */
+  box-shadow: 0 0 5mm rgba(0, 0, 0, 0.59);
+  /*           overflow-y: scroll; */
+  background-color: white;
+  outline: 0;
+}
+
+/* This class defines a rigid box around the printable area. This is the area that is safe to use for print items.
+     Outside of the printable area, printer hardware margins can clip the texts or graphics or might lead to a 
+     unwanted offset of the print face and wrong layout of pages. 
+     This area typically contains a header, page content and a footer plus padding around it. The size of the box
+     must be not changeable, which means min-height=max-height and min-width=max-width */
+div.printable {
+  margin: 0;
+  /* never change this value */
+  padding: 0mm 2mm 0mm 8mm;
+  min-height: 277mm;
+  max-height: 277mm;
+  min-width: 190mm;
+  max-width: 190mm;
+  font-size: 8pt;
+  outline: 0;
+}
+
+/* This class defines a box for the header. It can grow horizontally, but never changes in height. */
+header {
+  /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       This ensures, that child item margins do not exceed the header box-layout! For example: the top margin of  
+       a paragraph <p> element inside the header element exceeds the top border of the header bounding-box and 
+       pushes the whole layout down by the size of the top margin of the <p> element. Only overflow value "auto" 
+       ensures that the margins of the <p> elem are layouted inside of the header bounding box. 
+       Therefore, do not change this value unless you know what you are doing! */
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* set width to 100%, width is limited by the parent containers fixed size width limit */
+  min-height: 43mm;
+  /* define a fixed height (min-height=max=height), so child items */
+  max-height: 43mm;
+  /* cant grow beyond this limit */
+  /*    border: thin dashed rgba(200, 200, 200, 0.7); */
+  background-color: rgba(0, 0, 200, 0.1);
+}
+
+/* This class defines a box for the main (content) area. It can grow horizontally, but never changes in height. */
+main {
+  /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       The scrollbar is used as indicator here, to decide if the page needs to be split. If a scrollbar shows up
+       ,then to many child items are in inside of the page and the page needs to be split into two or more pages.
+       In addition the overflow-y:auto property ensures, that child item margins do not exceed the main box-layout! 
+       For example: the top margin of a paragraph <p> element inside the main element exceeds the top border of the 
+       main bounding-box and pushes the whole layout down by the size of the top margin of the <p> element. Only 
+       overflow value "auto" ensures that the margins of the <p> elem are layouted inside of the footers bounding 
+       box. Therefore, do not change this value unless you know what you are doing! */
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* set width to 100%, width is limited by the parent containers fixed size width limit */
+  min-height: 206.5mm;
+  /* define a fixed height (min-height=max=height), so child items */
+  max-height: 206.5mm;
+  /* cant grow beyond this limit */
+  /*    border: thin dashed rgba(200, 200, 200, 0.7); */
+  background-color: rgba(200, 200, 200, 0.1);
+}
+
+/* This class defines a box for the footer. It can grow horizontally, but never changes in height. */
+footer {
+  /* Note: overflow-y: auto displays scrollbars, if the main child items grow beyond the pre-defined max-height.
+       This ensures, that child item margins do not exceed the footer box-layout! For example: the top margin of  
+       a paragraph <p> element inside the footer element exceeds the top border of the footer bounding-box and 
+       pushes the whole layout down by the size of the top margin of the <p> element. Only overflow value "auto" 
+       ensures that the margins of the <p> elem are layouted inside of the footers bounding box. 
+       Therefore, do not change this value unless you know what you are doing! */
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 27.5mm;
+  /* define a fixed height (min-height=max=height), so child items */
+  max-height: 27.5mm;
+  /* cant grow beyond this limit */
+  height: 27.5mm;
+  /*   border: thin dashed rgba(200, 200, 200, 0.7); */
+  background-color: rgba(0, 100, 0, 0.1);
+}
+
+@media print {
+  @page {
+    margin: 0;
+    padding: 0;
+    size: 210mm 297mm;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+  }
+  div.printable {
+    margin: 0;
+    padding: 0mm 2mm 0mm 8mm;
+    min-height: 277mm;
+    max-height: 277mm;
+    min-width: 190mm;
+    max-width: 190mm;
+    box-sizing: border-box;
+    outline: 0;
+  }
+  /* can be used to hide an html element, which should not be printed. Remove, if not used */
+  .noprint {
+    display: none;
+  }
+  /* can be used to show an html element, which should be printed. Remove, if not used */
+  .enable-print {
+    display: block;
+  }
+  /* avoid that there are page breaks inside paragraphs. */
+  p {
+    page-break-inside: avoid;
+  }
+  /* avoid page breaks inside sections. */
+  section {
+    page-break-inside: avoid;
+  }
+}
+
+.header-headline {
+  height: 6mm;
+  /* 3.5mm (ca. text height of "SELECTED IOL REPORT") + 2,5mm (bottom margin) = 6mm */
+  text-transform: uppercase;
+}
+
+.header-section {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.header-details-layout {
+  flex-flow: column;
+  overflow: hidden;
+  vertical-align: top;
+  height: 39.5mm;
+  width: 107mm;
+  /* = 180 (A4 width without borders) - 68.5 (institution detail width) - 4.5 (padding between elements) */
+  white-space: nowrap;
+}
+
+.header-institution-details {
+  overflow: hidden;
+  vertical-align: top;
+  height: 36mm;
+  width: 68.5mm;
+  white-space: nowrap;
+}
+
+.header-details-layout {
+  max-height: 35mm;
+  max-width: 106.4mm;
+  border-spacing: 0;
+  padding-right: 4.5mm;
+}
+
+.header-details-layout td {
+  vertical-align: baseline;
+  padding-right: 4.5mm;
+}
+
+div.header-warning-section {
+  width: 90mm;
+  height: 8mm;
+  background-color: #ffefce;
+  margin-top: 2mm;
+  margin-bottom: 2mm;
+}
+
+div.header-warning-section td {
+  vertical-align: middle;
+  padding: 0;
+}
+
+div.header-warning-section td:first-child {
+  line-height: 0;
+}
+
+div.header-warning-section td:first-child img {
+  margin: 2mm;
+  width: 4mm;
+}
+
+div.header-warning-section td:first-child img.square {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.dateOfBirthLabel, .dateOfBirth {
+  padding-top: 1mm;
+}
+
+.patientName, .patientName2 {
+  width: 78mm;
+  /* required for ellipsis */
+}
+
+.patientName div.ellipsis, .patientName2 div.ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: inherit;
+  line-height: 12pt;
+}
+
+.institution-logo {
+  height: 6mm;
+  width: 68.5mm;
+}
+
+.institution-details-layout div {
+  min-height: 9.6pt;
+  /* default line spacing */
+}
+
+/* only used for at the beginning of a new section */
+/* used as standard separator in tables */
+/* used for footer comment box border */
+/* border for selected table line */
+/*
+footer {
+  padding-right: 3mm;
+}
+*/
+.footer-section {
+  padding: 0 3mm 0 0;
+  margin: 0;
+}
+
+.signature-section {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 3mm;
+  height: 13mm;
+  margin-bottom: 1.5mm;
+}
+
+.print-comment {
+  width: 90mm;
+  padding: 1.5mm;
+  line-height: 7.2pt;
+  border: 0.25pt solid #07090D;
+}
+
+.signature {
+  width: 65mm;
+  padding: 1.5mm;
+  background: #ecf2f8;
+}
+
+.zeiss-logo {
+  overflow: hidden;
+  justify-content: flex-end;
+}
+
+.zeiss-logo img {
+  width: 13mm;
+  height: 13mm;
+}
+
+.device-info-section {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 4.5mm;
+}
+
+.page-number {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/*
+.warnings-component {
+    min-height: 12.5mm;
+    display: table;
+    width: 180mm;
+    background-color: $y100;
+    margin-bottom: 3mm;
+}
+
+.warning-logo {
+    align-items:center;
+    justify-content:center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.warning-logo img {
+    width: 5mm;
+}
+
+.warnings {
+    background-color: $y30;
+    padding: 1.5mm 2.5mm;
+    display: table-cell;
+    width:175mm;
+}
+*/
+main {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+h3.warnings-header {
+  margin: 0;
+  display: block;
+  max-width: 180mm;
+  padding: 1.5mm 2.5mm;
+  background-color: #FDCA40;
+}
+
+.warning-row {
+  margin: 0;
+  padding: 0;
+  min-width: 180mm;
+  max-width: 180mm;
+  min-height: 5mm;
+  max-height: 5mm;
+  background-color: #ffefce;
+  display: block;
+}
+
+.warning-logo2 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.warning-row img {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  min-width: 5mm;
+  max-width: 5mm;
+  min-height: 5mm;
+  max-height: 5mm;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  background-color: #FDCA40;
+}
+
+.warnings2 {
+  margin: 0;
+  display: inline-block;
+  padding: 0;
+  min-width: 170mm;
+  max-width: 170mm;
+  min-height: 5mm;
+  max-height: 5mm;
+}
+
+div.imprint {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  transform: rotate(-90deg) translateX(9.5mm) translateY(-30mm);
+}
+
+/* only used for at the beginning of a new section */
+/* used as standard separator in tables */
+/* used for footer comment box border */
+/* border for selected table line */
+.column {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+h1 {
+    line-height: 18pt; */
+/* to match the font size */
+/*
+}
+*/
+table.order-sheet {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.order-sheet tr:first-child {
+  line-height: 18pt;
+}
+
+table.order-sheet tr td {
+  border-bottom: 0.25pt solid #394047;
+}
+
+table.order-sheet tr:first-child td {
+  border-bottom: 0.5pt solid #07090D;
+}
+
+table.order-sheet td {
+  width: 32%;
+  padding: 5px;
+  text-align: right;
+}
+
+table.order-sheet td:first-child {
+  text-align: left;
+  width: 36%;
+}
+
+.disclaimer {
+  padding-top: 2mm;
+}
+
+.reusable-stacy {
+  padding-top: 4mm;
+}
+
+.reusable-stacy div#box {
+  display: inline-block;
+  position: relative;
+  top: 0.25em;
+  width: 1.125em;
+  height: 1.125em;
+  border: 0.25pt solid #394047;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.flex-spacer {
+  flex: auto;
+}
+
+.column {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+.content {
+    max-height: 206.5mm;*/
+/* = 297 (A4 height) - 53 (top margin and header) - 37.5 (bottom margin and footer) */
+/*        font-size: 8pt;
+    }
+*/
+.sub-headline2 ellipsis {
+  line-height: 13pt;
+}
+
+.grayed-out {
+  color: #828D9E;
+}

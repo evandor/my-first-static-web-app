@@ -1,0 +1,139 @@
+@import 'variables';
+
+// ====== Font definitions ZUi Styleguide Base - Reports ======
+
+/* UI TBD */
+body,
+table,
+th,
+td {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 8pt;
+  line-height: 10pt;
+}
+
+/* Used for OD/OS */
+h1,
+.h1 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 18pt;
+  line-height: 18pt;
+}
+
+h2,
+.h2 {
+  font-family: $defaultFontFamily;
+  font-weight: 600;
+  font-size: 14pt;
+  line-height: 14pt;
+}
+
+h3,
+.h3 {
+  font-family: $defaultFontFamily;
+  font-weight: 300;
+  font-size: 10pt;
+  line-height: 10pt;
+}
+
+/* Used for right/left info */
+.subheadline1 {
+  font-family: $defaultFontFamily;
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+/* Used for e.g. section headlines. Always used in capital letters. */
+.subheadline2 {
+  font-family: $defaultFontFamily;
+  /* no semi-bold version for CJK available */
+  font-weight: 500;
+  font-size: 10pt;
+  text-transform: uppercase;
+}
+
+.subheadline3 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+.subheadline4 {
+  font-family: $defaultFontFamily;
+  font-weight: 600;
+  font-size: 8pt;
+  text-transform: uppercase;
+}
+
+.body1 {
+  font-family: $defaultFontFamily;
+  font-weight: 700;
+  font-size: 8pt;
+}
+
+
+.body2 {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 8pt;
+}
+
+/* Standard font styles used for labels and headlines within tables */
+.label1 {
+  font-family: $defaultFontFamily;
+  font-weight: 400;
+  font-size: 8pt;
+  white-space: nowrap; // defined in Neudorf, but not defined in style guide. todo: clarify if this needs to be removed*/
+}
+
+.label2 {
+  // not defined in style guide
+  font-family: $defaultFontFamily;
+  font-weight: 400;
+  font-size: 7pt;
+}
+
+/* Used for additional info-texts, e.g. legends, captions */
+.caption {
+  font-family: $defaultFontFamily;
+  font-weight: 400;
+  font-size: 6pt;
+}
+
+/* Used for info texts, e.g. copyright info, software version, device,... */
+.info {
+  font-family: $defaultFontFamily;
+  font-weight: 500;
+  font-size: 5pt;
+}
+
+
+/// ====== mixins ======
+@mixin fontSelector($specialFontLanguages, $defaultFont : "sans-serif") {
+
+  @each $language,
+  $font in $specialFontLanguages {
+    .language-#{$language} {
+
+      .h1,
+      .h2,
+      .h3,
+      .subheadline1,
+      .subheadline2,
+      .subheadline3,
+      .subheadline4,
+      .body1,
+      .body2,
+      .label1,
+      .label2,
+      .caption,
+      .info {
+        font-family: $font, $defaultFont;
+      }
+    }
+  }
+}
+
+@include fontSelector($specialFontLanguages);
